@@ -1,0 +1,90 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\NonCompeteAgreement;
+use App\Services\UserProfileService;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+
+class NonCompeteAgreementController extends Controller
+{
+    protected $userProfileService;
+
+    public function __construct(UserProfileService $userProfileService)
+    {
+        $this->userProfileService = $userProfileService;
+    }
+
+    public function index(UserProfileService $userProfileService)
+    {
+        $profileData = $userProfileService->getUserProfileData();
+
+        $userID = Auth::id();
+
+        $non_compete = DB::table('non_compete_agreement')->where('applicant_id', $userID)->get();
+
+        $nonCompeteData = [];
+
+        foreach($non_compete as $item){
+            $applicant_id = $item->applicant_id;
+            $signature = $item->signature;
+            $created_at = $item->created_at;
+
+            $nonCompeteData[] = [
+                'applicant_id' => $applicant_id,
+                'signature' => $signature,
+                'created_at' => $created_at
+            ];
+
+        }
+
+        return view('dashboard.non-compete-agreement.index', 
+        [
+            'nonCompeteData' => $nonCompeteData, 
+            'profileData' => $profileData
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        $userID = Auth::id();
+
+        $request->validate([
+            'signature' => 'required'
+        ]);
+
+        $compete = new NonCompeteAgreement();
+
+        // get signature input
+        $signatureData = $request->input('signature');
+
+        $signatureParts = explode(',', $signatureData);
+        $signatureEncoded = $signatureParts[1]; // Extract the base64-encoded part
+
+        $signatureBinary = base64_decode($signatureEncoded);
+
+        // Generate a unique filename for the signature file
+        $signatureName = time() . '.png';
+
+        // Save the signature file to disk using the Storage facade
+        Storage::put('public/signature/' . $signatureName, $signatureBinary);
+
+        $compete->signature = $signatureName;
+        $compete->applicant_id = $userID;
+
+        NonCompeteAgreement::firstOrCreate(
+            ['applicant_id' => $userID],
+            [
+                'signature' => $signatureName,
+                'applicant_id' => $userID
+            ]
+         );
+
+         return redirect()->back()->with('success', 'Non-Compete Agreement Signed Successfully');
+
+    }
+
+}
