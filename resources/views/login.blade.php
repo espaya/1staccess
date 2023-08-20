@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
         <meta content="Login - 1staccess job application portal" name="description">
         <meta content="1staccess Home Care" name="author">
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{asset('images/favicon.png')}}">
 
         @vite(['resources/css/bootstrap.min.css', 'resources/css/icons.min.css', 'resources/css/app.min.css'])
 
@@ -71,9 +71,9 @@ use Illuminate\Support\Facades\Auth;
                                             <button class="btn btn-primary waves-effect waves-light" type="submit">Log In</button>
                                         </div>
 
-                                        <!-- <div class="mt-4 text-center">
-                                            <a href="auth-recoverpw.html.htm" class="text-muted"><i class="mdi mdi-lock me-1"></i> Forgot your password?</a>
-                                        </div> -->
+                                        <div class="mt-4 text-center">
+                                            <a href="{{url('/forgot-password')}}" class="text-muted"><i class="mdi mdi-lock me-1"></i> Forgot your password?</a>
+                                        </div>
                                     </form>
                                 </div>
             
@@ -82,7 +82,7 @@ use Illuminate\Support\Facades\Auth;
                         <div class="mt-5 text-center">
                             
                             <div>
-                                <p>Don't have an account ? <a href="{{url('/register')}}" class="fw-medium text-primary"> Signup now </a> </p>
+                                <p>Don't have an account ? <a href="{{url('/register')}}" class="fw-medium text-primary"> Register now </a> </p>
                                 <p>© <script>document.write(new Date().getFullYear())</script>
                                  1staccess Home Care.
                                 </p>

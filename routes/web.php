@@ -1,9 +1,11 @@
 <?php
 use App\Http\Controllers\AttendanceTardinessController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AvatarController;
 use App\Http\Controllers\ConfidentialityOfInformation;
@@ -33,6 +35,7 @@ use App\Http\Controllers\SwornDisclosureController;
 use App\Http\Controllers\UniversalPrecautionsController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Middleware\Authenticate;
+use Illuminate\Support\Facades\Password;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,7 +57,26 @@ Route::get('/', function(){
     return view('login'); 
 });
 
+// login page route
 Route::post('/', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
+
+/* Password resset routes */
+Route::get('forgot-password', function(){
+    return view('auth/passwords.email');
+})->middleware('guest')->name('forgot-password');
+
+Route::post('/forgot-password', function(Request $request){
+
+    $request->validate(['email' => 'required|email']);
+    $status = Password::sendResetLink(
+        $request->only('email')
+    );
+
+    return $status === Password::RESET_LINK_SENT 
+        ? back()->with(['status' => __($status)])
+        : back()->withErrors(['email' => __($status)]);
+        
+})->middleware('guest')->name('password.email');
 
 
 // user route

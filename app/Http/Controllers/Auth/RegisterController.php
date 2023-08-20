@@ -89,7 +89,7 @@ class RegisterController extends Controller
         Mail::to($user->email)->send(new WelcomeEmail());
 
         // add verification email
-        $user->sendEmailVerificationNotification(); 
+        $user->sendEmailVerificationNotification();  
 
         return redirect('/dashboard/')->with('status', 'Registration Successfull');
     }

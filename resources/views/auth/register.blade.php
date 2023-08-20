@@ -10,7 +10,7 @@
         <meta content="Register - 1staccess job application portal" name="description">
         <meta content="1staccess Home Care" name="author">
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{asset('images/favicon.png')}}">
 
         @vite(['resources/css/bootstrap.min.css', 'resources/css/icons.min.css', 'resources/css/app.min.css'])
 
@@ -96,20 +96,18 @@
                                         <div class="mt-4 d-grid">
                                             <button class="btn btn-primary waves-effect waves-light" type="submit">Register</button>
                                         </div>
-
-                                        <div class="mt-4 text-center">
+                                        <!-- <div class="mt-4 text-center">
                                             <p class="mb-0">By registering you agree to the First Access Homecare Inc <a href="#" class="text-primary">Terms of Use</a></p>
-                                        </div>
+                                        </div> -->
                                     </form>
                                 </div>
-            
                             </div>
                         </div>
                         <div class="mt-5 text-center">
                             
                             <div>
                                 <p>Already have an account ? <a href="{{url('/')}}" class="fw-medium text-primary"> Login</a> </p>
-                                <p>© <script>document.write(new Date().getFullYear())</script> First Access Homecare Inc.
+                                <p>© <script>document.write(new Date().getFullYear())</script> 1staccess Home Care.
                                 </p>
                             </div>
                         </div>
