@@ -87,7 +87,7 @@
                                        <div class="col-md-6">
                                           <div class="form-group">
                                              <div class="form-control-wrap">
-                                                <p>Employee Hire Date: {{$empApplicationsData[0]['employee_hire_date']}}</p>
+                                                <p>Employee Hire Date: {{Carbon\Carbon::parse($empApplicationsData[0]['employee_hire_date'])->format('M d, Y') }}</p>
                                              </div>
                                           </div>
                                        </div>
@@ -162,7 +162,7 @@
                                        </div>
                                        <div class="col-md-12">
                                           <div class="form-group">
-                                             <p>Date You Can Start: {{$empApplicationsData[0]['date_start']}}</p>
+                                             <p>Date You Can Start: {{Carbon\Carbon::parse($empApplicationsData[0]['date_start'])->format('M d, Y') }}</p>
                                              <div class="form-control-wrap">
                                                 <p></p>
                                              </div>
@@ -205,7 +205,7 @@
                                        @if($empApplicationsData[0]['applied_before'] == 'Yes')
                                        <div class="col-md-12">
                                           <div class="form-group">
-                                             <p>where?: {{$empApplicationsData[0]['where']}}</p>
+                                             <p>Where?: {{$empApplicationsData[0]['where']}}</p>
                                              <div class="form-control-wrap">
                                                 <p></p>
                                              </div>
@@ -213,7 +213,7 @@
                                        </div>
                                        <div class="col-md-12">
                                           <div class="form-group">
-                                             <p>When?: {{$empApplicationsData[0]['when']}}</p>
+                                             <p>When?: {{ Carbon\Carbon::parse($empApplicationsData[0]['when'])->format('M d, Y') }}</p>
                                              <div class="form-control-wrap">
                                                 <p></p>
                                              </div>
@@ -455,7 +455,7 @@
                                           <div class="form-group">
                                              <label for="inputPassword4" class="form-label">From</label>
                                              <div class="form-control-wrap">
-                                                <p>{{$past_emp_data[0]['from_date_1']}}</p>
+                                                <p>{{ Carbon\Carbon::parse($past_emp_data[0]['from_date_1'])->format('M d, Y') }}</p>
                                              </div>
                                           </div>
                                        </div>
@@ -463,7 +463,7 @@
                                           <div class="form-group">
                                              <label for="inputPassword4" class="form-label">To</label>
                                              <div class="form-control-wrap">
-                                                <p>{{$past_emp_data[0]['to_date_1']}}</p>
+                                                <p>{{Carbon\Carbon::parse($past_emp_data[0]['to_date_1'])->format('M d, Y') }}</p>
                                              </div>
                                           </div>
                                        </div>
@@ -513,7 +513,7 @@
                                           <div class="form-group">
                                              <label for="inputPassword4" class="form-label">From</label>
                                              <div class="form-control-wrap">
-                                                <p>{{$past_emp_data[0]['from_date_2']}}</p>
+                                                <p>{{ Carbon\Carbon::parse($past_emp_data[0]['from_date_2'])->format('M d, Y') }}</p>
                                              </div>
                                           </div>
                                        </div>
@@ -521,7 +521,7 @@
                                           <div class="form-group">
                                              <label for="inputPassword4" class="form-label">To</label>
                                              <div class="form-control-wrap">
-                                                <p>{{$past_emp_data[0]['to_date_2']}}</p>
+                                                <p>{{ Carbon\Carbon::parse($past_emp_data[0]['to_date_2'])->format('M d, Y') }}</p>
                                              </div>
                                           </div>
                                        </div>
@@ -572,7 +572,7 @@
                                           <div class="form-group">
                                              <label for="inputPassword4" class="form-label">From</label>
                                              <div class="form-control-wrap">
-                                                <p>{{$past_emp_data[0]['from_date_3']}}</p>
+                                                <p>{{ Carbon\Carbon::parse($past_emp_data[0]['from_date_3'])-format('M d, Y') }}</p>
                                              </div>
                                           </div>
                                        </div>
@@ -580,7 +580,7 @@
                                           <div class="form-group">
                                              <label for="inputPassword4" class="form-label">To</label>
                                              <div class="form-control-wrap">
-                                                <p>{{$past_emp_data[0]['to_date_3']}}</p>
+                                                <p>{{ Carbon\Carbon::parse($past_emp_data[0]['to_date_3'])->format('M d, Y') }}</p>
                                              </div>
                                           </div>
                                        </div>
@@ -810,7 +810,7 @@
                                           <div class="form-group">
                                              <label for="inputEmail4" class="form-label">Signature</label>
                                              <div class="form-control-wrap">
-                                                <img class="img-fluid" src="{{ asset('storage/signature/' . $signatureData[0]['signature']) }}">
+                                                <img width="250" class="img-fluid" src="{{ asset('storage/signature/' . $signatureData[0]['signature']) }}">
                                              </div>
                                           </div>
                                        </div>

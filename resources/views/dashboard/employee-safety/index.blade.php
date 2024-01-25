@@ -81,6 +81,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div>
+                                        <p>Employee Name: <u>{{ ucfirst($profileData[0]['full_name']) }}</u></p>
                                         <h4 class="mb-sm-0 font-size-18">Employee Safety! Cellular Phone Use</h4><br>
                                         <p><strong class="text-black">1st Access Home Care Incorporated</strong> Does Not Permit employees whilst on company time to talk on cellular phones while on the job. This is very dangerous and should be avoided any time. It is mandatory that I must pull over and stop my vehicle each time I conduct Agency business per cellular phone.
                                     </p>
@@ -95,7 +96,7 @@
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label">Signature</label> <br>
-                                                        <img class="img-fluid" src="{{asset('storage/signature/' . $empSafetyData[0]['signature'])}}">
+                                                        <img width="250" class="img-fluid" src="{{asset('storage/signature/' . $empSafetyData[0]['signature'])}}">
                                              </div>
                                                     </div>
                                                 </div>

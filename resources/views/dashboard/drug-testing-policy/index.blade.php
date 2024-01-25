@@ -81,6 +81,7 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
+                                    <p>Employee Name: <u>{{ ucfirst($profileData[0]['full_name']) }}</u> </p>
                                     <h4 class="mb-sm-0 font-size-18">Drug Testing Policy</h4><br>
                                     <p>Agency employees may not possess, distribute or use alcoholic beverages or controlled substances. Including inhalants while on premises of property controlled by the Agency or while in the course of conducting company business or engaged in any company sponsored activity.</p>
 
@@ -97,7 +98,7 @@
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label">Signature</label> <br>
-                                                        <img width="500"  src="{{asset('storage/signature/' . $drugTestingData[0]['signature'])}}">
+                                                        <img width="250"  src="{{asset('storage/signature/' . $drugTestingData[0]['signature'])}}">
                                                     </div>
                                                 </div>
                                                 

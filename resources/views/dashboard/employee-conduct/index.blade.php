@@ -80,11 +80,12 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                    <h4 class="mb-sm-0 font-size-18">Employee Notification of Poliicy: Employee Conduct</h4><br>
+                                    <p>Employee Name: {{ ucfirst($profileData[0]['full_name']) }} </p>
+                                    <h4 class="mb-sm-0 font-size-18">Employee Notification of Policy: Employee Conduct</h4><br>
 
-                                    <p>The Agency expects all employees to display high standards of conduct when representing the Agency in any manner or capacity. Non-compliance to expected standards will result in disciplinary actions, termination or reporting to the appropriate regulatory authorities.</p> <br>
+                                    <p>The Agency expects all employees to display high standards of conduct when representing the Agency in any manner or capacity. Non-compliance to expected standards will result in disciplinary actions, termination or reporting to the appropriate regulatory authorities.</p> 
 
-                                        <h3 class="nk-block-title">Unacceptable conduct shall include but is not limited to the following:</h3>
+                                        <h3 class="mb-sm-0 font-size-18">Unacceptable conduct shall include but is not limited to the following:</h3>
                                         <ul>
                                             <li>Abuse, Neglect or Exploitation of clients.</li>
 
@@ -141,7 +142,7 @@
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label">Signature</label> <br>
-                                                        <img width="500"  src="{{asset('storage/signature/' . $empConductData[0]['signature'])}}">
+                                                        <img width="250"  src="{{asset('storage/signature/' . $empConductData[0]['signature'])}}">
                                                     </div>
                                                 </div>
                                                 

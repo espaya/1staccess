@@ -81,6 +81,7 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
+                                    <p>Employee Name: <u>{{ ucfirst($profileData[0]['full_name']) }}</u> </p>
                                     <h4 class="mb-sm-0 font-size-18">Infection Control Agreement</h4><br>
 
                                 <div class="row g-4">
@@ -97,7 +98,7 @@
                                           <div class="form-group">
                                              <label for="inputEmail4" class="form-label">Employee Signature</label>
                                              <div class="form-control-wrap">
-                                                <img width="450" src="{{ asset('storage/signature/' . $infectionData[0]['signature']) }}">
+                                                <img width="250" src="{{ asset('storage/signature/' . $infectionData[0]['signature']) }}">
                                              </div>
                                           </div>
                                        </div>

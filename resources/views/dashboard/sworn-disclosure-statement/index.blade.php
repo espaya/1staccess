@@ -81,8 +81,8 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
+                                    <p>Employee Name: <u>{{ ucfirst($profileData[0]['full_name']) }}</u> </p>
                                     <h4 class="mb-sm-0 font-size-18">Sworn Disclosure Statement</h4><br>
-
                                     <div>
                                  <p>Section 32.1-162.9:1 of the Code of Virginia requires that a sworn disclosure statement or affirmation be completed for each prospective employee for a home care organization.
                                  Employment or volunteering is prohibited if a person has been convicted of any of the offenses specified on the reverse side or has been the subject of a founded complaint of child abuse or neglect.
@@ -160,7 +160,7 @@
                                        <div class="form-group">
                                              <label for="inputZip" class="form-label">Applicant Signature</label>
                                              <div class="form-control-wrap">
-                                                <img class="img-fluid" src="{{ asset('storage/signature/' . $swornData[0]['signature'] ) }}">
+                                                <img width="250" class="img-fluid" src="{{ asset('storage/signature/' . $swornData[0]['signature'] ) }}">
                                             </div>
                                           </div>
                                        </div>
@@ -168,7 +168,7 @@
                                        <div class="form-group">
                                              <label for="inputZip" class="form-label">Witnessed by</label>
                                              <div class="form-control-wrap">
-                                             <img class="img-fluid" src="{{ asset('storage/signature/' . $swornData[0]['wit_signature'] ) }}">
+                                             <img width="250" class="img-fluid" src="{{ asset('storage/signature/' . $swornData[0]['wit_signature'] ) }}">
                                             </div>
                                           </div>
                                        </div>

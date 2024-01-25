@@ -39,26 +39,19 @@
                         <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
-                            @error('signature')
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert">    
-                            {{$message}}  
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                            @endif
+                                @error('signature')
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">    
+                                        {{$message}}  
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                @endif
 
                             @if(session('success'))
-                                 <div class="alert alert-success alert-dismissible fade show" role="alert">    
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">    
                                     {{session('success')}}   
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                 </div>
-                                 @endif
-
-                                <div class="alert alert-success alert-dismissible fade show" role="alert"> 
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert"> 
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
+                            @endif
                             
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                                 <button onclick="printContent();" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-printer">
@@ -89,8 +82,8 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
+                                    <p>Employee Name: <u>{{ ucfirst($profileData[0]['full_name']) }}</u> </p>
                                     <h4 class="mb-sm-0 font-size-18">Policies And Procedures Orientation Acknowledgement</h4><br>
-
                                 <div>
                                  <p>I acknowledge that I have been oriented to agencies Policies and Procedures Manual and agree to follow all guidelines, both written and verbal. I understand that, if the guidelines, policies and procedures are not followed, that I may be immediately terminated. I also had the opportunity to ask questions regarding the Policies and Procedures Manual and I know where it’s located for future reference.</p> <br>
                               </div>
@@ -101,7 +94,7 @@
                                           <div class="form-group">
                                              <label for="inputEmail4" class="form-label">Employee Signature</label>
                                              <div class="form-control-wrap">
-                                                <img class="img-fluid" src="{{ asset('storage/signature/' . $policyData[0]['signature']) }}">
+                                                <img width="250" class="img-fluid" src="{{ asset('storage/signature/' . $policyData[0]['signature']) }}">
                                             </div>
                                           </div>
                                        </div>

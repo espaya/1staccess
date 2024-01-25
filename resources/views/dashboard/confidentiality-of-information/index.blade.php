@@ -82,6 +82,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div>
+                                            <p>Employee Name:<u> {{ ucfirst($profileData[0]['full_name']) }}</u> </p>
                                         <h4 class="mb-sm-0 font-size-18">Confidentiality of Information Agreement</h4><br>
                                         <ul>
                                         <li>1. All information designated confidential that is obtained or generated as a result of any or all of the operations of the Agency will be dealt with in a confidential manner.</li>
@@ -108,7 +109,7 @@
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label">Signature</label> <br>
-                                                        <img width="500"  src="{{asset('storage/signature/' . $conf_infoData[0]['signature'])}}">
+                                                        <img width="250"  src="{{asset('storage/signature/' . $conf_infoData[0]['signature'])}}">
                                                     </div>
                                                 </div>
                                                 

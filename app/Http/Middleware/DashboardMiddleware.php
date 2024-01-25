@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class DashboardMiddleware
@@ -18,8 +19,12 @@ class DashboardMiddleware
         if(auth()->check() && auth()->user()->role == 'USER'){
             return $next($request);
         }
-
-        abort(403, 'Unauthorized Access');
+        elseif(auth()->check() && auth()->user()->role == 'ADMIN'){
+            return redirect()->intended('admin');
+        } 
+        else{
+            return redirect()->route('login');
+        }
         
     }
 }

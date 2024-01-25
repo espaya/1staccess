@@ -1,0 +1,9 @@
+    @vite(['resources/libs/jquery/jquery.min.js', 
+      'resources/libs/bootstrap/js/bootstrap.bundle.min.js', 
+      'resources/libs/metismenu/metisMenu.min.js', 
+      'resources/libs/simplebar/simplebar.min.js', 
+      'resources/libs/node-waves/waves.min.js',  
+      'resources/js/app.js',
+      'resources/libs/apexcharts/apexcharts.min.js',
+      'resources/js/pages/dashboard-job.init.js'
+    ])

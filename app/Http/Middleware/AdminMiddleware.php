@@ -4,6 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Stmt\Return_;
 use Symfony\Component\HttpFoundation\Response;
 
 class AdminMiddleware
@@ -18,8 +20,12 @@ class AdminMiddleware
         if(auth()->check() && auth()->user()->role == 'ADMIN'){
             return $next($request);
         }
+        elseif(auth()->check() && auth()->user()->role == 'USER'){
+            return redirect()->intended('dashboard');
+        }
+        else{           
+            return redirect()->route('login');
+        }
 
-        abort(403, 'Unauthorized Action');
-        
     }
 }

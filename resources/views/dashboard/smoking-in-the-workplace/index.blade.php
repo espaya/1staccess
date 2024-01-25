@@ -81,6 +81,7 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
+                                    <p>Employee Name: <u>{{ ucfirst($profileData[0]['full_name']) }}</u> </p>
                                     <h4 class="mb-sm-0 font-size-18">Employee Notification of Policy: Smoking in The Workplace</h4><br>
 
                                     <p>It is the policy of the Agency that smoking will not be allowed in areas where that can be observed by clients or the public. The employee may smoke in approved areas, if any.</p>
@@ -96,7 +97,7 @@
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label">Signature</label> <br>
-                                                        <img width="500"  src="{{ asset('storage/signature/' . $smokingData[0]['signature']) }}">
+                                                        <img width="250"  src="{{ asset('storage/signature/' . $smokingData[0]['signature']) }}">
                                                     </div>
                                                 </div>
                                                 

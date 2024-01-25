@@ -81,6 +81,7 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
+                                    <p>Name of Employee: <u>{{ ucfirst($profileData[0]['full_name'] ) }}</u> </p>
                                     <h4 class="mb-sm-0 font-size-18">Employee Dress Code</h4><br>
                                     <p><strong>1st Access Home Care Incorporated strives to present a professional and safe health care image to patients’ families, the community, and other health care professionals. 1st Access Home Care Incorporated staff members adhere to the following standards in their dress appearance.</strong></p>
 
@@ -100,7 +101,7 @@
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label">Signature</label> <br>
-                                                        <img width="500"  src="{{asset('storage/signature/' . $dressCodeData[0]['signature'])}}">
+                                                        <img width="250"  src="{{asset('storage/signature/' . $dressCodeData[0]['signature'])}}">
                                                     </div>
                                                 </div>
                                                 

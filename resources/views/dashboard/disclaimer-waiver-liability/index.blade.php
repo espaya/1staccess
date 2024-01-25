@@ -80,6 +80,7 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
+                                    <p>Employee Name: <u>{{ ucfirst($profileData[0]['full_name']) }}</u> </p>
                                     <h4 class="mb-sm-0 font-size-18">Disclaimer and Waiver of Liability</h4><br>
                                     <p>I acknowledge and will adhere to the rules and regulations as set forth by the Office of Licensure and Certification. I understand that the falsification of documents, particularly those pertaining to the submission of visit notes where in fact no visits was made, is considered to be fraud and is subject to filing of a criminal grievance, civil and/or criminal prosecution, and immediate termination. I therefore hold the home health care agency, its shareholders, directors and officers, harmless from any falsified documents.</p>
 
@@ -93,7 +94,7 @@
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label">Signature</label> <br>
-                                                        <img width="500"  src="{{asset('storage/signature/' . $disclaimerData[0]['signature'])}}">
+                                                        <img width="250"  src="{{asset('storage/signature/' . $disclaimerData[0]['signature'])}}">
                                                     </div>
                                                 </div>
                                                 

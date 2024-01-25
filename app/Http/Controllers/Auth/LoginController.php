@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -34,18 +37,32 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    // public function __construct()
+    // {
+    //     $this->middleware('guest')->except('logout');
+    // }
+
+    
+    protected function authenticate(Request $request): RedirectResponse
     {
-        $this->middleware('guest')->except('logout');
-    }
+        $user = Auth::user();
 
-    protected function authenticated(Request $request, $user){
-        // direct user based role
-        if($user->role == 'ADMIN'){
-            return redirect()->route('/admin');
-        }else{
-            return redirect()->route('dashboard');
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required']
+        ]);
+
+        if(Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['password'], 'role' => 'ADMIN']))
+        {
+            $request->session()->regenerate();
+            return redirect()->intended('admin');
         }
-    }
+        else if(Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['password'], 'role' => 'USER']))
+        {
+            $request->session()->regenerate();
+            return redirect()->intended('dashboard');
+        }
 
+        return back()->withErrors(['email' => 'Invalid email or password.' ])->withInput($request->only('email'));
+    }
 }

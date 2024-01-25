@@ -81,11 +81,33 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                    <h4 class="mb-sm-0 font-size-18">Home Health Aide</h4><br>
-
+                                    <p>Employee Name: <u>{{ ucfirst($profileData[0]['full_name']) }}</u> </p>
+                                    <h4 class="mb-sm-0 font-size-18">Home Health Aide</h4>
+                                    <br>
                                 <div class="row g-4">
-                                <h5 class="nk-block-title">PHYSICAL REQUIREMENTS: </h5>
                               <p>
+
+                              <strong>REPORTS TO: SUPERVISING REGISTERED NURSE</strong><br>
+                                 <strong>DEPARTMENT: CLINICAL</strong><br><br>
+                                
+                                 <strong>POSITION SUMMARY:</strong><br>
+                                 Works under the supervision of the designated Registered Nurse. Provides direct client care as assigned by the registered nurse. Provides quality and delivery of home care services.
+                                 Assist in the home care services that reflect the home care agency philosophy and standards of home health nursing care of assigned clients. <br><br>
+                                 
+                                    <strong>POSITION QUALIFICATIONS:</strong><br>
+                                    ●	High school graduation required.<br>
+                                    ●	Home Health Aide certification required as obtained through successful completion of and approved program.<br>
+                                    ●	 Shall have on year-full-time experience in home health care in an institutional setting, such as a hospital or nursing home OR shall have one year-full-time experience within the last 5 years in direct client care in a home health agency setting; OR <br>
+                                    ●	Evidence of sympathetic attitude toward care of the sick. <br>
+                                    ●	Demonstrated ability to read, write, and carry out directions. <br>
+                                    ●	Evidence of maturity and ability to deal effectively with job demands. <br>
+                                    ●	Good verbal and written communications skills required. <br>
+                                    ●	Attends 12 hours of Aide oriented in services per year. <br>
+                                    ●	Participates in professional meetings when directed. <br>
+                                    ●	Shall have a criminal history check conducted prior to being offered permanent employment with this agency. <br>
+                                    ●	Is able to work closely supervised to ensure competence in providing client care. <br><br>
+                                    
+                                 <strong>PHYSICAL REQUIREMENTS:</strong><br>
                               ●	Visual/hearing ability sufficient to comprehend written /verbal communication. <br>
                               ●	Ability to perform tasks involving physical activity, which may include heavy lifting and extensive bending and standing. <br>
                               ●	Ability to deal effectively with stress. <br>
@@ -96,10 +118,9 @@
                               ●	Able to work in a stressful environment. <br>
                               ●	Able to drive 45 - 50 miles per day. <br>
                               ●	Able to access and communicate will ill clients, co-workers and general public. <br>
-                              ●	Is neat in appearance and practice,with good personal hygiene.
-                              </p>
-                              <h5 class="nk-block-title">May be employed by the agency if he/she has met the following conditions:</h5>
-                              <p>
+                              ●	Is neat in appearance and practice,with good personal hygiene.<br><br>
+                             
+                              <strong>May be employed by the agency if he/she has met the following conditions:</strong><br>
                               Home Health Aide is expected to pass competency examination with at least a 80% or better. The content of the competency evaluation of the Agency will include and not limited to: <br>
                               ●	Communication skills. <br>
                               ●	Observation, reporting, and documentation of a client’s status and the care or service furnished.<br>
@@ -108,10 +129,10 @@
                               ●	Basic elements of body functions and changes in body function that must be reported to the Supervisor.<br>
                               ●	Maintenance of a clean, healthy, and safe environment.<br>
                               ●	Recognizing emergencies and knowledge of emergency procedures. <br>
-                              ●	The physical, emotional, and developmental needs of and ways to work with the populations served by the Agency including, the need for respect for the client and his or her privacy and property.
-                              </p>
-                              <h5 class="nk-block-title">PHYSICAL REQUIREMENTS:</h5>
-                              <p>●	The appropriate and safe techniques in personal hygiene and grooming include: <br>
+                              ●	The physical, emotional, and developmental needs of and ways to work with the populations served by the Agency including, the need for respect for the client and his or her privacy and property. <br><br>
+                              
+                              <strong>PHYSICAL REQUIREMENTS:</strong><br>
+                              ●	The appropriate and safe techniques in personal hygiene and grooming include: <br>
                                  -	Bed bath<br>
                                  -	Sponge, tub or shower bath;<br>
                                  -	Shampoo, sink, tub or bed;<br>
@@ -122,24 +143,24 @@
                                  -	Normal range of motion and position;<br>
                                  -	Adequate nutrition and fluid intake;<br>
                                  -	Client rights; and <br>
-                                 -	Any other task that the Agency may choose to have the home health aide perform.
-                                 </p>
-                                 <h5 class="nk-block-title">DUTIES:</h5>
-                                 <p>
+                                 -	Any other task that the Agency may choose to have the home health aide perform. <br><br>
+                                 
+                                 <strong>DUTIES:</strong><br>
+                                 
                                  1.	Ensure quality and safe delivery of home care services.<br>
                                     ●	Participates in development and implementation of client plans of care per home care agency policy and procedure, as appropriate. <br>
                                     ●	Participates in client case conferences according to home health care agency policy and procedure, as appropriate.<br>
                                     ●	The provided home health aide services reflect client plans of care. <br>
-                                    ●	Information regarding client plans of care is submitted to the Home Care Registered Nurse in a timely manner. <br>
-                                 </p>
-                                 <p>
+                                    ●	Information regarding client plans of care is submitted to the Home Care Registered Nurse in a timely manner. <br><br>
+                                 
                                  2.	Implement current Home Health Aide services. <br>
                                     ●	Client plans of care are discussed with the Home Care Registered Nurse on a regular basis.<br>
                                     ●	Client clinical records are documented per Home Care agency policy and procedure.<br>
-                                    ●	Client assignments and reports are received from the Home Care Registered Nurse.<br>
-                                 </p>
-                                 <h5 class="nk-block-title">Acknowledgement:</h5>
-                                 <p>*I have reviewed my job description and agree to perform all duties mentioned to the best of my ability; I understand that my job duties may change as the needs of the agency change. I further agree to notify my immediate Supervisor if I am unable to complete any of my job duties in a timely manner.</p> <br>
+                                    ●	Client assignments and reports are received from the Home Care Registered Nurse.<br><br>
+                                 
+                                 <strong>Acknowledgement:</strong><br>
+                                 *I have reviewed my job description and agree to perform all duties mentioned to the best of my ability; I understand that my job duties may change as the needs of the agency change. I further agree to notify my immediate Supervisor if I am unable to complete any of my job duties in a timely manner.
+                                 </p> <br>
                               </div>
                                     
                               @if(!empty($homeHealthData[0]['applicant_id']))
@@ -148,7 +169,7 @@
                                           <div class="form-group">
                                              <label for="inputEmail4" class="form-label">Employee Signature</label>
                                              <div class="form-control-wrap">
-                                                <img class="img-fluid" src="{{ asset('storage/signature/' . $homeHealthData[0]['signature']) }}">
+                                                <img width="250" class="img-fluid" src="{{ asset('storage/signature/' . $homeHealthData[0]['signature']) }}">
                                             </div>
                                           </div>
                                        </div>

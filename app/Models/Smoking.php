@@ -13,6 +13,8 @@ class Smoking extends Model
 
     protected $fillable = [
         'applicant_id',
-        'signature'
+        'signature',
+        'supervisor_signature',
+        'hr_signature'
     ];
 }

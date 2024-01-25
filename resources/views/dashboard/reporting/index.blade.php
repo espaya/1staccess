@@ -81,11 +81,10 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                    <h4 class="mb-sm-0 font-size-18">Reporting: Abuse/neglect/Exploitation</h4><br>
                                     @if(!empty($fNameData[0]['applicant_id']))
-                                    <p><strong>Employee Name:</strong> {{ $fNameData[0]['full_name']}}</p>
+                                    <p><strong>Employee Name:</strong> <u>{{ $fNameData[0]['full_name']}}</u></p>
                                     @endif
-
+                                    <h4 class="mb-sm-0 font-size-18">Reporting: Abuse/neglect/Exploitation</h4><br>
                                     <div>
                                  <p><strong>All agency staff are required to report suspected abuse / neglect / exploitation and develop a plan to minimize the risk of such. The care health employee is responsible to report and document:</strong></p>
                                  <p>
@@ -106,7 +105,7 @@
                                           <div class="form-group">
                                              <label for="inputEmail4" class="form-label">Employee Signature</label>
                                              <div class="form-control-wrap">
-                                             <img class="img-fluid" src="{{ asset('storage/signature/' . $reportingData[0]['signature']) }}">
+                                             <img width="250" class="img-fluid" src="{{ asset('storage/signature/' . $reportingData[0]['signature']) }}">
                                             </div>
                                           </div>
                                        </div>

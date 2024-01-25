@@ -166,7 +166,7 @@
                                              <div class="form-group">
                                                 <label for="inputPassword4" class="form-label">Employee Signature</label>
                                                 <div class="form-control-wrap">
-                                                <img src="{{asset('storage/signature/' . $empRefCheckData[0]['signature'])}}">
+                                                <img width="250" src="{{asset('storage/signature/' . $empRefCheckData[0]['signature'])}}">
                                              </div>
                                              </div>
                                           </div>
@@ -182,7 +182,7 @@
                                           <div class="form-group">
                                                 <label class="form-label">Signature of Agency Representative</label>
                                                 <div class="form-control-wrap">
-                                                <img src="{{asset('storage/signature/' . $empRefCheckData[0]['rep_signature'])}}">
+                                                <img width="250" src="{{asset('storage/signature/' . $empRefCheckData[0]['rep_signature'])}}">
                                              </div>
                                              </div>
                                           </div>

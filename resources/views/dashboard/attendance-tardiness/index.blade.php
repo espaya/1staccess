@@ -57,7 +57,8 @@
                         <div class="card">
                            <div class="card-body">
                               <div>
-                                 <h4 class="mb-sm-0 font-size-18">Attendance, Tardiness, Absenteeism & Leave</h4>
+                                 <p>Employee Name: <u>{{ ucfirst($profileData[0]['full_name']) }}</u> </p>
+                                 <h4 class="mb-sm-0 font-size-18">Employee Notification of Policy: Attendance, Tardiness, Absenteeism and Leave</h4>
                                  <br>
                                  <p>Exempt employees are owners, officers, management and supervisors. All full time employees are required to put in a full day's work and a full 40 hour work week. All employees regardless of classification, are required to arrive on time and appropriately complete their designated hours and tasks as assigned.</p>
                                  <br>
@@ -86,7 +87,7 @@
                                  <div class="col-md-6">
                                     <div class="mb-3">
                                        <label class="form-label">Signature</label> <br>
-                                       <img width="500"  src="{{asset('storage/signature/' . $attendanceData[0]['signature'])}}">
+                                       <img width="250"  src="{{asset('storage/signature/' . $attendanceData[0]['signature'])}}">
                                     </div>
                                  </div>
                                  <div class="col-md-6">

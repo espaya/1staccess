@@ -175,7 +175,6 @@ use Illuminate\Support\Facades\Auth;
                                 </div>
                                 <!-- end row -->
 
-
                             </div>
                         </div>
                         <!-- end row -->
@@ -185,9 +184,6 @@ use Illuminate\Support\Facades\Auth;
                     <!-- container-fluid -->
                 </div>
                 <!-- End Page-content -->
-
-
-
                 @include('templates/dashboard/footer')
             </div>
             <!-- end main content-->

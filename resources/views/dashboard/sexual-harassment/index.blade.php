@@ -82,12 +82,10 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                    <h4 class="mb-sm-0 font-size-18">Sexual Harassment</h4><br>
-
                                     @if(!empty($fullNameData[0]['applicant_id']))
-                                 <p><strong>Name of Employee:</strong> {{ $fullNameData[0]['full_name'] }}</p>
-                                 @endif
-
+                                    <p><strong>Name of Employee:</strong> <u>{{ $fullNameData[0]['full_name'] }}</u></p>
+                                    @endif
+                                    <h4 class="mb-sm-0 font-size-18">Sexual Harassment</h4><br>
                                  <div>
                                  <p>1st Access Home Care does not tolerate <strong>Sexual Harassment,</strong> as it is a form of gender-based discrimination.</p>
                                  <p>
@@ -114,7 +112,7 @@
                                           <div class="form-group">
                                              <label for="inputEmail4" class="form-label">Employee Signature</label>
                                              <div class="form-control-wrap">
-                                             <img class="img-fluid" src="{{ asset('storage/signature/' . $sexualData[0]['signature']) }}">
+                                             <img width="250" class="img-fluid" src="{{ asset('storage/signature/' . $sexualData[0]['signature']) }}">
                                             </div>
                                           </div>
                                        </div>

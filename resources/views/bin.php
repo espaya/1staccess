@@ -1,65 +1,98 @@
-@extends('layouts.app')
+<?php 
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+$employment_data[] = [
+    'SSN' => $employments_applications->SSN,
+    'furnish_work' => $employments_applications->furnish_work,
+    'employment_desired' => $employments_applications->employment_desired,
+    'position' => $employments_applications->position,
+    'date_start' => $employments_applications->date_start,
+    'salary' => $employments_applications->salary,
+    'employed_now' => $employments_applications->employed_now,
+    'inqure_present_employer' => $employments_applications->inqure_present_employer,
+    'applied_before' => $employments_applications->applied_before,
+    'where' => $employments_applications->where,
+    'when' => $employments_applications->when,
+    'on_layoff_subject_to_recall' => $employments_applications->on_layoff_subject_to_recall,
+    'travel_if_required' => $employments_applications->travel_if_required,
+    'relocate_if_required' => $employments_applications->relocate_if_required,
+    'overtime_if_required' => $employments_applications->overtime_if_required,
+    'attendance_requirements_position' => $employments_applications->attendance_requirements_position,
+    'bonded' => $employments_applications->bonded,
+    'convicted' => $employments_applications->convicted,
+    'explain_convicted' => $employments_applications->explain_convicted,
+    'drivers_license' => $employments_applications->drivers_license,
+    'drivers_license_state' => $employments_applications->drivers_license_state,
+    'special_skills_qualifications' => $employments_applications->special_skills_qualifications,
+    'employee_hire_date' => $employee_hire_date,
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('password.update') }}">
-                        @csrf
+    'present_address' => $present_address->present_address,
+    'present_city' => $present_address->present_city,
+    'present_state' => $present_address->present_state,
+    'present_zip' => $present_address->present_zip,
 
-                        <input type="hidden" name="token" value="{{ $token }}">
+    'permanent_address' => $permanent_address->permanent_address,
+    'permanent_city' => $permanent_address->permanent_city,
+    'permanent_state' => $permanent_address->permanent_state,
+    'permanent_zip' => $permanent_address->permanent_zip,
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+    'from_date_1' => $past_employment_info->from_date_1,
+    'to_date_1' => $past_employment_info->to_date_1,
+    'name_address_employer_1' => $past_employment_info->name_address_employer_1,
+    'phone_number_1' => $past_employment_info->phone_number_1,
+    'job_1' => $past_employment_info->job_1,
+    'reason_leaving_1' => $past_employment_info->reason_leaving_1,
+    'from_date_2' => $past_employment_info->from_date_2,
+    'to_date_2' => $past_employment_info->to_date_2,
+    'name_address_employer_2' => $past_employment_info->name_address_employer_2,
+    'phone_number_2' => $past_employment_info->phone_number_2,
+    'job_2' => $past_employment_info->job_2,
+    'reason_leaving_2' => $past_employment_info->reason_leaving_2,
+    'from_date_3' => $past_employment_info->from_date_3,
+    'to_date_3' => $past_employment_info->to_date_3,
+    'name_address_employer_3' => $past_employment_info->name_address_employer_3,
+    'phone_number_3' => $past_employment_info->phone_number_3,
+    'job_3' => $past_employment_info->job_3,
+    'reason_leaving_3' => $past_employment_info->reason_leaving_3,
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
+    'edu_current_name_location_school' => $academic_trades_business->edu_current_name_location_school,
+    'edu_current_number_years' => $academic_trades_business->edu_current_number_years,
+    'edu_current_did_graduate' => $academic_trades_business->edu_current_did_graduate,
+    'edu_current_subjects_studied' => $academic_trades_business->edu_current_subjects_studied,
+    'edu_last_name_location_school' => $academic_trades_business->edu_last_name_location_school,
+    'edu_last_number_years' => $academic_trades_business->edu_last_number_years,
+    'edu_last_did_graduate' => $academic_trades_business->edu_last_did_graduate,
+    'edu_last_subjects_studied' => $academic_trades_business->edu_last_subjects_studied,
+    'trades_current_name_location_school' => $academic_trades_business->trades_current_name_location_school,
+    'trades_current_number_years' => $academic_trades_business->trades_current_number_years,
+    'trades_current_did_graduate' => $academic_trades_business->trades_current_did_graduate,
+    'trades_current_subjects_studied' => $academic_trades_business->trades_current_subjects_studied,
+    'trades_last_current_name_location_school' => $academic_trades_business->trades_last_current_name_location_school,
+    'trades_last_current_number_years' => $academic_trades_business->trades_last_current_number_years,
+    'trades_last_current_did_graduate' => $academic_trades_business->trades_last_current_did_graduate,
+    'trades_last_subjects_studied' => $academic_trades_business->trades_last_subjects_studied,
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+    'language_1' => $language->language_1,
+    'read_write_1' => $language->read_write_1,
+    'read_speak_1' => $language->read_speak_1,
+    'speak_only_1' => $language->speak_only_1,
+    'language_2' => $language->language_2,
+    'read_write_2' => $language->read_write_2,
+    'read_speak_2' => $language->read_speak_2,
+    'speak_only_2' => $language->speak_only_2,
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+    'reference_name_1' => $refrence->reference_name_1,
+    'reference_address_1' => $refrence->reference_address_1,
+    'reference_phone_1' => $refrence->reference_phone_1,
+    'reference_years_acquainted_1' => $refrence->reference_years_acquainted_1,
+    'reference_name_2' => $refrence->reference_name_2,
+    'reference_address_2' => $refrence->reference_address_2,
+    'reference_phone_2' => $refrence->reference_phone_2,
+    'reference_years_acquainted_2' => $refrence->reference_years_acquainted_2,
+    'reference_name_3' => $refrence->reference_name_3,
+    'reference_address_3' => $refrence->reference_address_3,
+    'reference_phone_3' => $refrence->reference_phone_3,
+    'reference_years_acquainted_3' => $refrence->reference_years_acquainted_3,
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+    'signature' => $signature->id,
+    'date_signed' => $signature->created_at,
+];

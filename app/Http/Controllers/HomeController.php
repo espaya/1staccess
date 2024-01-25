@@ -18,6 +18,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 
 class HomeController extends Controller
 {
@@ -68,8 +69,6 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
-
         // validate form data
         $request->validate([
         // employments_application table
@@ -107,11 +106,13 @@ class HomeController extends Controller
         'present_state'                                 => 'required',
         'present_zip'                                   => 'required|regex:/^\d{5}(-\d{4})?$/',
 
+        'present_permanent_address'                     => 'required',
+
         // permanent address table
-        'permanent_address'                             => 'required|string',
-        'permanent_city'                                => 'required|string',
-        'permanent_state'                               => 'required',
-        'permanent_zip'                                 => 'required|regex:/^\d{5}(-\d{4})?$/',
+        'permanent_address' => $request->input('present_permanent_address') == 'No' ? 'required|string' : '',
+        'permanent_city' => $request->input('present_permanent_address') == 'No' ? 'required|string' : '',
+        'permanent_state' => $request->input('present_permanent_address') == 'No' ? 'required|string' : '',
+        'permanent_zip' => $request->input('present_permanent_address') == 'No' ? 'required|regex:/^\d{5}(-\d{4})?$/' : '',
 
         // academic/education/trades
         'edu_current_name_location_school'              => 'required|regex:/^[a-zA-Z 0-9\s,.-]+$/',
@@ -266,12 +267,24 @@ class HomeController extends Controller
         $PresAddr->present_zip  = $request->present_zip;
         $PresAddr->applicant_id = $userID;
 
-        // permanent address
-        $PermAddr->permanent_address = $request->permanent_address;
-        $PermAddr->permanent_city= $request->permanent_city;
-        $PermAddr->permanent_state = $request->permanent_state;
-        $PermAddr->permanent_zip = $request->permanent_zip;
-        $PermAddr->applicant_id = $userID;
+        if($request->input('present_permanent_address') == 'Yes')
+        {
+            // permanent address
+            $PermAddr->permanent_address = $request->present_address;
+            $PermAddr->permanent_city= $request->present_city;
+            $PermAddr->permanent_state = $request->present_state;
+            $PermAddr->permanent_zip = $request->present_zip;
+            $PermAddr->applicant_id = $userID;
+        }
+        else
+        {
+            // permanent address
+            $PermAddr->permanent_address = $request->permanent_address;
+            $PermAddr->permanent_city= $request->permanent_city;
+            $PermAddr->permanent_state = $request->permanent_state;
+            $PermAddr->permanent_zip = $request->permanent_zip;
+            $PermAddr->applicant_id = $userID;
+        }
         
         // Academic, Education, Trades Business
         $AcadTrad->edu_current_name_location_school = $request->edu_current_name_location_school;

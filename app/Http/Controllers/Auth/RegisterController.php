@@ -32,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -91,6 +91,6 @@ class RegisterController extends Controller
         // add verification email
         $user->sendEmailVerificationNotification();  
 
-        return redirect('/dashboard/')->with('status', 'Registration Successfull');
+        return redirect('/')->with('status', 'Registration Successfull');
     }
 }

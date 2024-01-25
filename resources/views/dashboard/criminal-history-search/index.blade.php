@@ -130,7 +130,7 @@
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label">Signature</label> <br>
-                                                        <img width="500"  src="{{asset('storage/signature/' . $criminalHistoryData[0]['signature'])}}">
+                                                        <img width="250"  src="{{asset('storage/signature/' . $criminalHistoryData[0]['signature'])}}">
                                                     </div>
                                                 </div>
                                                 

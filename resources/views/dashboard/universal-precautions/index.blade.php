@@ -86,7 +86,7 @@
 
                             @if(!empty($nameData[0]['applicant_id']))
                               <div class="col-md-6">
-                                 <p>Name: {{$nameData[0]['full_name']}}</p>
+                                 <p><u>Name: {{$nameData[0]['full_name']}}</u></p>
                               </div>
                               @endif
                               @if(!empty($precautionsData[0]['applicant_id']))
@@ -154,7 +154,7 @@
                                           <div class="form-group">
                                              <label for="inputEmail4" class="form-label">Employee Signature</label>
                                              <div class="form-control-wrap">
-                                                <img class="img-fluid" src="{{ asset('storage/signature/' . $precautionsData[0]['signature'] ) }}">
+                                                <img width="250" class="img-fluid" src="{{ asset('storage/signature/' . $precautionsData[0]['signature'] ) }}">
                                             </div>
                                           </div>
                                        </div>

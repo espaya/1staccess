@@ -103,7 +103,8 @@ class SmokingInTheWorkplace extends Controller
             ]
          );
 
-         return redirect()->back()->with('success', 'Employee Notification of Policy: Smoking In The Workplace Signed Successfully');
+         return redirect()->back()->with('success', 'Supervisor\'s Signature Added Successfully');
 
     }
+
 }

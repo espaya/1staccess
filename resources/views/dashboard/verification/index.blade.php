@@ -82,10 +82,10 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
+                                    <p>Employee Name: <u>{{ ucfirst($profileData[0]['full_name']) }}</u> </p>
                                     <h4 class="mb-sm-0 font-size-18">Verification of Professional License</h4><br>
-                              
-                            @if(!empty($verificationData[0]['applicant_id']))
-                              <div class="row g-4">
+                              @if(!empty($verificationData[0]['applicant_id']))
+                                 <div class="row g-4">
                                        <div class="col-md-12">
                                        <div class="form-group">
                                           <div class="form-check form-check-inline">
@@ -139,7 +139,7 @@
                                           <div class="form-group">
                                              <label for="inputPassword4" class="form-label">Signature of Agency Representative</label>
                                              <div class="form-control-wrap">
-                                                <img class="img-fluid" src="{{ asset('storage/signature/' . $verificationData[0]['signature'] ) }}">
+                                                <img width="250" class="img-fluid" src="{{ asset('storage/signature/' . $verificationData[0]['signature'] ) }}">
                                              </div>
                                           </div>
                                        </div>

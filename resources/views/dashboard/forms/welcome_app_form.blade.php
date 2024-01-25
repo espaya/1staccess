@@ -114,9 +114,54 @@
                   </div>
                </div>
             </div>
-            <hr style="margin-top: 70px; margin-bottom: 30px;">
+            <hr style="padding-top: 10px;">
+            <div class="col-md-12">
+               <div class="form-group">
+                  <label for="inputZip" class="form-label">Present address same as permanent address?</label>
+                  <div class="mb-3">           
+                     <div class="form-check">
+                        <input name="present_permanent_address" value="Yes" class="form-check-input @error('present_permanent_address') is-invalid @enderror" type="radio" id="yesRadio" {{ old('present_permanent_address') == 'Yes' ? 'checked' : '' }}>
+                        <label class="form-check-label" for="yesRadio">
+                           Yes
+                        </label>
+                     </div>
+                     <div class="form-check">
+                        <input name="present_permanent_address" value="No" class="form-check-input @error('present_permanent_address') is-invalid @enderror" type="radio" id="noRadio" {{ old('present_permanent_address') == 'No' ? 'checked' : '' }}>
+                        <label class="form-check-label" for="noRadio">
+                           No
+                        </label>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
+            <script>
+   document.addEventListener("DOMContentLoaded", function() {
+      var yesRadio = document.getElementById("yesRadio");
+      var noRadio = document.getElementById("noRadio");
+
+      // Function to toggle visibility based on radio button state
+      function toggleVisibility() {
+         var displayValue = yesRadio.checked ? "none" : "block";
+         document.getElementById("permanentAddress").style.display = displayValue;
+         document.getElementById("permanentCity").style.display = displayValue;
+         document.getElementById("permanentState").style.display = displayValue;
+         document.getElementById("permanentZip").style.display = displayValue;
+      }
+
+      // Initial toggle on page load
+      toggleVisibility();
+
+      // Event listeners for radio buttons
+      yesRadio.addEventListener("change", toggleVisibility);
+      noRadio.addEventListener("change", toggleVisibility);
+   });
+</script>
+
+
+            <hr style="margin-top: 10px; margin-bottom: 10px;">
             <!-- Permanent Address -->
-            <div class="col-12">
+            <div id="permanentAddress" class="col-12">
                <div class="form-group">
                   <label for="inputAddress2" class="form-label">Permanent Address</label>
                   <div class="form-control-wrap">
@@ -124,7 +169,7 @@
                   </div>
                </div>
             </div>
-            <div class="col-md-6">
+            <div id="permanentCity" class="col-md-6">
                <div class="form-group">
                   <label for="inputCity" class="form-label">City</label>
                   <div class="form-control-wrap">
@@ -132,7 +177,7 @@
                   </div>
                </div>
             </div>
-            <div class="col-md-4">
+            <div id="permanentState" class="col-md-4">
                <div class="form-group">
                   <label for="inputState" class="form-label">State</label>
                   <div class="form-control-wrap">
@@ -193,7 +238,7 @@
                   </div>
                </div>
             </div>
-            <div class="col-md-2">
+            <div id="permanentZip" class="col-md-2">
                <div class="form-group">
                   <label for="inputZip" class="form-label">Zip</label>
                   <div class="form-control-wrap">
@@ -201,6 +246,8 @@
                   </div>
                </div>
             </div>
+            
+
             <hr style="margin-top: 70px; margin-bottom: 30px;">
             <div class="col-md-6">
                <div class="form-group">
