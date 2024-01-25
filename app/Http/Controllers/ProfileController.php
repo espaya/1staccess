@@ -62,6 +62,7 @@ class ProfileController extends Controller
 
         // $/hr and working days
         $empAgreement = DB::table('employee_agreement')->where('applicant_id', $userID)->get();
+
         $empAgreementData = [];
         $working_days = 0;
         foreach($empAgreement as $item){

@@ -52,7 +52,7 @@ class LoginController extends Controller
             'password' => ['required']
         ]);
 
-        if(Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['password'], 'role' => 'ADMIN']))
+        if( Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['password'], 'role' => 'ADMIN']))
         {
             $request->session()->regenerate();
             return redirect()->intended('admin');

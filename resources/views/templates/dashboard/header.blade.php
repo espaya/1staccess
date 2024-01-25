@@ -274,9 +274,9 @@
                             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             @if(!empty($profileData[0]['user_avatar']))
                                 <img class="rounded-circle header-profile-user" src="{{asset('storage/avatars/' . $profileData[0]['user_avatar'])}}" alt="Header Avatar">
-                                @else
+                            @else
                                 <img class="rounded-circle header-profile-user" src="{{ asset('images/avatar/avatar-placeholder.jpg') }}" alt="Header Avatar">
-                                @endif
+                            @endif
                                 <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ucfirst(auth()->user()->name)}}</span>
                                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                             </button>

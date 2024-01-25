@@ -67,7 +67,7 @@ Route::get('/verify', 'Auth\VerificationController@showResendForm')->name('verif
 // Route::match(['get', 'post'], '/', [LoginController::class, 'login'])->name('login');
 Route::post('/', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('signin');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 // admin route
 Route::middleware(['web', 'auth', 'admin'])->group(function(){

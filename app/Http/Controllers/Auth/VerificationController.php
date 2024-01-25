@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Http\Request;
 
@@ -50,6 +52,23 @@ class VerificationController extends Controller
         $request->user()->sendEmailVerificationNotification();
 
         return back()->with('resent', true);
+    }
+
+    public function verify(Request $request)
+    {
+        if($request->route('id') != $request->user()->getKey()){
+            throw new AuthorizationException;
+        }
+
+        if($request->user()->hasVerifiedEmail()){
+            return redirect()->route('show-dashboard')->with('verified', true); 
+        }
+
+        if($request->user()->markEmailAsVerified()){
+            event(new Verified($request->user()));
+        }
+
+        return redirect()->route('show-dashboard')->with('verified', true);
     }
 
 }

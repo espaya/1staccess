@@ -40,8 +40,16 @@
                                             @else
                                                 <img src="{{asset('images/avatar/avatar-placeholder.jpg')}}" alt="" class="avatar-md rounded-circle mx-auto d-block">
                                             @endif
-                                            <h5 class="mt-3 mb-1">{{ ucfirst($profileData[0]['full_name']) }}</h5>
-                                            <p class="text-muted mb-3">{{ ucfirst($positionData[0]['position']) }}</p>
+                                            <h5 class="mt-3 mb-1">
+                                                @if(!empty($profileData[0]['full_name']))
+                                                    {{ ucfirst($profileData[0]['full_name']) }}
+                                                @endif
+                                            </h5>
+                                            <p class="text-muted mb-3">
+                                                @if(!empty($positionData[0]['position']))
+                                                    {{ ucfirst($positionData[0]['position']) }}
+                                                @endif
+                                            </p>
                                         </div>
                                         <div class="d-flex align-items-center">
                                             <ul class="list-unstyled hstack gap-3 mb-0 flex-grow-1">
@@ -49,10 +57,16 @@
                                                     <i class="bx bx-map align-middle"></i> {{ $permanentAddressData[0]['permanent_address'] . ', ' . $permanentAddressData[0]['permanent_city'] . ', ' . $permanentAddressData[0]['permanent_state'] . ', ' . $permanentAddressData[0]['permanent_zip'] }}
                                                 </li>
                                                 <li>
-                                                    <i class="bx bx-money align-middle"></i> ${{ number_format($empAgreementData[0]['pay_per_hour'], 2, '.', ',') }} / hrs
+                                                    @if(!empty($empAgreementData[0]['pay_per_hour']) && isset($empAgreementData[0]['pay_per_hour']))
+                                                    <i class="bx bx-money align-middle"></i> 
+                                                    ${{ number_format($empAgreementData[0]['pay_per_hour'], 2, '.', ',') }} / hrs
+                                                    @endif
                                                 </li>
                                                 <li>
-                                                    <i class="bx bx-time align-middle"></i> {{ $empAgreementData[0]['working_days'] }} days working
+                                                    @if(!empty($empAgreementData[0]['working_days']))
+                                                    <i class="bx bx-time align-middle"></i> 
+                                                    {{ $empAgreementData[0]['working_days'] }} days working
+                                                    @endif
                                                 </li>
                                             </ul>
                                             <div class="hstack gap-2">
