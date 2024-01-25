@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Welcome to 1staccess Home Care Services</title>
+      <title>Welcome to 1st Access Home Care Incorporated</title>
    </head>
    <body>
       <div class="row">
@@ -16,7 +16,7 @@
                               <tbody>
                                  <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                                     <td class="alert alert-warning" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 16px; vertical-align: top; color: #fff; font-weight: 500; text-align: center; border-radius: 7px 7px 0 0; background-color: #02baac; margin: 0; padding: 20px;" align="center" bgcolor="#71b6f9" valign="top">
-                                       Welcome | 1staccess Home Care Services
+                                       Welcome to 1st Access Home Care Incorporated
                                     </td>
                                  </tr>
                                  <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
@@ -35,12 +35,12 @@
                                              </tr>
                                              <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                                                 <td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
-                                                   Thanks for choosing <b>1staccess</b>.
+                                                   Thanks for choosing <strong>1staccess</strong>.
                                                 </td>
                                              </tr>
                                              <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                                                 <td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
-                                                   <b>1staccess</b>
+                                                   <strong>1staccess</strong>
                                                    <p>Administrator</p>
                                                 </td>
                                              </tr>
