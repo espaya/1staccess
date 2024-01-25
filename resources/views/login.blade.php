@@ -36,6 +36,9 @@
                             </div>
                             <div class="card-body pt-0"> 
                                 <br>
+                                @if(session('status'))
+                                <div class="alert alert-info">{{ session('status') }}</div>
+                                @endif
                                 <div class="p-2">
                                 <form action="{{ route('login') }}" method="post" enctype="multipart/form-data">
                                   @csrf

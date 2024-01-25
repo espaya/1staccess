@@ -91,6 +91,6 @@ class RegisterController extends Controller
         // add verification email
         $user->sendEmailVerificationNotification();  
 
-        return redirect('/')->with('status', 'Registration Successfull');
+        return redirect('/')->with('status', 'Registration Successfull. Please sign in to your account');
     }
 }

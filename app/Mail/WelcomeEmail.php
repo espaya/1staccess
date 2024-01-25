@@ -27,7 +27,7 @@ class WelcomeEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Welcome Email | 1st Access Home Care Services',
+            subject: 'Welcome Email | 1st Access Home Care Incorporated',
         );
     }
 
