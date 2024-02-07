@@ -89,8 +89,20 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                    <h4 class="mb-sm-0 font-size-18">Universal Precautions Training Document</h4><br>
 
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                    <strong>1st Access Home Care Incorporated</strong>
+                                    </p>
+                                    <p style="text-align: center; font-size: 11;">
+                                        6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                    </p>
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                        <strong>Universal Precautions Training Document</strong>
+                                    </p><br>
+                                        <br>
+
+                                    
                             @if(!empty($nameData[0]['applicant_id']))
                               <div class="col-md-6">
                                  <p><u>Name: {{$nameData[0]['full_name']}}</u></p>

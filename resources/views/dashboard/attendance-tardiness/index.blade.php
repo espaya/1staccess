@@ -64,8 +64,20 @@
                         <div class="card">
                            <div class="card-body">
                               <div>
+
+                              <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                    <strong>1st Access Home Care Incorporated</strong>
+                                    </p>
+                                    <p style="text-align: center; font-size: 11;">
+                                        6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                    </p>
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                        <strong>Employee Notification of Policy: Attendance, Tardiness, Absenteeism and Leave</strong>
+                                    </p>
+
                                  <p>Employee Name: <u>{{ ucfirst($profileData[0]['full_name']) }}</u> </p>
-                                 <h4 class="mb-sm-0 font-size-18">Employee Notification of Policy: Attendance, Tardiness, Absenteeism and Leave</h4>
+                                 
                                  <br>
                                  <p>Exempt employees are owners, officers, management and supervisors. All full time employees are required to put in a full day's work and a full 40 hour work week. All employees regardless of classification, are required to arrive on time and appropriately complete their designated hours and tasks as assigned.</p>
                                  <br>

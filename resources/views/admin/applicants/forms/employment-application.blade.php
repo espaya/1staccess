@@ -4,6 +4,42 @@
 
    @include('templates/admin/head')
 
+   <style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    /* Make table responsive */
+    @media screen and (max-width: 600px) {
+        table, thead, tbody, th, td, tr {
+            display: block;
+        }
+        thead tr {
+            display: none;
+        }
+        td {
+            border: none;
+            position: relative;
+            padding-left: 50%;
+        }
+        td:before {
+            position: absolute;
+            left: 6px;
+            content: attr(data-label);
+            text-align: left;
+            font-weight: bold;
+        }
+    }
+</style>
+
     <body data-sidebar="dark" data-layout-mode="light">
 
     <!-- <body data-layout="horizontal" data-topbar="dark"> -->
@@ -83,220 +119,285 @@
                                                             <span style="margin-left: 100px;">Email Address: <u>{{$user->email}}</u></span>
                                                         </p>
 
-                                                        <p>Name: <u>{{$profileData->full_name}}</u>
+                                                        <p>Name: {{$profileData->full_name}}
                                                             <span style="margin-left: 100px;">Social Security #: 
-                                                                <u>{{ $employment_data[0]['SSN'] }}</u>
+                                                                {{ $employment_data[0]['SSN'] }}
 
                                                             </span>
                                                         </p>
 
-                                                        <P>Present Address: <u>{{ $employment_data[0]['present_address'] .' ' . $employment_data[0]['present_city'] .' ' . $employment_data[0]['present_state'] . ' ' . $employment_data[0]['present_zip'] }}</u>
+                                                        <P>Present Address: {{ $employment_data[0]['present_address'] .' ' . $employment_data[0]['present_city'] .' ' . $employment_data[0]['present_state'] . ' ' . $employment_data[0]['present_zip'] }}
                                                         </P>
 
-                                                        <p>Permanent Address: <u>{{ $employment_data[0]['permanent_address'] .' ' . $employment_data[0]['permanent_city'] .' ' . $employment_data[0]['permanent_state'] . ' ' . $employment_data[0]['permanent_zip'] }}</u>
+                                                        <p>Permanent Address: {{ $employment_data[0]['permanent_address'] .' ' . $employment_data[0]['permanent_city'] .' ' . $employment_data[0]['permanent_state'] . ' ' . $employment_data[0]['permanent_zip'] }}
                                                         </p>
 
-                                                        <p>Phone Number: <u>{{$profileData->phone}}</u>
+                                                        <p>Phone Number: {{$profileData->phone}}
                                                             <span style="margin-left: 100px;">If you are under 18 can you furnish a permit? 
-                                                            <u>{{ $employment_data[0]['furnish_work'] }}</u>
+                                                                {{ $employment_data[0]['furnish_work'] }}
                                                             </span>
                                                         </p>
 
-                                                        <p>Employment Desired: <u>{{ $employment_data[0]['employment_desired'] }}</u></p>
+                                                        <p>Employment Desired: {{ $employment_data[0]['employment_desired'] }}</p>
                                                        
-                                                        <p>Position: <u>{{ $employment_data[0]['position'] }}</u>
-                                                            <span  style="margin-left: 70px;">Date You Can Start: <u>{{ \Carbon\Carbon::parse($employment_data[0]['date_start'])->format('M d, Y') }}</u>
+                                                        <p>Position: {{ $employment_data[0]['position'] }}
+                                                            <span  style="margin-left: 70px;">Date You Can Start: {{ \Carbon\Carbon::parse($employment_data[0]['date_start'])->format('M d, Y') }}
                                                             </span>
-                                                            <span style="margin-left: 70px;">Salary: <u>${{ number_format($employment_data[0]['salary'], 2) }}</u></span>
+                                                            <span style="margin-left: 70px;">Salary: ${{ number_format($employment_data[0]['salary'], 2) }}</span>
                                                         </p>
 
                                                         <p>
-                                                            Are you employed now? <u>{{ $employment_data[0]['employed_now']}}</u>
+                                                            Are you employed now? {{ $employment_data[0]['employed_now']}}
                                                             <span style="margin-left: 100px;">If so, may we inqure your present employer? 
-                                                            <u>{{$employment_data[0]['inqure_present_employer']}}</u> </span>
+                                                            {{$employment_data[0]['inqure_present_employer']}} </span>
                                                          </p>
 
                                                         <p>Ever Applied For This Company Before: 
-                                                            <u>{{ $employment_data[0]['applied_before'] }}</u>
+                                                            {{ $employment_data[0]['applied_before'] }}
                                                             @if($employment_data[0]['applied_before'] == 'Yes')
-                                                            <span style="margin-left: 50px;">Where: <u>{{ $employment_data[0]['where'] }}</u>
+                                                            <span style="margin-left: 50px;">Where: {{ $employment_data[0]['where'] }}
                                                             </span>
-                                                            <span style="margin-left: 50px;">When: <u>{{ \Carbon\Carbon::parse($employment_data[0]['when'])->format('M d, Y') }}</u>
+                                                            <span style="margin-left: 50px;">When: {{ \Carbon\Carbon::parse($employment_data[0]['when'])->format('M d, Y') }}
                                                             </span>
                                                             @endif
                                                         </p>
 
-                                                        <p>Are You On Layoff And Subject To Recall: <u>{{ $employment_data[0]['on_layoff_subject_to_recall'] }}</u></p>
+                                                        <p>Are You On Layoff And Subject To Recall: {{ $employment_data[0]['on_layoff_subject_to_recall'] }}</p>
 
-                                                        <p>Will You Travel If Required: <u>{{ $employment_data[0]['travel_if_required'] }}</u>
+                                                        <p>Will You Travel If Required: {{ $employment_data[0]['travel_if_required'] }}
                                                         </p>
 
-                                                        <p>Will You Work Overtime If Required?: <u>{{ $employment_data[0]['overtime_if_required'] }}</u></p>
+                                                        <p>Will You Work Overtime If Required?: {{ $employment_data[0]['overtime_if_required'] }}</p>
 
                                                         <p>
                                                         Are you able to meet the attendance requirements of this position?: 
-                                                        <u>{{ $employment_data[0]['attendance_requirements_position'] }}</u>
+                                                        {{ $employment_data[0]['attendance_requirements_position'] }}
                                                         </p>
 
-                                                        <p>Have You Ever Been Bonded?: <u>{{ $employment_data[0]['bonded'] }}</u></p>
+                                                        <p>Have You Ever Been Bonded?: {{ $employment_data[0]['bonded'] }}</p>
 
                                                         <p>Have you ever been convicted of a felony in the past 7years?: 
-                                                            <u>{{ $employment_data[0]['convicted'] }}</u>
+                                                            {{ $employment_data[0]['convicted'] }}
                                                         </p>
 
                                                         @if($employment_data[0]['convicted'] == 'Yes')
-                                                        <p>Such conviction may be relevant if job related, but does not bar you from employment. If yes - explain: <u>{{ $employment_data[0]['explain_convicted'] }}</u>
+                                                        <p>Such conviction may be relevant if job related, but does not bar you from employment. If yes - explain: {{ $employment_data[0]['explain_convicted'] }}
                                                         </p>
                                                         @endif
 
-                                                        <p>Driver's License Number: <u>{{ $employment_data[0]['drivers_license'] }}</u>
-                                                        <span style="margin-left: 100px;">State: <u>{{ $employment_data[0]['drivers_license_state'] }}</u></span>
+                                                        <p>Driver's License Number: {{ $employment_data[0]['drivers_license'] }}
+                                                        <span style="margin-left: 100px;">State: {{ $employment_data[0]['drivers_license_state'] }}</span>
                                                         </p>
 
-                                                        <h4 class="mb-sm-0 font-size-18">Academic / Education</h4>
-                                                        <p>Name And Location Of School: <u>{{ $employment_data[0]['edu_current_name_location_school'] }}</u></p>
-                                                        
-                                                        <p>Number Of Years Completed: <u>{{ $employment_data[0]['edu_current_number_years']}} year(s)</u>
-                                                        </p>
+                                                        <br>
 
-                                                        <p>Did You Graduate?: <u>{{ $employment_data[0]['edu_current_did_graduate']}}</u></p>
+                                                        <table>
+                                          <thead>
+                                             <tr>
+                                                   <th></th>
+                                                   <th>Education</th>
+                                                   <th>Name and Location of School</th>
+                                                   <th># of Years Completed</th>
+                                                   <th>Did you graduate?</th>
+                                                   <th>Subjects studied</th>
+                                             </tr>
+                                          </thead>
+                                          <tbody>
+                                             <tr>
+                                                   <td data-label="Education">Academic</td>
+                                                   <td data-label="Academic">
+                                                      <div>Currently Attending</div>
+                                                      <div style="border-top: 1px solid black;"></div>
+                                                      <div>Last Completed</div>
+                                                   </td>
+                                                   <td data-label="Name / Location of School">
+                                                      <div>{{ $employment_data[0]['edu_current_name_location_school'] }}</div>
+                                                      <div style="border-top: 1px solid black;"></div>
+                                                      <div>{{$employment_data[0]['edu_last_name_location_school']}}</div>
+                                                   </td>
+                                                   <td data-label="# of YearsCompleted">
+                                                      <div>{{ $employment_data[0]['edu_current_number_years']}} year(s)</div>
+                                                      <div style="border-top: 1px solid black;"></div>
+                                                      <div>{{$employment_data[0]['edu_last_number_years']}}</div>
+                                                   </td>
+                                                   <td data-label="Did you graduate">
+                                                      <div>{{ $employment_data[0]['edu_current_did_graduate']}}</div>
+                                                      <div style="border-top: 1px solid black;"></div>
+                                                      <div>{{$employment_data[0]['edu_last_did_graduate']}}</div>
+                                                   </td>
+                                                   <td data-label="Subjects studied">
+                                                      <div>{{ $employment_data[0]['edu_current_subjects_studied'] }}</div>
+                                                      <div style="border-top: 1px solid black;"></div>
+                                                      <div>Subjects Studied?: {{$employment_data[0]['edu_last_subjects_studied']}}</div>
+                                                   </td>
+                                             </tr>
+                                             <tr>
+                                                   <td data-label="Education">Trades of Business</td>
+                                                   <td data-label="Trades of Business">
+                                                      <div>Currently Attending</div>
+                                                      <div style="border-top: 1px solid black;"></div>
+                                                      <div>Last Completed</div>
+                                                   </td>
+                                                   <td data-label="Name / Location of School">
+                                                      <div>{{$employment_data[0]['trades_current_name_location_school']}}</div>
+                                                      <div style="border-top: 1px solid black;"></div>
+                                                      <div>{{$employment_data[0]['trades_last_current_name_location_school']}}</div>
+                                                   </td>
+                                                   <td data-label="# of Year Completed">
+                                                      <div>{{$employment_data[0]['trades_current_number_years']}}</div>
+                                                      <div style="border-top: 1px solid black;"></div>
+                                                      <div>{{$employment_data[0]['trades_last_current_number_years']}}</div>
+                                                   </td>
+                                                   <td data-label="Did you graduate">
+                                                      <div>{{$employment_data[0]['trades_current_did_graduate']}}</div>
+                                                      <div style="border-top: 1px solid black;"></div>
+                                                      <div>{{ $employment_data[0]['trades_last_current_did_graduate']}}</div>
+                                                   </td>
+                                                   <td data-label="Subjects studied">
+                                                      <div>{{ $employment_data[0]['trades_current_subjects_studied'] }}</div>
+                                                      <div style="border-top: 1px solid black;"></div>
+                                                      <div>{{$employment_data[0]['trades_last_subjects_studied']}}</div>
+                                                   </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
 
-                                                        <p>Subjects Studied?: <u>{{ $employment_data[0]['edu_current_subjects_studied'] }}</u>
-                                                        </p>
+                                       <br>
 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <p><strong>(Last Completed)</strong></p>
-                                            <p>Name And Location Of School: <u>{{$employment_data[0]['edu_last_name_location_school']}}</u></p>
-
-                                            <p>Number Of Years Completed: <u>{{$employment_data[0]['edu_last_number_years']}}</u>
-                                                <span>Did You Graduate?: {{$employment_data[0]['edu_last_did_graduate']}}</span>
-                                            </p>
-
-                                            <p>Subjects Studied?: {{$employment_data[0]['edu_last_subjects_studied']}}</p>
-
-                                            <h4 class="mb-sm-0 font-size-18">Trades of Business / Education</h4>
-
-                                            <p><strong>(Currently Attending)</strong></p>
-                                            
-                                            <p>Name And Location Of School: 
-                                                <u>{{$employment_data[0]['trades_current_name_location_school']}}
-                                            </u>
-                                            </p>
-
-                                            <p>Number Of Years Completed: 
-                                                <u>{{$employment_data[0]['trades_current_number_years']}} </u>
-                                            </p>
-
-                                            <p>Did You Graduate?: <u>{{$employment_data[0]['trades_current_did_graduate']}}</u> </p>
-
-                                            <p>Subjects Studied?: <u>{{ $employment_data[0]['trades_current_subjects_studied'] }}</u></p>
-
-                                            <p><strong>(Last Completed)</strong></p>
-                                            <p>Name And Location Of School: <u>{{$employment_data[0]['trades_last_current_name_location_school']}}</u></p>
-
-                                            <p>Number Of Years Completed: <u>{{$employment_data[0]['trades_last_current_number_years']}}</u>
-                                                <span>Did You Graduate?: <u>{{ $employment_data[0]['trades_last_current_did_graduate']}}</u>
-                                                </span>
-                                            </p>
-
-                                            <p>Subjects Studied?: <u>{{$employment_data[0]['trades_last_subjects_studied']}}</u></p>
-
-                                            <p>Summarize special skills and qualifications required from employment or other experiences that may qualify you to work with this company: <u>{{$employment_data[0]['special_skills_qualifications']}}</u></p>
+                                       <p>Summarize special skills and qualifications required from employment or other experiences that may qualify you to work with this company: <u>{{$employment_data[0]['special_skills_qualifications']}}</u></p>
 
                                             <hr>
-                                            <h6 class="mb-sm-0 font-size-16">Previous Employeer</h6>
-                                            <p>#1</p>
-                                            <p>From: <u>{{\Carbon\Carbon::parse($employment_data[0]['from_date_1'])->format('M d, Y')}}</u>
-                                            <span style="margin-left: 100;">To: {{\Carbon\Carbon::parse($employment_data[0]['to_date_1'])->format('M d, Y')}} </span>
-                                            </p>Name and Address of Employer: <u>{{$employment_data[0]['name_address_employer_1']}}</u>
-                                            <p>
-                                            <p>Phone: <u>{{$employment_data[0]['phone_number_1']}}</u>
-                                                <span style="margin-left: 70px;">Salary: <u>${{number_format($employment_data[0]['salary_1'], 2)}}</u></span>
-                                                <span style="margin-left: 70px;">Job: {{$employment_data[0]['job_1']}} </span>
-                                            </p>
+                                            <p><strong>Past Employment Information</strong></p>
 
-                                            <p>Reason(s) For Leaving: <u>{{$employment_data[0]['reason_leaving_1']}}</u></p>
-                                            
-                                        @if(!empty($employment_data[0]['from_date_2']))
-                                            <p>#2</p>
-                                            <p>From: {{ \Carbon\Carbon::parse($employment_data[0]['from_date_2'])->format('M d, Y')}} 
-                                                <span style="margin-left: 100px;">To: {{\Carbon\Carbon::parse($employment_data[0]['to_date_2'])->format('M d, Y')}} </span></p>
-                                            <p>Name And Address Of Employer: <u>{{$employment_data[0]['name_address_employer_2']}}</u></p>
+                                            <table>
+                                          <thead>
+                                             <tr>
+                                                   <th>Date/Month/Year</th>
+                                                   <th>Name and Address of Employer</th>
+                                                   <th>Phone Number</th>
+                                                   <th>Salary</th>
+                                                   <th>Job</th>
+                                                   <th>Reason for Leaving</th>
+                                             </tr>
+                                          </thead>
+                                          <tbody>
+                                             <tr>
+                                                   <td data-label="From / To">
+                                                      <div>From: {{\Carbon\Carbon::parse($employment_data[0]['from_date_1'])->format('M d, Y')}}</div>
+                                                      <div style="border-top: 1px solid black;"></div>
+                                                      <div>To: {{\Carbon\Carbon::parse($employment_data[0]['to_date_1'])->format('M d, Y')}}</div>
+                                                   </td>
+                                                   <td data-label="Name & Address">{{$employment_data[0]['name_address_employer_1']}}</td>
+                                                   <td data-label="Phone Number">{{$employment_data[0]['phone_number_1']}}</td>
+                                                   <td data-label="Salary">${{number_format($employment_data[0]['salary_1'], 2)}}</td>
+                                                   <td data-label="Job">{{$employment_data[0]['job_1']}}</td>
+                                                   <td data-label="Reason for leaving">{{$employment_data[0]['reason_leaving_1']}}</td>
+                                             </tr>
+                                             @if(!empty($employment_data[0]['from_date_2']))
+                                             <tr>
+                                                   <td data-label="From / To">
+                                                      <div>From: {{ \Carbon\Carbon::parse($employment_data[0]['from_date_2'])->format('M d, Y')}}</div>
+                                                      <div style="border-top: 1px solid black;"></div>
+                                                      <div>To: {{\Carbon\Carbon::parse($employment_data[0]['to_date_2'])->format('M d, Y')}}</div>
+                                                   </td>
+                                                   <td data-label="Name & Address">{{$employment_data[0]['name_address_employer_2']}}</td>
+                                                   <td data-label="Phone Number">{{$employment_data[0]['phone_number_2']}}</td>
+                                                   <td data-label="Salary">${{number_format($employment_data[0]['salary_2'], 2)}}</td>
+                                                   <td data-label="Job">{{$employment_data[0]['job_2']}}</td>
+                                                   <td data-label="Reason for leaving">{{ $employment_data[0]['reason_leaving_2'] }}</td>
+                                             </tr>
+                                             @endif
+                                             
 
-                                            <p>Phone: <u>{{$employment_data[0]['phone_number_2']}}</u> 
-                                                <span style="margin-left: 70px;">Salary: <u>${{number_format($employment_data[0]['salary_2'], 2)}}</u></span>
-                                                <span style="margin-left: 70px;">Job: <u>{{$employment_data[0]['job_2']}}</u> </span> 
-                                            </p>
+                                             @if(!empty($employment_data[0]['from_date_3']))
+                                             <tr>
+                                                   <td data-label="From / To">
+                                                      <div>From: {{\Carbon\Carbon::parse($employment_data[0]['from_date_3'])->format('M d, Y')}}</div>
+                                                      <div style="border-top: 1px solid black;"></div>
+                                                      <div>To: {{\Carbon\Carbon::parse($employment_data[0]['to_date_3'])->format('M d, Y')}}</div>
+                                                   </td>
+                                                   <td data-label="name & Address">{{$employment_data[0]['name_address_employer_3']}}</td>
+                                                   <td data-label="Phone Number">{{$employment_data[0]['phone_number_3']}}</td>
+                                                   <td data-label="Salary">${{number_format($employment_data[0]['salary_3'], 2)}}</td>
+                                                   <td data-label="Job">{{$employment_data[0]['job_3']}}</td>
+                                                   <td data-label="Reason for Leaving">{{$employment_data[0]['reason_leaving_3']}}</td>
+                                             </tr>
+                                             @endif
+                                             
+                                          </tbody>
+                                       </table>
 
-                                            <p>Reason(s) For Leaving: {{ $employment_data[0]['reason_leaving_2'] }}</p>
-                                        @endif
+                                       <br>
+                                        
 
-                                        @if(!empty($employment_data[0]['from_date_3']))
-                                            <p>#3</p>
-                                            <p>From: <u>{{\Carbon\Carbon::parse($employment_data[0]['from_date_3'])->format('M d, Y')}}</u>
-                                            <span style="margin-left: 100px;">To: 
-                                                <u>{{\Carbon\Carbon::parse($employment_data[0]['to_date_3'])->format('M d, Y')}}</u>
-                                            </span>
-                                            </p>
-                                            <p>Name And Address Of Employer: <u>{{$employment_data[0]['name_address_employer_3']}}</u></p>
-                                            <p>Phone: {{$employment_data[0]['phone_number_3']}}
-                                                <span style="margin-left: 70px;">Salary: ${{number_format($employment_data[0]['salary_3'], 2)}}</span> 
-                                                <span style="margin-left: 70px;">Job: {{$employment_data[0]['job_3']}}</span> 
-                                            </p>
-                                            <p>Reason(s) For Leaving: {{$employment_data[0]['reason_leaving_3']}}</p>
-
-                                        @endif
-
-                                            <h4 class="mb-sm-0 font-size-18">References</h4>
+                                            <p><strong>References</strong></p>
                                             <p>Give the name of three persons not related to you to whom you have known at least 1year</p>
-                                            <p>#1</p>
+                                        
+                                        <table>
+                                          <thead>
+                                             <tr>
+                                                   <th>Name</th>
+                                                   <th>Address</th>
+                                                   <th>Phone</th>
+                                                   <th>Years Acquainted</th>
+                                                   
+                                             </tr>
+                                          </thead>
+                                          <tbody>
+                                             <tr>
+                                                   <td data-label="Name">{{$employment_data[0]['reference_name_1']}}</td>
+                                                   <td data-label="Address">{{$employment_data[0]['reference_address_1']}}</td>
+                                                   <td data-label="Phone">{{$employment_data[0]['reference_phone_1']}}</td>
+                                                   <td data-label="Years Acquainted">{{$employment_data[0]['reference_years_acquainted_1']}}</td>   
+                                             </tr>
+                                             <tr>
+                                                   <td data-label="Name">{{$employment_data[0]['reference_name_2']}}</td>
+                                                   <td data-label="Address">{{$employment_data[0]['reference_address_2']}}</td>
+                                                   <td data-label="Phone">{{$employment_data[0]['reference_phone_2']}}</td>
+                                                   <td data-label="Years Acquainted">{{$employment_data[0]['reference_years_acquainted_2']}}</td>
+                                             </tr>
+                                             <tr>
+                                                   <td data-label="Name">{{$employment_data[0]['reference_name_3']}}</td>
+                                                   <td data-label="Address">{{$employment_data[0]['reference_address_3']}}</td>
+                                                   <td data-label="Phone">{{$employment_data[0]['reference_phone_3']}}</td>
+                                                   <td data-label="Years Acquainted">{{$employment_data[0]['reference_years_acquainted_3']}}</td>  
+                                             </tr>
+                                          </tbody>
+                                       </table>
 
-                                            <p>Name: <u>{{$employment_data[0]['reference_name_1']}}</u></p>
-
-                                            <p>Address: <u>{{$employment_data[0]['reference_address_1']}}</u></p>
-
-                                            <p>Phone: <u>{{$employment_data[0]['reference_phone_1']}}</u> 
-                                                <span>Years Acquainted: <u>{{$employment_data[0]['reference_years_acquainted_1']}}</u> </span> 
-                                            </p>
-
-                                            <p>#2</p>
-                                            <p>Name: <u>{{$employment_data[0]['reference_name_2']}}</u></p>
-
-                                            <p>Address: <u>{{$employment_data[0]['reference_address_2']}}</u></p>
-
-                                            <p>Phone: <u>{{$employment_data[0]['reference_phone_2']}}</u> 
-                                                <span>Years Acquainted: {{$employment_data[0]['reference_years_acquainted_2']}}</span> 
-                                            </p>
-
-                                            <p>#3</p>
-                                            <p>Name: <u>{{$employment_data[0]['reference_name_3']}}</u></p>
-
-                                            <p>Address: <u>{{$employment_data[0]['reference_address_3']}}</u> </p>
-
-                                            <p>Phone: <u>{{$employment_data[0]['reference_phone_3']}}</u> 
-                                                <span>Years Acquainted: <u>{{$employment_data[0]['reference_years_acquainted_3']}}</u></span> 
-                                            </p>
 
                                         <br>
-                                            <h4 class="mb-sm-0 font-size-16">Any foreign language(s).</h4>
-                                            <p>#1</p>
-                                            <p>Language: <u>{{ucfirst($employment_data[0]['language_1'])}}</u> </p>
-                                            <p>
-                                                <span>Read and Write: <u>{{ucfirst($employment_data[0]['read_write_1'])}}</u></span> 
-                                                <span style="margin-left: 50px;">Read and Speak: <u>{{ucfirst($employment_data[0]['read_speak_1'])}}</u> </span>
-                                                <span style="margin-left: 50px;">Speak Only: <u>{{ucfirst($employment_data[0]['speak_only_1'])}}</u></span>
-                                            </p>
+                                            <p><strong>Any foreign language(s).</strong></p>
+
+                                            <table>
+                                          <thead>
+                                             <tr>
+                                                   <th>Language</th>
+                                                   <th>Read and Write</th>
+                                                   <th>Read and Speak</th>
+                                                   <th>Speak Only</th>
+                                             </tr>
+                                          </thead>
+                                          <tbody>
+                                             <tr>
+                                                   <td data-label="Language">{{ucfirst($employment_data[0]['language_1'])}}</td>
+                                                   <td data-label="Read and Write">{{ucfirst($employment_data[0]['read_write_1'])}}</td>
+                                                   <td data-label="Speak and Write">{{ucfirst($employment_data[0]['read_speak_1'])}}</td>
+                                                   <td data-label="Speak Only">{{ucfirst($employment_data[0]['speak_only_1'])}}</td>
+                                             </tr>
+                                             @if(!empty($employment_data[0]['language_2']))
+                                             <tr>
+                                                   <td data-label="Language">{{ucfirst($employment_data[0]['language_2'])}}</td>
+                                                   <td data-label="Read and Write">{{ucfirst($employment_data[0]['read_write_2'])}}</td>
+                                                   <td data-label="Read and Speak">{{ucfirst($employment_data[0]['read_speak_2'])}}</td>
+                                                   <td data-label="Speak Only">{{ucfirst($employment_data[0]['speak_only_2'])}}</td>
+                                             </tr>
+                                             @endif
+                                          </tbody>
+                                       </table>
+
+                                       <br>
                                             
-                                            @if(!empty($employment_data[0]['language_2']))
-                                            <p>#2</p>
-                                            <p>Language: <u>{{ucfirst($employment_data[0]['language_2'])}}</u> </p>
-                                            <p>Read and Write: {{ucfirst($employment_data[0]['read_write_2'])}} 
-                                                <span>Read and Speak: {{ucfirst($employment_data[0]['read_speak_2'])}}</span> 
-                                                <span>Speak Only: {{ucfirst($employment_data[0]['speak_only_2'])}}</span>
-                                            </p>
-                                            @endif
 
                                             <p>In case of emergency notify: {{$employment_data[0]['emergency_address'] . ' ' . $employment_data[0]['emergency_city'] . ' ' . $employment_data[0]['emergency_state'] . ' ' . $employment_data[0]['emergency_zip']}}</p>
 
@@ -315,8 +416,12 @@
                                                 <p>This application is current for 90 days. At the conclusion of this time if I have not heard from the Employer and still wish to be considered for employment, it will be necessary to fill out a new application.</p>
                                             </div>
 
-                                            <hr>
 
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
                                             <div>
                                             <p>Signature of Applicant:</p>
                                                 <img width="250" class="img-fluid" src="{{asset('storage/signature/' . $employment_data[0]['signature'])}}">

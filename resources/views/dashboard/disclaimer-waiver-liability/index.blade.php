@@ -87,8 +87,19 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                    <strong>1st Access Home Care Incorporated</strong>
+                                    </p>
+                                    <p style="text-align: center; font-size: 11;">
+                                        6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                    </p>
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                        <strong>Disclaimer and Waiver of Liability</strong>
+                                    </p><br>
+                                        <br>
                                     <p>Employee Name: <u>{{ ucfirst($profileData[0]['full_name']) }}</u> </p>
-                                    <h4 class="mb-sm-0 font-size-18">Disclaimer and Waiver of Liability</h4><br>
+                                    
                                     <p>I acknowledge and will adhere to the rules and regulations as set forth by the Office of Licensure and Certification. I understand that the falsification of documents, particularly those pertaining to the submission of visit notes where in fact no visits was made, is considered to be fraud and is subject to filing of a criminal grievance, civil and/or criminal prosecution, and immediate termination. I therefore hold the home health care agency, its shareholders, directors and officers, harmless from any falsified documents.</p>
 
                                         <p><strong>I have read and understand the above information. I understand that the falsification of documents, particularly those pertaining to the submission of visit notes where in fact no visits was made, is considered to be fraud and is subject to filing of a criminal grievance, civil and/or criminal prosecution, and immediate termination.</strong></p>

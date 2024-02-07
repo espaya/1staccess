@@ -87,9 +87,20 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                    <strong>1st Access Home Care Incorporated</strong>
+                                    </p>
+                                    <p style="text-align: center; font-size: 11;">
+                                        6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                    </p>
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                        <strong>Employee Safety! Cellular Phone Use</strong>
+                                    </p><br>
+                                        <br>
                                         <div>
                                         <p>Employee Name: <u>{{ ucfirst($profileData[0]['full_name']) }}</u></p>
-                                        <h4 class="mb-sm-0 font-size-18">Employee Safety! Cellular Phone Use</h4><br>
+                                        <br>
                                         <p><strong class="text-black">1st Access Home Care Incorporated</strong> Does Not Permit employees whilst on company time to talk on cellular phones while on the job. This is very dangerous and should be avoided any time. It is mandatory that I must pull over and stop my vehicle each time I conduct Agency business per cellular phone.
                                     </p>
                                     <p> The agency is not responsible for any moving violations, accidents or other incidents that may occur while I am using my cellular phone and driving.

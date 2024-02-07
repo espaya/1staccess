@@ -89,8 +89,20 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div>
+
+                                        <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                    <strong>1st Access Home Care Incorporated</strong>
+                                    </p>
+                                    <p style="text-align: center; font-size: 11;">
+                                        6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                    </p>
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                        <strong>Confidentiality of Information Agreement</strong>
+                                    </p>
+
                                             <p>Employee Name:<u> {{ ucfirst($profileData[0]['full_name']) }}</u> </p>
-                                        <h4 class="mb-sm-0 font-size-18">Confidentiality of Information Agreement</h4><br>
+                                        <br>
                                         <ul>
                                         <li>1. All information designated confidential that is obtained or generated as a result of any or all of the operations of the Agency will be dealt with in a confidential manner.</li>
 

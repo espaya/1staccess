@@ -88,10 +88,23 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
+
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                    <strong>1st Access Home Care Incorporated</strong>
+                                    </p>
+                                    <p style="text-align: center; font-size: 11;">
+                                        6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                    </p>
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                        <strong>Reporting: Abuse/Neglect/Exploitation</strong>
+                                    </p><br>
+                                        <br>
+
                                     @if(!empty($fNameData[0]['applicant_id']))
                                     <p><strong>Employee Name:</strong> <u>{{ $fNameData[0]['full_name']}}</u></p>
                                     @endif
-                                    <h4 class="mb-sm-0 font-size-18">Reporting: Abuse/neglect/Exploitation</h4><br>
+                                    <br>
                                     <div>
                                  <p><strong>All agency staff are required to report suspected abuse / neglect / exploitation and develop a plan to minimize the risk of such. The care health employee is responsible to report and document:</strong></p>
                                  <p>

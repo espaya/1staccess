@@ -352,22 +352,22 @@
                                           </thead>
                                           <tbody>
                                              <tr>
-                                                   <td data-label="Column 1">{{$referenceData[0]['reference_name_1']}}</td>
-                                                   <td data-label="Column 2">{{$referenceData[0]['reference_address_1']}}</td>
-                                                   <td data-label="Column 3">{{$referenceData[0]['reference_phone_1']}}</td>
-                                                   <td data-label="Column 4">{{$referenceData[0]['reference_years_acquainted_1']}}</td>   
+                                                   <td data-label="Name">{{$referenceData[0]['reference_name_1']}}</td>
+                                                   <td data-label="Address">{{$referenceData[0]['reference_address_1']}}</td>
+                                                   <td data-label="Phone">{{$referenceData[0]['reference_phone_1']}}</td>
+                                                   <td data-label="Years Acquainted">{{$referenceData[0]['reference_years_acquainted_1']}}</td>   
                                              </tr>
                                              <tr>
-                                                   <td data-label="Column 1">{{$referenceData[0]['reference_name_2']}}</td>
-                                                   <td data-label="Column 2">{{$referenceData[0]['reference_address_2']}}</td>
-                                                   <td data-label="Column 3">{{$referenceData[0]['reference_phone_2']}}</td>
-                                                   <td data-label="Column 4">{{$referenceData[0]['reference_years_acquainted_2']}}</td>
+                                                   <td data-label="Name">{{$referenceData[0]['reference_name_2']}}</td>
+                                                   <td data-label="Address">{{$referenceData[0]['reference_address_2']}}</td>
+                                                   <td data-label="Phone">{{$referenceData[0]['reference_phone_2']}}</td>
+                                                   <td data-label="Years Acquainted">{{$referenceData[0]['reference_years_acquainted_2']}}</td>
                                              </tr>
                                              <tr>
-                                                   <td data-label="Column 1">{{$referenceData[0]['reference_name_3']}}</td>
-                                                   <td data-label="Column 2">{{$referenceData[0]['reference_address_3']}}</td>
-                                                   <td data-label="Column 3">{{$referenceData[0]['reference_phone_3']}}</td>
-                                                   <td data-label="Column 4">{{$referenceData[0]['reference_years_acquainted_3']}}</td>  
+                                                   <td data-label="Name">{{$referenceData[0]['reference_name_3']}}</td>
+                                                   <td data-label="Address">{{$referenceData[0]['reference_address_3']}}</td>
+                                                   <td data-label="Phone">{{$referenceData[0]['reference_phone_3']}}</td>
+                                                   <td data-label="Years Acquainted">{{$referenceData[0]['reference_years_acquainted_3']}}</td>  
                                              </tr>
                                           </tbody>
                                        </table>
@@ -388,17 +388,17 @@
                                           </thead>
                                           <tbody>
                                              <tr>
-                                                   <td data-label="Column 1">{{$languageData[0]['language_1']}}</td>
-                                                   <td data-label="Column 2">{{$languageData[0]['read_write_1']}}</td>
-                                                   <td data-label="Column 3">{{$languageData[0]['read_speak_1']}}</td>
-                                                   <td data-label="Column 4">{{$languageData[0]['speak_only_1']}}</td>
+                                                   <td data-label="Language">{{$languageData[0]['language_1']}}</td>
+                                                   <td data-label="Read and Write">{{$languageData[0]['read_write_1']}}</td>
+                                                   <td data-label="Speak and Write">{{$languageData[0]['read_speak_1']}}</td>
+                                                   <td data-label="Speak Only">{{$languageData[0]['speak_only_1']}}</td>
                                              </tr>
                                              @if(!empty($languageData[0]['language_2']))
                                              <tr>
-                                                   <td data-label="Column 1">{{$languageData[0]['language_2']}}</td>
-                                                   <td data-label="Column 2">{{$languageData[0]['read_write_2']}}</td>
-                                                   <td data-label="Column 3">{{$languageData[0]['read_speak_2']}}</td>
-                                                   <td data-label="Column 4">{{$languageData[0]['speak_only_2']}}</td>
+                                                   <td data-label="Language">{{$languageData[0]['language_2']}}</td>
+                                                   <td data-label="Read and Write">{{$languageData[0]['read_write_2']}}</td>
+                                                   <td data-label="Read and Speak">{{$languageData[0]['read_speak_2']}}</td>
+                                                   <td data-label="Speak Only">{{$languageData[0]['speak_only_2']}}</td>
                                              </tr>
                                              @endif
                                           </tbody>

@@ -88,8 +88,19 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                    <strong>1st Access Home Care Incorporated</strong>
+                                    </p>
+                                    <p style="text-align: center; font-size: 11;">
+                                        6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                    </p>
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                        <strong>Employee Dress Code</strong>
+                                    </p><br>
+                                        <br>
                                     <p>Name of Employee: <u>{{ ucfirst($profileData[0]['full_name'] ) }}</u> </p>
-                                    <h4 class="mb-sm-0 font-size-18">Employee Dress Code</h4><br>
+                                    
                                     <p><strong>1st Access Home Care Incorporated strives to present a professional and safe health care image to patients’ families, the community, and other health care professionals. 1st Access Home Care Incorporated staff members adhere to the following standards in their dress appearance.</strong></p>
 
                                         <ul style="list-style: none;">
