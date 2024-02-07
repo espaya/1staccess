@@ -15,39 +15,6 @@
                                 </a>
                             </li>
 
-                            <!-- <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-layout"></i>
-                                    <span key="t-layouts">Layouts</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="true">
-                                    <li>
-                                        <a href="javascript: void(0);" class="has-arrow" key="t-vertical">Vertical</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="layouts-light-sidebar.html.htm" key="t-light-sidebar">Light Sidebar</a></li>
-                                            <li><a href="layouts-compact-sidebar.html.htm" key="t-compact-sidebar">Compact Sidebar</a></li>
-                                            <li><a href="layouts-icon-sidebar.html.htm" key="t-icon-sidebar">Icon Sidebar</a></li>
-                                            <li><a href="layouts-boxed.html.htm" key="t-boxed-width">Boxed Width</a></li>
-                                            <li><a href="layouts-preloader.html.htm" key="t-preloader">Preloader</a></li>
-                                            <li><a href="layouts-colored-sidebar.html.htm" key="t-colored-sidebar">Colored Sidebar</a></li>
-                                            <li><a href="layouts-scrollable.html.htm" key="t-scrollable">Scrollable</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a href="javascript: void(0);" class="has-arrow" key="t-horizontal">Horizontal</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="layouts-horizontal.html.htm" key="t-horizontal">Horizontal</a></li>
-                                            <li><a href="layouts-hori-topbar-light.html.htm" key="t-topbar-light">Topbar light</a></li>
-                                            <li><a href="layouts-hori-boxed-width.html.htm" key="t-boxed-width">Boxed width</a></li>
-                                            <li><a href="layouts-hori-preloader.html.htm" key="t-preloader">Preloader</a></li>
-                                            <li><a href="layouts-hori-colored-header.html.htm" key="t-colored-topbar">Colored Header</a></li>
-                                            <li><a href="layouts-hori-scrollable.html.htm" key="t-scrollable">Scrollable</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li> -->
-
                             <li class="menu-title" key="t-apps">Form</li>
                             <li>
                                 <a class="waves-effect" href="{{ url('/dashboard/employment-application/') }}" >

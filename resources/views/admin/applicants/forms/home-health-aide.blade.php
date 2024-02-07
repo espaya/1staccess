@@ -64,11 +64,20 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                    <h4 class="mb-sm-0 font-size-18">Home Health Aide and Certified Nursing Assistance</h4><br>
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                            <strong>1st Access Home Care Incorporated</strong>
+                                        </p>
+                                        <p style="text-align: center; font-size: 11;">
+                                            6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                        </p>
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                            <strong>Home Health Aide and Certified Nursing Assistance</strong>
+                                        </p>
                                 <div class="row g-4">
                                 <p>
                                  <strong>REPORTS TO: SUPERVISING REGISTERED NURSE</strong><br>
-                                 <strong>DEPARTMENT: CLINICAL</strong><br><br>
+                                 <strong>DEPARTMENT: CLINICAL</strong><br>
                                 
                                  <strong>POSITION SUMMARY:</strong><br>
                                  Works under the supervision of the designated Registered Nurse. Provides direct client care as assigned by the registered nurse. Provides quality and delivery of home care services.
@@ -156,10 +165,7 @@
                                        </div>
                                        <div class="col-md-6">
                                           <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Date</label>
-                                             <div class="form-control-wrap">
-                                             <p>{{ \Carbon\Carbon::parse($home_health_aide_data[0]['created_at'])->format('M d, Y')}}</p>
-                                            </div>
+                                             <label for="inputPassword4" class="form-label">Date: {{ \Carbon\Carbon::parse($home_health_aide_data[0]['created_at'])->format('M d, Y')}}</label>
                                           </div>
                                        </div>
                                     </div>   

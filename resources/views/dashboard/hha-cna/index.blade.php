@@ -21,11 +21,16 @@
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
       <script src="http://code.jquery.com/jquery.min.js"></script>
       <script src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
-      <!-- <script src="https://unpkg.com/signature_pad"></script> -->
-      <!-- <script src="https://unpkg.com/canvas-toBlob"></script> -->
       <title>Home Health Aide & Certified Nursing Assistant - First Access Homecare Inc</title>
       <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
-      @vite(['resources/my_assets/css/style.css', 'resources/my_assets/jquery.signature.js', 'resources/my_assets/jquery.ui.touch-punch.min.js'])
+          <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+
+<!-- Include Icons CSS -->
+<link rel="stylesheet" href="{{ asset('assets/css/icons.min.css') }}">
+
+<!-- Include App CSS -->
+<link rel="stylesheet" href="{{ asset('assets/css/app.min.css') }}">
    </head>
    <body class="nk-body" data-sidebar-collapse="lg" data-navbar-collapse="lg">
       <div class="nk-app-root">
@@ -228,11 +233,21 @@
       </div>
       </div>
    </body>
-   @vite(['resources/my_assets/js/bundle.js', 'resources/my_assets/js/scripts.js'])
-   @include('templates/dashboard/notification')
-   @vite([
-   'resources/my_assets/js/bundle.js', 
-   'resources/my_assets/js/scripts.js', 
-   'resources/my_assets/js/charts/project-manage-chart.js'
-   ])
+   <!-- Include jQuery -->
+   <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
+
+<!-- Include Bootstrap JS -->
+<script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<!-- Include MetisMenu JS -->
+<script src="{{ asset('assets/libs/metismenu/metisMenu.min.js') }}"></script>
+
+<!-- Include SimpleBar JS -->
+<script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
+
+<!-- Include Waves JS -->
+<script src="{{ asset('assets/libs/node-waves/waves.min.js') }}"></script>
+
+<!-- Include App JS -->
+<script src="{{ asset('assets/js/app.js') }}"></script>
 </html>

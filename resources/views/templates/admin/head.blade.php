@@ -13,5 +13,12 @@
         <script src="http://code.jquery.com/jquery.min.js"></script>
         <script src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
 
-        @vite(['resources/css/bootstrap.min.css', 'resources/css/icons.min.css', 'resources/css/app.min.css'])
+                <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+
+<!-- Include Icons CSS -->
+<link rel="stylesheet" href="{{ asset('assets/css/icons.min.css') }}">
+
+<!-- Include App CSS -->
+<link rel="stylesheet" href="{{ asset('assets/css/app.min.css') }}">
     </head>

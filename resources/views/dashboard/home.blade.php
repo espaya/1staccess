@@ -24,7 +24,13 @@ use Illuminate\Support\Facades\Auth;
       <script src="http://code.jquery.com/jquery.min.js"></script>
       <script src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
 
-        @vite(['resources/css/bootstrap.min.css', 'resources/css/icons.min.css', 'resources/css/app.min.css'])
+      <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+
+<!-- Include Icons CSS -->
+<link rel="stylesheet" href="{{ asset('assets/css/icons.min.css') }}">
+
+<!-- Include App CSS -->
+<link rel="stylesheet" href="{{ asset('assets/css/app.min.css') }}">
 
     </head>
 
@@ -198,14 +204,22 @@ use Illuminate\Support\Facades\Auth;
 
         <!-- JAVASCRIPT -->
 
-        @vite(['resources/libs/jquery/jquery.min.js',
-        'resources/libs/bootstrap/js/bootstrap.bundle.min.js',
-        'resources/libs/metismenu/metisMenu.min.js',
-        'resources/libs/simplebar/simplebar.min.js',
-        'resources/libs/node-waves/waves.min.js',
-        'resources/libs/apexcharts/apexcharts.min.js',
-        'resources/js/pages/dashboard.init.js',
-        'resources/js/app.js'])
+        <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
+
+<!-- Include Bootstrap JS -->
+<script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<!-- Include MetisMenu JS -->
+<script src="{{ asset('assets/libs/metismenu/metisMenu.min.js') }}"></script>
+
+<!-- Include SimpleBar JS -->
+<script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
+
+<!-- Include Waves JS -->
+<script src="{{ asset('assets/libs/node-waves/waves.min.js') }}"></script>
+
+<!-- Include App JS -->
+<script src="{{ asset('assets/js/app.js') }}"></script>
 
     </body>
 

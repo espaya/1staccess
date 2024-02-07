@@ -23,6 +23,7 @@ class EmployeeReferenceCheck extends Model
         'name_of_company',
         'signature',
         'rep_signature',
-        'rep_title'
+        'rep_title',
+        'company_signature'
     ];
 }

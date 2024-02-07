@@ -70,20 +70,21 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                    <h4 class="mb-sm-0 font-size-18">Employment Agreement</h4><br>
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                       <strong>1st Access Home Care Incorporated</strong>
+                                    </p>
+                                    <p style="text-align: center; font-size: 11;">
+                                       6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                    </p>
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                       <strong>Employment Agreement</strong>
+                                    </p>
                                     @if(!empty($employee_agreement_data[0]['applicant_id']))
-                                 <div class="row g-4">
-                                    <div class="col-md-12">
-                                          <div class="form-group">
-                                             <div class="form-control-wrap">
-                                             1.	The employee will carry out the duties and responsibilities listed in the job description/list of assigned tasks ,and signed by employee and employer
-                                            </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-12">
-                                          <div class="form-group">
-                                             <div class="form-control-wrap">
-                                             2.	Following are the hours the employee will work: <br>
+                                 <!-- <div class="row g-4"> -->
+                                    <!-- <div class="col-md-12"> -->
+                                          <p>1.	The employee will carry out the duties and responsibilities listed in the job description/list of assigned tasks ,and signed by employee and employer</p>
+                                         	<p> 2. Following are the hours the employee will work:</p>
                                              <p style="padding-left: 20px;">Monday: {{ $employee_agreement_data[0]['monday_hour'] }} Hours<br>
                                                 Tuesday: {{ $employee_agreement_data[0]['tuesday_hour'] }} Hours<br>
                                                 Wednesday: {{ $employee_agreement_data[0]['wednesday_hour'] }} Hours<br>
@@ -91,91 +92,25 @@
                                                 Friday: {{ $employee_agreement_data[0]['friday_hour'] }} Hours<br>
                                                 Saturday: {{ $employee_agreement_data[0]['saturday_hour'] }} Hours<br>
                                                 Sunday: {{ $employee_agreement_data[0]['sunday_hour'] }} Hours
-                                                </p>
-                                            </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-12">
-                                       <div class="form-group">
-                                             <label for="inputZip" class="form-label"> 3.	The employee will have the following time off: {{ $employee_agreement_data[0]['time_off'] }}</label>
-                                          </div>
-                                       </div>
-                                       <div class="col-12">
-                                       <div class="form-group">
-                                             <label for="inputZip" class="form-label">4.	The employer will pay the employee per hour: ${{ number_format($employee_agreement_data[0]['pay_per_hour'], 2, '.', ',') }}</label>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-12">
-                                          <div class="form-group">
-                                             <div class="form-control-wrap">
-                                             5.	When leaving the employee will give the approximate time of return, and if possible, leave a phone number where he/she can reach.<br> Also, when the employee will be late in returning, he/she will call to let the employer know.
-                                            </div>
-                                          </div>
-                                       </div>
+                                          </p>
+                                          <p>3. The employee will have the following time off: {{ $employee_agreement_data[0]['time_off'] }}</p>
+                                          <p>4.	The employer will pay the employee per hour: ${{ number_format($employee_agreement_data[0]['pay_per_hour'], 2, '.', ',') }}</p>
+                                          <p>5.	When leaving the employee will give the approximate time of return, and if possible, leave a phone number where he/she can reach. Also, when the employee will be late in returning, he/she will call to let the employer know.</p>
+                                          <p>6.	The employee is responsible for paying for long-distance telephone calls made/received by the employee.</p>
+                                          <p>7.	The employee will not be paid for scheduled hours not worked unless the time not worked is covered by a benefit as provided by the employer.</p>
+                                          <p>8.	Both parties to this agreement will respect each other’s individuality and treat each other accordingly. Both will attempt to be flexible and work at solving problems as they arise.</p>
+                                          <p> 9. At least 2 weeks’ notice will be given by the employee regarding termination of this agreement.</p>
+                                          <p>Other agreements/benefits: {{ $employee_agreement_data[0]['other_agreements'] }}</p>
 
-                                       <div class="col-md-12">
-                                          <div class="form-group">
-                                             <div class="form-control-wrap">
-                                             6.	The employee is responsible for paying for long-distance telephone calls made/received by the employee.
-                                            </div>
-                                          </div>
-                                       </div>
-
-                                       <div class="col-md-12">
-                                          <div class="form-group">
-                                             <div class="form-control-wrap">
-                                             7.	The employee will not be paid for scheduled hours not worked unless the time not worked is covered by a benefit as provided by the employer.
-                                            </div>
-                                          </div>
-                                       </div>
-
-                                       <div class="col-md-12">
-                                          <div class="form-group">
-                                             <div class="form-control-wrap">
-                                             8.	Both parties to this agreement will respect each other’s individuality and treat each other accordingly. Both will attempt to be flexible and work at solving problems as they arise.
-                                            </div>
-                                          </div>
-                                       </div>
-
-                                       <div class="col-md-12">
-                                          <div class="form-group">
-                                             <div class="form-control-wrap">
-                                             9.	At least 2 weeks’ notice will be given by the employee regarding termination of this agreement.
-                                            </div>
-                                          </div>
-                                       </div>
-
-                                       <div class="col-12">
-                                       <div class="form-group">
-                                             <label for="inputZip" class="form-label">Other agreements/benefits: {{ $employee_agreement_data[0]['other_agreements'] }}</label>
-                                          </div>
-                                       </div>
-
-                                       <div class="col-12">
-                                       <div class="form-group">
-                                             <label for="inputZip" class="form-label">Employee Signature:</label>
-                                             <div class="form-control-wrap">
-                                                <img width="250" src="{{asset('storage/signature/' . $employee_agreement_data[0]['signature'])}}">
-                                            </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-4">
-                                       <div class="form-group">
-                                             <label for="inputZip" class="form-label">Date:</label>
-                                             <div class="form-control-wrap">
-                                             <p>{{ \Carbon\Carbon::parse($employee_agreement_data[0]['created_at'])->format('M d, Y')}}</p>
-                                            </div>
-                                          </div>
-                                       </div>
+                                          <p>Employee Signature:</p>
+                                          <img width="250" src="{{asset('storage/signature/' . $employee_agreement_data[0]['signature'])}}">
+                                          <p>Date:</p>
+                                          <p>{{ \Carbon\Carbon::parse($employee_agreement_data[0]['created_at'])->format('M d, Y')}}</p>
                                           @if(!empty($employee_agreement_data[0]['employer_signature']))
-                                          <div class="col-12">
-                                             <div class="form-group">
-                                                   <label for="inputZip" class="form-label">Employer Signature:</label>
-                                                   <div class="form-control-wrap">
-                                                      <img width="250" src="{{asset('storage/signature/' . $employee_agreement_data[0]['employer_signature'])}}">
-                                                </div>
-                                                </div>
-                                          </div>
+                                             <p>Employer Signature:</p>
+                                                <div class="form-control-wrap">
+                                                   <img width="250" src="{{asset('storage/signature/' . $employee_agreement_data[0]['employer_signature'])}}">
+                                             </div> 
                                           @else
                                              <form action="{{ route('submit-employee-agreement', ['applicant_id' => $applicant_id, 'id' => $id]) }}" method="post" enctype="multipart/form-data" onsubmit="submitForm();">
                                                 <!-- Employer Signature -->
@@ -204,6 +139,8 @@
                                                 </div>
                                              </form>
                                           @endif
+                                       </div>
+                                       
                                        @endif
                                        </div>
                                        </div>

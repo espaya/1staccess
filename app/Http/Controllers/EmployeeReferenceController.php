@@ -56,6 +56,7 @@ class EmployeeReferenceController extends Controller
             $rep_signature = $item->rep_signature;
             $rep_title = $item->rep_title;
             $created_at = $item->created_at;
+            $company_signature = $item->company_signature;
 
             $empRefCheckData[] = [
                 'applicant_id' => $applicant_id,
@@ -70,7 +71,8 @@ class EmployeeReferenceController extends Controller
                 'signature' => $signature,
                 'rep_signature' => $rep_signature,
                 'rep_title' => $rep_title,
-                'created_at' => $created_at
+                'created_at' => $created_at,
+                'company_signature' => $company_signature
             ];
         }
 
@@ -82,23 +84,23 @@ class EmployeeReferenceController extends Controller
         ]);
     }
 
-
     public function store(Request $request)
     {
         $userID = Auth::id();
 
         $request->validate([
-            'company_contacted' => 'required',
-            'employer_name' => 'required',
-            'from_date' => 'required',
-            'to_date' => 'required',
-            'eligible_for_hire' => 'required',
-            'comments' => 'required',
-            'received_by' => 'required',
-            'name_of_company' => 'required',
-            'signature' => 'required',
-            'rep_signature' => 'required',
-            'rep_title' => 'required'
+            'company_contacted' => ['required', 'string'],
+            'employer_name' => ['required', 'string'],
+            'from_date' => ['required'],
+            'to_date' => ['required'],
+            'eligible_for_hire' => ['required'],
+            'comments' => ['required', 'string'],
+            'received_by' => ['required'],
+            'name_of_company' => ['required', 'string'],
+            'signature' => ['required'],
+            'rep_signature' => ['required'],
+            'rep_title' => ['required', 'string'],
+            'company_signature' => ['required_if:received_by,Fax'], // required if received_by == 'Fax'
         ]);
 
         // dd($request->all());
@@ -106,28 +108,35 @@ class EmployeeReferenceController extends Controller
         $empRef = new EmployeeReferenceCheck();
 
         // get signature input
-$signatureData = $request->input('signature');
-$repSignatureData = $request->input('rep_signature');
+        $signatureData = $request->input('signature');
+        $repSignatureData = $request->input('rep_signature');
+        $companySignatureData = $request->input('company_signature');
 
-$signatureParts = explode(',', $signatureData);
-$repSignatureParts = explode(',', $repSignatureData);
+        $signatureParts = explode(',', $signatureData);
+        $repSignatureParts = explode(',', $repSignatureData);
+        $companySignatureParts = explode(',', $companySignatureData);
 
-$signatureEncoded = $signatureParts[1]; // Extract the base64-encoded part
-$repSignatureEncoded = $repSignatureParts[1]; // Extract the base64-encoded part
+        $signatureEncoded = $signatureParts[1]; // Extract the base64-encoded part
+        $repSignatureEncoded = $repSignatureParts[1]; // Extract the base64-encoded part
+        $companySignatureEncoded = $companySignatureParts[1]; // extract the base64-encoded part
 
-$signatureBinary = base64_decode($signatureEncoded);
-$repSignatureBinary = base64_decode($repSignatureEncoded);
+        $signatureBinary = base64_decode($signatureEncoded);
+        $repSignatureBinary = base64_decode($repSignatureEncoded);
+        $companySignatureBinary = base64_decode($companySignatureEncoded);
 
-// Generate a unique filename for the signature file
-$signatureName = time() . '.png';
-$repSignatureName = time() . '_rep.png';
+        // Generate a unique filename for the signature file
+        $signatureName = time() . '.png';
+        $repSignatureName = time() . '_rep.png';
+        $companySignatureName = time() . '_company.png';
 
-// Save the signature file
-Storage::put('public/signature/' . $signatureName, $signatureBinary);
+        // Save the signature file
+        Storage::put('public/signature/' . $signatureName, $signatureBinary);
 
-// Save the repSignature file
-Storage::put('public/signature/' . $repSignatureName, $repSignatureBinary);
+        // Save the repSignature file
+        Storage::put('public/signature/' . $repSignatureName, $repSignatureBinary);
 
+        // save company contacted signature file
+        Storage::put('public/signature/' . $companySignatureName, $companySignatureBinary);
 
          $empRef->applicant_id = $userID;
          $empRef->company_contacted = $request->company_contacted;
@@ -140,9 +149,8 @@ Storage::put('public/signature/' . $repSignatureName, $repSignatureBinary);
          $empRef->name_of_company = $request->name_of_company;
          $empRef->signature = $signatureName;
          $empRef->rep_signature = $repSignatureName;
+         $empRef->company_signature = $companySignatureName;
          $empRef->rep_title = $request->rep_title;
-
-         
 
          EmployeeReferenceCheck::firstOrCreate(
             ['applicant_id' => $userID],
@@ -158,13 +166,12 @@ Storage::put('public/signature/' . $repSignatureName, $repSignatureBinary);
                 'name_of_company' => $request->name_of_company,
                 'signature' => $signatureName,
                 'rep_signature' => $repSignatureName,
+                'company_signature' => $companySignatureName,
                 'rep_title' => $request->rep_title
             ]
         );
-        
 
-         return redirect()->back()->with('success', 'Employee Reference Check Signed Successfully');
+        return redirect()->back()->with('success', 'Employee Reference Check Signed Successfully');
 
     }
-
 }

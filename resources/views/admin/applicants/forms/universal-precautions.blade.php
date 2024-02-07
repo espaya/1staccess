@@ -65,22 +65,25 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                       <p>Name: {{$profileData->full_name}} </p>
-                                    <h4 class="mb-sm-0 font-size-18">Universal Precautions Training Document</h4><br>
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                            <strong>1st Access Home Care Incorporated</strong>
+                                        </p>
+                                        <p style="text-align: center; font-size: 11;">
+                                            6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                        </p>
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                            <strong>Universal Precautions Training Document</strong>
+                                        </p>
+                                       <p>Name: {{$profileData->full_name}}   <span style="margin-left: 100px;">Date: {{Carbon\Carbon::parse($universal_precaution_data[0]['created_at'])->format('M d, Y')}}</span></p>
+                                    
 
-                            @if(!empty($nameData[0]['applicant_id']))
-                              <div class="col-md-6">
-                                 <p>Name: {{$nameData[0]['full_name']}}</p>
-                              </div>
-                              @endif
-                              @if(!empty($precautionsData[0]['applicant_id']))
-                              <div class="col-md-6">
-                                 <p>Date: {{Carbon\Carbon::parse($precautionsData[0]['created_at'])->format('M d, Y')}}</p>
-                              </div>
-                              @endif
+                            
+                                
+                              
 
                               <div>
-                              <h5 class="nk-block-title">➢	LESSON 1 - BLOOD BORNE INFECTION</h5>
+                              <p><strong>➢	LESSON 1 - BLOOD BORNE INFECTION</strong></p>
                               <p>Definition of Exposure. <br>
                                  Spread of HIV infection in the general population.<br>
                                  Symptoms and effects of HIV infection. <br>
@@ -90,46 +93,39 @@
                                  It is estimated that there are 1and ½ million HIV carriers in the US <br>
                                  There may be as many as one million carriers of HBV
                                  </p>
-                              </div> <br> 
-                              <div>
-                              <h5 class="nk-block-title">➢	LESSON 2 - TRANSMISSION OF BLOOD BORNE INFECTION</h5>
+                                 <p><strong>➢	LESSON 2 - TRANSMISSION OF BLOOD BORNE INFECTION</strong></p>
                               <p>Sources of blood borne infections in the workplace. <br>
                                  Four primary ways of getting blood borne infections outside the workplace. <br>
                                  Three primary ways of getting blood borne infections at work. <br>
                                  Risky jobs, tasks and work practices.
                               </p>
-                              </div> <br>
 
-                              <div>
-                              <h5 class="nk-block-title">➢	LESSON 3 - EXPOSURE CONTROL</h5>
+                              <p><strong>➢	LESSON 3 - EXPOSURE CONTROL</strong></p>
                               <p>The HBV vaccine for all workers who come into contact with blood or other potentially infectious body fluids on the job. <br>
                               The definition of Universal Precautions. <br>
                               The steps that should be taken after an exposure incident in order to prevent infection.<br>
                               My right in case of exposure and/or infection.<br>
                               I have the right to have HBV vaccinations provided to me free of charge if I am at risk for infection. If I refuse it at this time, I have the right to be vaccinated free of charge at any time in the future provided I am still at risk for infection.
                               </p>
-                              </div> <br>
 
-                              <div>
-                              <h5 class="nk-block-title">➢	LESSON 4 - USING PERSONAL PROTECTIVE EQUIPMENT</h5>
+                              <p><strong> ➢	LESSON 4 - USING PERSONAL PROTECTIVE EQUIPMENT</strong></p>
                               <p>Types of Personal Protective Equipment (PPE) required for different tasks or situations.<br>
                                  Key requirements for selecting, providing, using, and disposing of or cleaning PPE.<br>
                                  Limitations of personal protective equipment.
                               </p>
-                              </div> <br>
 
-                              <div>
-                              <h5 class="nk-block-title">➢	LESSON 5 - WORK PRACTICE CONTROLS</h5>
+                              <p><strong> ➢	LESSON 5 - WORK PRACTICE CONTROLS</strong></p>
                               <p>Disposing of used needles or other sharps. <br>
                                  Working with lab materials.<br>
                                  Decontaminating work areas, instruments, and equipment.<br>
                                  Identifying and handling regulated waste.<br>
                                  Hand washing and other personal hygiene and health practices.
                               </p>
-                              </div> <br>
-                              <div>
-                                 <p><strong>*I have received training covering all of the above topics and been informed of my rights accordingly.</strong></p>
-                              </div> <br>
+
+                              <p><strong>*I have received training covering all of the above topics and been informed of my rights accordingly.</strong></p>
+
+                              </div> 
+                              
      
                               <div class="row g-4">
                                        <div class="col-md-12">

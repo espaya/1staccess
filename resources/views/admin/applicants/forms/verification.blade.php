@@ -65,29 +65,46 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                    <h4 class="mb-sm-0 font-size-18">Verification of Professional License</h4><br>
-                                    <p>Employee Name: {{ ucfirst($profileData->full_name) }} </p>
-                                    <p>Date of Hire: {{ \Carbon\Carbon::parse($verification_data[0]['hire_date'])->format('M d, Y') }} </p>
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                            <strong>1st Access Home Care Incorporated</strong>
+                                        </p>
+                                        <p style="text-align: center; font-size: 11;">
+                                            6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                        </p>
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                            <strong>Verification of Professional License</strong>
+                                        </p><br>
+                                    <p style="text-align: center;">Employee Name: {{ ucfirst($profileData->full_name) }} <span style="margin-left: 100px;">Date of Hire: {{ \Carbon\Carbon::parse($verification_data[0]['hire_date'])->format('M d, Y') }} </span></p>
+                                    
                               
                               <div class="row g-4">
                                        <div class="col-md-12">
                                        <div class="form-group">
                                           <div class="form-control-wrap">
-                                             <p>
-                                                Check Off Discipline Needing Verification: {{implode(', ', explode(',', $verification_data[0]['disciplines']))}} <br><br>
+                                             <p style="text-align: center;">
+                                                <strong> Check Off Discipline Needing Verification: {{implode(', ', explode(',', $verification_data[0]['disciplines']))}}
+                                                </strong>
+                                             </p>
 
-                                                License Number: {{$verification_data[0]['licenseNumber']}} <br><br>
+                                             <p style="text-align:center;">
+                                                License Number: {{$verification_data[0]['licenseNumber']}} <span style="margin-left: 100px;">Expiration Date Of License: {{Carbon\Carbon::parse($verification_data[0]['expirationDate'])->format('M d, Y')}}</span>
+                                             </p>
 
-                                                Expiration Date Of License: {{Carbon\Carbon::parse($verification_data[0]['expirationDate'])->format('M d, Y')}} <br><br>
+                                             <p style="text-align:center;">
+                                                Date Verified: {{Carbon\Carbon::parse($verification_data[0]['dateVerified'])->format('M d, Y')}} 
+                                             </p>
 
-                                                Date Verified: {{Carbon\Carbon::parse($verification_data[0]['dateVerified'])->format('M d, Y')}} <br><br>
+                                             <p style="text-align:center;">
+                                                License Verified By: {{ucfirst($verification_data[0]['licenseVerifiedBy'])}}
+                                             </p>
 
-                                                License Verified By: {{ucfirst($verification_data[0]['licenseVerifiedBy'])}} <br><br>
+                                             <p style="text-align:center;">
+                                                Action Outstanding: {{$verification_data[0]['actionOutstanding']}}
+                                             </p>
 
-                                                Action Outstanding: {{$verification_data[0]['actionOutstanding']}} <br><br>
-
+                                             <p style="text-align:center;">
                                                 Comments: {{$verification_data[0]['comments']}}
-
                                              </p>
                                           </div>
                                        </div>

@@ -168,7 +168,7 @@
                                                     </td>
                                                     <td>
                                                         <h5 class="text-truncate font-size-14">
-                                                            <a href="{{ route('view-drug-testing-policy', ['applicant_id' => $applicant_id, 'id' => $drug_testing_policy[$index]->id]) }}" class="text-dark">Drug Testing Policy</a>
+                                                            <a href="{{ route('get-drug-testing-policy', ['applicant_id' => $applicant_id, 'id' => $drug_testing_policy[$index]->id]) }}" class="text-dark">Drug Testing Policy</a>
                                                         </h5>
                                                     </td>
                                                     <td>{{ \Carbon\Carbon::parse($drug_testing_policy[$index]->created_at)->format('M j, Y | g:iA') }}</td>
@@ -180,7 +180,7 @@
                                                                 <i class="mdi mdi-dots-horizontal font-size-18"></i>
                                                             </a>
                                                             <div class="dropdown-menu dropdown-menu-end">
-                                                                <a class="dropdown-item" href="{{ route('view-drug-testing-policy', ['applicant_id' => $applicant_id, 'id' => $drug_testing_policy[$index]->id]) }}">View</a>
+                                                                <a class="dropdown-item" href="{{ route('get-drug-testing-policy', ['applicant_id' => $applicant_id, 'id' => $drug_testing_policy[$index]->id]) }}">View</a>
                                                                 <a class="dropdown-item" href="#">Append Signature</a>
                                                                 <a class="dropdown-item" href="#">Download PDF</a>
                                                             </div>

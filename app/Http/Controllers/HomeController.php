@@ -421,16 +421,36 @@ class HomeController extends Controller
             ]
         );
 
-        PremanentAddress::firstOrCreate(
-            ['applicant_id' => $userID], 
-            [
-                'permanent_address' => $request->permanent_address,
-                'permanent_city' => $request->permanent_city,
-                'permanent_state' => $request->permanent_state,
-                'permanent_zip' => $request->permanent_zip,
-                'applicant_id' => $userID
-            ]
-        );
+
+        // check if present address is same as permanent address
+        if($request->input('present_permanent_address') == 'No')
+        {
+            PremanentAddress::firstOrCreate(
+                ['applicant_id' => $userID], 
+                [
+                    'permanent_address' => $request->permanent_address,
+                    'permanent_city' => $request->permanent_city,
+                    'permanent_state' => $request->permanent_state,
+                    'permanent_zip' => $request->permanent_zip,
+                    'applicant_id' => $userID
+                ]
+            );
+        }
+        else
+        {
+            PremanentAddress::firstOrCreate(
+                ['applicant_id' => $userID], 
+                [
+                    'permanent_address' => $request->present_address,
+                    'permanent_city' => $request->present_city,
+                    'permanent_state' => $request->present_state,
+                    'permanent_zip' => $request->present_zip,
+                    'applicant_id' => $userID
+                ]
+            );
+        }
+
+        
 
         PresentAdrress::firstOrCreate(
             ['applicant_id' => $userID], 

@@ -72,12 +72,20 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                    <h4 class="mb-sm-0 font-size-18">Employee Notification of Policy: Smoking in The Workplace</h4><br>
-                                    <p>Name of Employee: {{ ucfirst($profileData->full_name) }} </p>
-                                    <p>Hire Date: {{\Carbon\Carbon::parse($smoking_in_the_workplace_data[0]['hire_date'])->format('M d, Y')}} </p>
-                                    <p>Title: </p>
-                                    <p>Department: </p>
-
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                            <strong>1st Access Home Care Incorporated</strong>
+                                        </p>
+                                        <p style="text-align: center; font-size: 11;">
+                                            6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                        </p>
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                            <strong>Employee Notification of Policy: Smoking in The Workplace</strong>
+                                        </p><br>
+                                    <p>Name of Employee: {{ ucfirst($profileData->full_name) }} <span style="margin-left: 100px;">Hire Date: {{\Carbon\Carbon::parse($smoking_in_the_workplace_data[0]['hire_date'])->format('M d, Y')}} </span></p>
+                                    
+                                    <p>Title: <span>Department: </span></p>
+                                    
                                     <p>It is the policy of the Agency that smoking will not be allowed in areas where that can be observed by clients or the public. The employee may smoke in approved areas, if any.</p>
                                     <p>To support the policy of not allowing smoking in other than designated smoking areas, the Agency has posted “No Smoking” and “Smoking” signs in the appropriate areas, if any
                                     Each sign posted in an area where smoking is prohibited carries the internationally recognized symbol for no smoking - a red circle containing a lit cigarette with a line drawn diagonally through the circle. Please observe these signs at all times.
@@ -90,14 +98,14 @@
                                             <div class="row d-flex align-items-center justify-content-center">
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
-                                                        <label class="form-label">Signature</label> <br>
+                                                        <p>Signature</p> <br>
                                                         <img width="250"  src="{{ asset('storage/signature/' . $smoking_in_the_workplace_data[0]['signature']) }}">
                                                     </div>
                                                 </div>
                                                 
                                                 <div class="col-md-6">
                                                     <div class="mb-3">
-                                                        <label class="form-label">Date Signed</label>
+                                                        <p>Date Signed</p>
                                                         <p>{{ \Carbon\Carbon::parse($smoking_in_the_workplace_data[0]['created_at'])->format('M d, Y')}}</p>
                                                     </div>
                                                 </div>

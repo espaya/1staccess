@@ -69,81 +69,39 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                    <h4 class="mb-sm-0 font-size-18">Employee Reference Check</h4><br>
-                                    <br>
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                            <strong>1st Access Home Care Incorporated</strong>
+                                        </p>
+                                        <p style="text-align: center; font-size: 11;">
+                                            6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                        </p>
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                            <strong>Employee Reference Check</strong>
+                                        </p>
+                                    
                                     <div class="row g-4">
                                           <div class="col-md-12">
-                                             <div class="form-group">
-                                                <div class="form-control-wrap">
-                                                   <p><span class="form-label">Employee Name: {{ ucfirst($profileData->full_name) }} </span></p>
-                                             </div>
-                                             </div>
-                                          </div>
-                                          <div class="col-md-12">
-                                             <div class="form-group">
-                                                <div class="form-control-wrap">
-                                                <p>
-                                                <span class="form-label">Company Contacted: </span>{{ucfirst($employee_reference_check_data[0]['company_contacted'])}}</p>
-                                             </div>
-                                             </div>
-                                          </div>
-                                          <div class="col-md-12">
-                                             <div class="form-group">
-                                                <p>Mr./Mrs. <span style="text-decoration: underline;">{{ucfirst($employee_reference_check_data[0]['employer_name'])}}</span> is checking employment with our company. It is our policy to ask for references prior to employment. Please complete this form for our records and sign below. We would greatly appreciate your assistance.</p>
-                                             </div>
+                                             <p><strong>1st Access Home Care has my authorization to check my references.</strong></p>
+                                             <p><span class="form-label">Employee Name: {{ ucfirst($profileData->full_name) }} </span></p>
+                                             <p>
+                                                <span class="form-label">Company Contacted: </span>{{ucfirst($employee_reference_check_data[0]['company_contacted'])}}
+                                             </p>
+                                             <p>Mr./Mrs. <span style="text-decoration: underline;">{{ucfirst($employee_reference_check_data[0]['employer_name'])}}</span> is checking employment with our company. It is our policy to ask for references prior to employment. Please complete this form for our records and sign below. We would greatly appreciate your assistance.</p>
+                                             <p><strong>Please Verify Employment Dates:</strong></p>
+                                             <p>
+                                                From: {{Carbon\Carbon::parse($employee_reference_check_data[0]['from_date'])->format('M d, Y')}}
+                                                <span style="margin-left: 100px;">To: {{Carbon\Carbon::parse($employee_reference_check_data[0]['to_date'])->format('M d, Y')}}</span>
+                                             </p>
+                                             <p>
+                                                <span class="form-label">Eligible For Hire?: </span>{{ucfirst($employee_reference_check_data[0]['eligible_for_hire'])}}</p>
+                                                <p>Comments: {{ucfirst($employee_reference_check_data[0]['comments'])}}</p>
+                                             <p>
+                                                <span class="form-label">Information Was Received By: </span>{{ucfirst($employee_reference_check_data[0]['received_by'])}}</p>
+                                             <p>Name of Company: {{ucfirst($employee_reference_check_data[0]['name_of_company'])}}</p>
+                                             <p>(IF FAXED) Company Contact Signature</p>
                                           </div>
                                           
-                                          <div class="col-md-12">
-                                             <div class="form-group">
-                                             <h5>Please Verify Employment Dates</h5>
-                                             </div>
-                                          </div>
-                                          <div class="col-md-4">
-                                             <div class="form-group">
-                                                <div class="form-control-wrap">
-                                                <p><span class="form-label">From: </span>{{Carbon\Carbon::parse($employee_reference_check_data[0]['from_date'])->format('M d, Y')}}</p>
-                                             </div>
-                                             </div>
-                                          </div>
-                                          <div class="col-md-12">
-                                             <div class="form-group">
-                                                <div class="form-control-wrap">
-                                                <p><span class="form-label">To: </span>{{Carbon\Carbon::parse($employee_reference_check_data[0]['to_date'])->format('M d, Y')}}</p>
-                                             </div>
-                                             </div>
-                                          </div>
-                                          <div class="col-md-12">
-                                             <div class="form-group">
-                                                <div class="form-control-wrap">
-                                                <p>
-                                                <span class="form-label">Eligible For Hire?: </span>{{ucfirst($employee_reference_check_data[0]['eligible_for_hire'])}}</p>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <div class="col-md-12">
-                                             <div class="form-group">
-                                                <label for="inputZip" class="form-label">Comments</label>
-                                                <div class="form-control-wrap">
-                                                <p>{{ucfirst($employee_reference_check_data[0]['comments'])}}</p>
-                                             </div>
-                                             </div>
-                                          </div>
-                                          <div class="col-md-12">
-                                             <div class="form-group">
-                                                <div class="form-control-wrap">
-                                                <p>
-                                                <span class="form-label">Information Was Received By: </span>{{ucfirst($employee_reference_check_data[0]['received_by'])}}</p>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          <div class="col-md-12">
-                                             <div class="form-group">
-                                                <div class="form-control-wrap">
-                                                <p><span class="form-label">Name of Company: </span>{{ucfirst($employee_reference_check_data[0]['name_of_company'])}}</p>
-                                             </div>
-                                             </div>
-                                          </div>
-                                          <hr>
                                           <div class="col-md-12">
                                              <div class="form-group">
                                                 <label for="inputPassword4" class="form-label">Employee Signature</label>

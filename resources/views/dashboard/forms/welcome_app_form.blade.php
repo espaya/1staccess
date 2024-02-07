@@ -1,7 +1,8 @@
-<div class="container">
+<div class="container-fluid">
    <div  style="margin-bottom: 50px !important; margin-top:50px" class="row">
       <div class="col-md-2"></div>
-      <div class=" col-md-8">
+      <div class=" col-xl-8">
+
          <form id="myForm" action="{{route('dashboard')}}" onsubmit="submitForm();" method="post" enctype="multipart/form-data" class="row g-4">
             @csrf
             <div class="col-md-12">
@@ -250,7 +251,7 @@
 
             <hr style="margin-top: 70px; margin-bottom: 30px;">
             <div class="col-md-6">
-               <div class="form-group">
+               <div class="mb-3">
                   <label for="inputEmail4" class="form-label">Phone</label>
                   <div class="form-control-wrap">
                      <input name="phone" value="{{old('phone')}}" type="text" class="form-control @error('phone') is-invalid @enderror" id="inputEmail4">
@@ -258,7 +259,7 @@
                </div>
             </div>
             <div class="col-md-6">
-               <div class="form-group">
+               <div class="mb-3">
                   <label for="inputState" class="form-label">If you are under 18 can you furnish a work? </label>
                   <div class="form-control-wrap">
                      <select name="furnish_work" id="inputState" class="form-select @error('furnish_work') is-invalid @enderror">
@@ -771,7 +772,7 @@
             </div>
             <hr style="margin-top: 70px; margin-bottom: 30px;">
             <h4>Past Employment Information</h4>
-            <div class="col-3">
+            <div class="col-md-3">
                <div class="form-group">
                   <label for="inputAddress2" class="form-label">From</label>
                   <div class="form-control-wrap">
@@ -828,7 +829,7 @@
                </div>
             </div>
             <hr>
-            <div class="col-3">
+            <div class="col-md-3">
                <div class="form-group">
                   <label for="inputAddress2" class="form-label">From</label>
                   <div class="form-control-wrap">
@@ -885,7 +886,7 @@
                </div>
             </div>
             <hr>
-            <div class="col-3">
+            <div class="col-md-3">
                <div class="form-group">
                   <label for="inputAddress2" class="form-label">From</label>
                   <div class="form-control-wrap">
@@ -942,7 +943,7 @@
                </div>
             </div>
             <hr style="margin-top: 70px; margin-bottom: 30px;">
-            <div class="col-12">
+            <div class="col-md-12">
                <h4>References</h4>
                <p>Give the name of three persons not related to you to whom you have known at least 1year</p>
             </div>
@@ -1279,6 +1280,8 @@
                <button id="submit" name="submit" type="submit" class="btn btn-primary">Submit & Continue</button>
             </div>
          </form>
+
+
       </div>
    </div>
 </div>

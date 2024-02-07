@@ -64,46 +64,46 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
+                                    
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                    <strong>1st Access Home Care Incorporated</strong>
+                                    </p>
+                                    <p style="text-align: center; font-size: 11;">
+                                        6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                    </p>
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                        <strong>Confidentiality of Information Agreement</strong>
+                                    </p><br>
+                                        <br>
                                         <div>
                                             <p>Employee Name: <u>{{ ucfirst($profileData->full_name) }}</u></p>
-                                        <h4 class="mb-sm-0 font-size-18">Confidentiality of Information Agreement</h4><br>
-                                        <ul>
-                                        <li>All information designated confidential that is obtained or generated as a result of any or all of the operations of the Agency will be dealt with in a confidential manner.</li>
+                                            <p><strong>Confidentiality of Information Agreement</strong></p>
+                                            <ul>
+                                                <li>All information designated confidential that is obtained or generated as a result of any or all of the operations of the Agency will be dealt with in a confidential manner.</li>
 
-                                        <li>All information that is gathered, maintained or stored by the Agency becomes the Agency’s property and cannot be released without proper authorization from the administration.</li>
+                                                <li>All information that is gathered, maintained or stored by the Agency becomes the Agency’s property and cannot be released without proper authorization from the administration.</li>
 
-                                        <li>Altering information is prohibited by the Agency and by law. Correction of any identified erroneous information must be done according to Agency policy</li>
+                                                <li>Altering information is prohibited by the Agency and by law. Correction of any identified erroneous information must be done according to Agency policy</li>
 
-                                    </ul> <br>
+                                            </ul>
 
-                                    <h5 class="nk-block-title">What we can do to maintain the confidentiality of Information</h5>
-                                    <ul>
-                                        <li>In order to protect any individual from invasion of privacy and to protect the interest of the Agency, any information gathered for client care or operations will be gathered, maintained and stored in such a manner as to ensure confidentiality.</li>
+                                            <p><strong>What we can do to maintain the confidentiality of Information</strong></p>
+                                            <ul>
+                                                <li>In order to protect any individual from invasion of privacy and to protect the interest of the Agency, any information gathered for client care or operations will be gathered, maintained and stored in such a manner as to ensure confidentiality.</li>
 
-                                        <li>Access to information will be limited to a need to know basis to perform the scope of one’s duties and responsibilities.</li>
+                                                <li>Access to information will be limited to a need to know basis to perform the scope of one’s duties and responsibilities.</li>
 
-                                        <li>Dissemination of information will be handled according to Agency policy, and staff will be informed during orientation, will sign the confidentiality statement and it will be placed in the employee’s file</li>
-                                    </ul>
-                                    <br>
-                                    <p><strong>I understand that I am responsible for following this Confidentiality Policy Agreement & The Guidelines, both written and verbal</strong></p>
-                                        <br>
+                                                <li>Dissemination of information will be handled according to Agency policy, and staff will be informed during orientation, will sign the confidentiality statement and it will be placed in the employee’s file</li>
+                                            </ul>
+                                    
+                                            <p><strong>I understand that I am responsible for following this Confidentiality Policy Agreement & The Guidelines, both written and verbal</strong></p>
+                                        
                                         @if(!empty($confidentialityData[0]['applicant_id']))
-                                            <div class="row d-flex align-items-center justify-content-center">
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Signature</label> <br>
-                                                        <img width="250"  src="{{asset('storage/signature/' . $confidentialityData[0]['signature'])}}">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Date Signed: {{ \Carbon\Carbon::parse($confidentialityData[0]['created_at'])->format('M d, Y')}}</label>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                            </div>
+                                        <p>Employee Signature</p>
+                                        <img width="250"  src="{{asset('storage/signature/' . $confidentialityData[0]['signature'])}}">
+                                        <p>Date: {{ \Carbon\Carbon::parse($confidentialityData[0]['created_at'])->format('M d, Y')}}</p>
+                                            
                                         @else
                                         <form action="{{route('confidentiality-of-information')}}" method="post" enctype="multipart/form-data" onsubmit="submitForm();">
                                         @csrf

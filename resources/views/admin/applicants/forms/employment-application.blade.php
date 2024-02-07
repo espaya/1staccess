@@ -63,6 +63,7 @@
                             <div class="col-xl-8">
                                 <div style="padding: 20px;" class="card">
                                     <div class="card-body">
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
                                     <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
                                     <strong>1st Access Home Care Incorporated</strong>
                                     </p>
@@ -70,7 +71,8 @@
                                         6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
                                     </p>
                                     <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
-                                        <strong>Application For Employment</strong></p><br>
+                                        <strong>Application For Employment</strong>
+                                    </p><br>
                                         <br>
                                         <div class="row">
                                                 <div class="col-md-12">
@@ -81,496 +83,222 @@
                                                             <span style="margin-left: 100px;">Email Address: <u>{{$user->email}}</u></span>
                                                         </p>
 
-                                                        <p>Name: <u>{{$profileData->full_name}}</u></p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                        <p>Name: <u>{{$profileData->full_name}}</u>
+                                                            <span style="margin-left: 100px;">Social Security #: 
+                                                                <u>{{ $employment_data[0]['SSN'] }}</u>
 
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Name: {{$profileData->full_name}}</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">
-                                                            Social Security #: {{ $employment_data[0]['SSN'] }}</label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                            </span>
+                                                        </p>
 
-                                            <div class="mb-3">
-                                                <label for="formrow-firstname-input" class="form-label">Present Address: {{ $employment_data[0]['present_address'] .' ' . $employment_data[0]['present_city'] .' ' . $employment_data[0]['present_state'] . ' ' . $employment_data[0]['present_zip'] }}</label>
-                                            </div>
+                                                        <P>Present Address: <u>{{ $employment_data[0]['present_address'] .' ' . $employment_data[0]['present_city'] .' ' . $employment_data[0]['present_state'] . ' ' . $employment_data[0]['present_zip'] }}</u>
+                                                        </P>
 
+                                                        <p>Permanent Address: <u>{{ $employment_data[0]['permanent_address'] .' ' . $employment_data[0]['permanent_city'] .' ' . $employment_data[0]['permanent_state'] . ' ' . $employment_data[0]['permanent_zip'] }}</u>
+                                                        </p>
 
-                                        <div class="mb-3">
-                                            <label for="formrow-firstname-input" class="form-label">Permanent Address: {{ $employment_data[0]['permanent_address'] .' ' . $employment_data[0]['permanent_city'] .' ' . $employment_data[0]['permanent_state'] . ' ' . $employment_data[0]['permanent_zip'] }}</label>
-                                        </div>
+                                                        <p>Phone Number: <u>{{$profileData->phone}}</u>
+                                                            <span style="margin-left: 100px;">If you are under 18 can you furnish a permit? 
+                                                            <u>{{ $employment_data[0]['furnish_work'] }}</u>
+                                                            </span>
+                                                        </p>
 
+                                                        <p>Employment Desired: <u>{{ $employment_data[0]['employment_desired'] }}</u></p>
+                                                       
+                                                        <p>Position: <u>{{ $employment_data[0]['position'] }}</u>
+                                                            <span  style="margin-left: 70px;">Date You Can Start: <u>{{ \Carbon\Carbon::parse($employment_data[0]['date_start'])->format('M d, Y') }}</u>
+                                                            </span>
+                                                            <span style="margin-left: 70px;">Salary: <u>${{ number_format($employment_data[0]['salary'], 2) }}</u></span>
+                                                        </p>
 
-                                        <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Phone Number: {{$profileData->phone}}</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">If you are under 18 can you furnish a permit? {{ $employment_data[0]['furnish_work'] }}</label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                        <p>
+                                                            Are you employed now? <u>{{ $employment_data[0]['employed_now']}}</u>
+                                                            <span style="margin-left: 100px;">If so, may we inqure your present employer? 
+                                                            <u>{{$employment_data[0]['inqure_present_employer']}}</u> </span>
+                                                         </p>
 
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Employment Desired: {{ $employment_data[0]['employment_desired'] }}</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">
-                                                            Position: {{ $employment_data[0]['position'] }}</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">
-                                                            Date You Can Start: {{ \Carbon\Carbon::parse($employment_data[0]['date_start'])->format('M d, Y') }}</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">
-                                                            Salary: ${{ number_format($employment_data[0]['salary'], 2) }}</label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                        <p>Ever Applied For This Company Before: 
+                                                            <u>{{ $employment_data[0]['applied_before'] }}</u>
+                                                            @if($employment_data[0]['applied_before'] == 'Yes')
+                                                            <span style="margin-left: 50px;">Where: <u>{{ $employment_data[0]['where'] }}</u>
+                                                            </span>
+                                                            <span style="margin-left: 50px;">When: <u>{{ \Carbon\Carbon::parse($employment_data[0]['when'])->format('M d, Y') }}</u>
+                                                            </span>
+                                                            @endif
+                                                        </p>
 
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Ever Applied For This Company Before: {{ $employment_data[0]['applied_before'] }}</label>
-                                                    </div>
-                                                </div>
-                                                @if($employment_data[0]['applied_before'] == 'Yes')
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Where: {{ $employment_data[0]['where'] }}</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">When: {{ \Carbon\Carbon::parse($employment_data[0]['when'])->format('M d, Y') }}</label>
-                                                    </div>
-                                                </div>
-                                                @endif
-                                            </div>
+                                                        <p>Are You On Layoff And Subject To Recall: <u>{{ $employment_data[0]['on_layoff_subject_to_recall'] }}</u></p>
 
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Are You On Layoff And Subject To Recall: {{ $employment_data[0]['on_layoff_subject_to_recall'] }}</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Will You Travel If Required: {{ $employment_data[0]['travel_if_required'] }}</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Will You Relocate If Required?: {{ $employment_data[0]['relocate_if_required'] }}</label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                        <p>Will You Travel If Required: <u>{{ $employment_data[0]['travel_if_required'] }}</u>
+                                                        </p>
 
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Will You Work Overtime If Required?: {{ $employment_data[0]['overtime_if_required'] }}</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Are you able to meet the attendance requirements of this position?: {{ $employment_data[0]['attendance_requirements_position'] }}</label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                        <p>Will You Work Overtime If Required?: <u>{{ $employment_data[0]['overtime_if_required'] }}</u></p>
 
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Have You Ever Been Bonded?: {{ $employment_data[0]['bonded'] }}</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Have you ever been convicted of a felony in the past 7years?: {{ $employment_data[0]['convicted'] }}</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            @if($employment_data[0]['convicted'] == 'Yes')
-                                            <div class="mb-3">
-                                                <label for="formrow-firstname-input" class="form-label">Such conviction may be relevant if job related, but does not bar you from employment. If yes - explain: {{ $employment_data[0]['explain_convicted'] }}</label>
-                                            </div>
-                                            @endif
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Driver's License Number:
-                                                         {{ $employment_data[0]['drivers_license'] }}</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">State: {{ $employment_data[0]['drivers_license_state'] }}</label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                        <p>
+                                                        Are you able to meet the attendance requirements of this position?: 
+                                                        <u>{{ $employment_data[0]['attendance_requirements_position'] }}</u>
+                                                        </p>
 
-                                            <hr>
-                                            <h4 class="mb-sm-0 font-size-18">Academic / Education</h4>
-                                            <p><strong>(Currently Attending)</strong></p>
-                                            <div class="mb-3">
-                                                <label for="formrow-firstname-input" class="form-label">Name And Location Of School: {{ $employment_data[0]['edu_current_name_location_school'] }}</label>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Number Of Years Completed: {{ $employment_data[0]['edu_current_number_years']}} year(s)</label>
+                                                        <p>Have You Ever Been Bonded?: <u>{{ $employment_data[0]['bonded'] }}</u></p>
+
+                                                        <p>Have you ever been convicted of a felony in the past 7years?: 
+                                                            <u>{{ $employment_data[0]['convicted'] }}</u>
+                                                        </p>
+
+                                                        @if($employment_data[0]['convicted'] == 'Yes')
+                                                        <p>Such conviction may be relevant if job related, but does not bar you from employment. If yes - explain: <u>{{ $employment_data[0]['explain_convicted'] }}</u>
+                                                        </p>
+                                                        @endif
+
+                                                        <p>Driver's License Number: <u>{{ $employment_data[0]['drivers_license'] }}</u>
+                                                        <span style="margin-left: 100px;">State: <u>{{ $employment_data[0]['drivers_license_state'] }}</u></span>
+                                                        </p>
+
+                                                        <h4 class="mb-sm-0 font-size-18">Academic / Education</h4>
+                                                        <p>Name And Location Of School: <u>{{ $employment_data[0]['edu_current_name_location_school'] }}</u></p>
+                                                        
+                                                        <p>Number Of Years Completed: <u>{{ $employment_data[0]['edu_current_number_years']}} year(s)</u>
+                                                        </p>
+
+                                                        <p>Did You Graduate?: <u>{{ $employment_data[0]['edu_current_did_graduate']}}</u></p>
+
+                                                        <p>Subjects Studied?: <u>{{ $employment_data[0]['edu_current_subjects_studied'] }}</u>
+                                                        </p>
+
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Did You Graduate?: {{ $employment_data[0]['edu_current_did_graduate']}}</label>
-                                                    </div>
-                                                </div>
                                             </div>
-                                            <div class="mb-3">
-                                                <label for="formrow-firstname-input" class="form-label">Subjects Studied?: {{ $employment_data[0]['edu_current_subjects_studied'] }}</label>
-                                            </div>
-                                            <hr>
                                             <p><strong>(Last Completed)</strong></p>
-                                            <div class="mb-3">
-                                                <label for="formrow-firstname-input" class="form-label">Name And Location Of School: {{$employment_data[0]['edu_last_name_location_school']}}</label>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Number Of Years Completed: {{$employment_data[0]['edu_last_number_years']}} year(s)</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Did You Graduate?: {{$employment_data[0]['edu_last_did_graduate']}} </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="formrow-firstname-input" class="form-label">
-                                                    Subjects Studied?: {{$employment_data[0]['edu_last_subjects_studied']}}</label>
-                                            </div>
+                                            <p>Name And Location Of School: <u>{{$employment_data[0]['edu_last_name_location_school']}}</u></p>
 
-                                            <hr>
+                                            <p>Number Of Years Completed: <u>{{$employment_data[0]['edu_last_number_years']}}</u>
+                                                <span>Did You Graduate?: {{$employment_data[0]['edu_last_did_graduate']}}</span>
+                                            </p>
+
+                                            <p>Subjects Studied?: {{$employment_data[0]['edu_last_subjects_studied']}}</p>
+
                                             <h4 class="mb-sm-0 font-size-18">Trades of Business / Education</h4>
+
                                             <p><strong>(Currently Attending)</strong></p>
-                                            <div class="mb-3">
-                                                <label for="formrow-firstname-input" class="form-label"> Name And Location Of School: {{$employment_data[0]['trades_current_name_location_school']}} </label>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Number Of Years Completed: {{$employment_data[0]['trades_current_number_years']}} year(s)</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Did You Graduate?: {{$employment_data[0]['trades_current_did_graduate']}} </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="formrow-firstname-input" class="form-label">Subjects Studied?: {{ $employment_data[0]['trades_current_subjects_studied'] }}</label>
-                                            </div>
-                                            <hr>
-                                            <p><strong>(Last Completed)</strong></p><br>
-                                            <div class="mb-3">
-                                                <label for="formrow-email-input" class="form-label">Name And Location Of School: {{$employment_data[0]['trades_last_current_name_location_school']}} </label>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Number Of Years Completed: {{$employment_data[0]['trades_last_current_number_years']}} Year(s)</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Did You Graduate?: {{ $employment_data[0]['trades_last_current_did_graduate']}} </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="formrow-firstname-input" class="form-label">Subjects Studied?: {{$employment_data[0]['trades_last_subjects_studied']}} </label>
-                                            </div>
+                                            
+                                            <p>Name And Location Of School: 
+                                                <u>{{$employment_data[0]['trades_current_name_location_school']}}
+                                            </u>
+                                            </p>
 
-                                            <div class="mb-3">
-                                                <label for="formrow-firstname-input" class="form-label">Summarize special skills and qualifications required from employment or other experiences that may qualify you to work with this company: {{$employment_data[0]['special_skills_qualifications']}} </label>
-                                            </div>
+                                            <p>Number Of Years Completed: 
+                                                <u>{{$employment_data[0]['trades_current_number_years']}} </u>
+                                            </p>
 
+                                            <p>Did You Graduate?: <u>{{$employment_data[0]['trades_current_did_graduate']}}</u> </p>
+
+                                            <p>Subjects Studied?: <u>{{ $employment_data[0]['trades_current_subjects_studied'] }}</u></p>
+
+                                            <p><strong>(Last Completed)</strong></p>
+                                            <p>Name And Location Of School: <u>{{$employment_data[0]['trades_last_current_name_location_school']}}</u></p>
+
+                                            <p>Number Of Years Completed: <u>{{$employment_data[0]['trades_last_current_number_years']}}</u>
+                                                <span>Did You Graduate?: <u>{{ $employment_data[0]['trades_last_current_did_graduate']}}</u>
+                                                </span>
+                                            </p>
+
+                                            <p>Subjects Studied?: <u>{{$employment_data[0]['trades_last_subjects_studied']}}</u></p>
+
+                                            <p>Summarize special skills and qualifications required from employment or other experiences that may qualify you to work with this company: <u>{{$employment_data[0]['special_skills_qualifications']}}</u></p>
 
                                             <hr>
                                             <h6 class="mb-sm-0 font-size-16">Previous Employeer</h6>
                                             <p>#1</p>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">From: {{\Carbon\Carbon::parse($employment_data[0]['from_date_1'])->format('M d, Y')}}
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">To: {{\Carbon\Carbon::parse($employment_data[0]['to_date_1'])->format('M d, Y')}} </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="formrow-password-input" class="form-label">Name and Address of Employer: {{$employment_data[0]['name_address_employer_1']}} </label>
-                                            </div>
-                                            
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Phone: {{$employment_data[0]['phone_number_1']}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Salary: ${{number_format($employment_data[0]['salary_1'], 2)}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Job: {{$employment_data[0]['job_1']}} </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="formrow-password-input" class="form-label">Reason(s) For Leaving: {{$employment_data[0]['reason_leaving_1']}} </label>
-                                            </div>
+                                            <p>From: <u>{{\Carbon\Carbon::parse($employment_data[0]['from_date_1'])->format('M d, Y')}}</u>
+                                            <span style="margin-left: 100;">To: {{\Carbon\Carbon::parse($employment_data[0]['to_date_1'])->format('M d, Y')}} </span>
+                                            </p>Name and Address of Employer: <u>{{$employment_data[0]['name_address_employer_1']}}</u>
+                                            <p>
+                                            <p>Phone: <u>{{$employment_data[0]['phone_number_1']}}</u>
+                                                <span style="margin-left: 70px;">Salary: <u>${{number_format($employment_data[0]['salary_1'], 2)}}</u></span>
+                                                <span style="margin-left: 70px;">Job: {{$employment_data[0]['job_1']}} </span>
+                                            </p>
 
+                                            <p>Reason(s) For Leaving: <u>{{$employment_data[0]['reason_leaving_1']}}</u></p>
+                                            
                                         @if(!empty($employment_data[0]['from_date_2']))
                                             <p>#2</p>
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">From: {{ \Carbon\Carbon::parse($employment_data[0]['from_date_2'])->format('M d, Y')}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">To: {{\Carbon\Carbon::parse($employment_data[0]['to_date_2'])->format('M d, Y')}} </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="formrow-password-input" class="form-label">Name And Address Of Employer: {{$employment_data[0]['name_address_employer_2']}} </label>
-                                            </div>
-                                            
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Phone: {{$employment_data[0]['phone_number_2']}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Salary: ${{number_format($employment_data[0]['salary_2'], 2)}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Job: {{$employment_data[0]['job_2']}} </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="formrow-password-input" class="form-label">Reason(s) For Leaving: {{ $employment_data[0]['reason_leaving_2'] }} </label>
-                                            </div>
+                                            <p>From: {{ \Carbon\Carbon::parse($employment_data[0]['from_date_2'])->format('M d, Y')}} 
+                                                <span style="margin-left: 100px;">To: {{\Carbon\Carbon::parse($employment_data[0]['to_date_2'])->format('M d, Y')}} </span></p>
+                                            <p>Name And Address Of Employer: <u>{{$employment_data[0]['name_address_employer_2']}}</u></p>
+
+                                            <p>Phone: <u>{{$employment_data[0]['phone_number_2']}}</u> 
+                                                <span style="margin-left: 70px;">Salary: <u>${{number_format($employment_data[0]['salary_2'], 2)}}</u></span>
+                                                <span style="margin-left: 70px;">Job: <u>{{$employment_data[0]['job_2']}}</u> </span> 
+                                            </p>
+
+                                            <p>Reason(s) For Leaving: {{ $employment_data[0]['reason_leaving_2'] }}</p>
                                         @endif
+
                                         @if(!empty($employment_data[0]['from_date_3']))
                                             <p>#3</p>
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">From: {{\Carbon\Carbon::parse($employment_data[0]['from_date_3'])->format('M d, Y')}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">To: {{\Carbon\Carbon::parse($employment_data[0]['to_date_3'])->format('M d, Y')}} </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="formrow-password-input" class="form-label">Name And Address Of Employer: {{$employment_data[0]['name_address_employer_3']}} </label>
-                                            </div>
-                                            
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Phone: {{$employment_data[0]['phone_number_3']}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Salary: ${{number_format($employment_data[0]['salary_3'], 2)}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Job: {{$employment_data[0]['job_3']}} </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="formrow-password-input" class="form-label">Reason(s) For Leaving: {{$employment_data[0]['reason_leaving_3']}} </label>
-                                            </div>
+                                            <p>From: <u>{{\Carbon\Carbon::parse($employment_data[0]['from_date_3'])->format('M d, Y')}}</u>
+                                            <span style="margin-left: 100px;">To: 
+                                                <u>{{\Carbon\Carbon::parse($employment_data[0]['to_date_3'])->format('M d, Y')}}</u>
+                                            </span>
+                                            </p>
+                                            <p>Name And Address Of Employer: <u>{{$employment_data[0]['name_address_employer_3']}}</u></p>
+                                            <p>Phone: {{$employment_data[0]['phone_number_3']}}
+                                                <span style="margin-left: 70px;">Salary: ${{number_format($employment_data[0]['salary_3'], 2)}}</span> 
+                                                <span style="margin-left: 70px;">Job: {{$employment_data[0]['job_3']}}</span> 
+                                            </p>
+                                            <p>Reason(s) For Leaving: {{$employment_data[0]['reason_leaving_3']}}</p>
+
                                         @endif
 
                                             <h4 class="mb-sm-0 font-size-18">References</h4>
                                             <p>Give the name of three persons not related to you to whom you have known at least 1year</p>
                                             <p>#1</p>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Name: {{$employment_data[0]['reference_name_1']}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Address: {{$employment_data[0]['reference_address_1']}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Phone: {{$employment_data[0]['reference_phone_1']}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Years Acquainted: {{$employment_data[0]['reference_years_acquainted_1']}} </label>
-                                                    </div>
-                                                </div>
-                                            </div>
 
+                                            <p>Name: <u>{{$employment_data[0]['reference_name_1']}}</u></p>
+
+                                            <p>Address: <u>{{$employment_data[0]['reference_address_1']}}</u></p>
+
+                                            <p>Phone: <u>{{$employment_data[0]['reference_phone_1']}}</u> 
+                                                <span>Years Acquainted: <u>{{$employment_data[0]['reference_years_acquainted_1']}}</u> </span> 
+                                            </p>
 
                                             <p>#2</p>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Name: {{$employment_data[0]['reference_name_2']}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Address: {{$employment_data[0]['reference_address_2']}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Phone: {{$employment_data[0]['reference_phone_2']}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Years Acquainted: {{$employment_data[0]['reference_years_acquainted_2']}} </label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <p>Name: <u>{{$employment_data[0]['reference_name_2']}}</u></p>
+
+                                            <p>Address: <u>{{$employment_data[0]['reference_address_2']}}</u></p>
+
+                                            <p>Phone: <u>{{$employment_data[0]['reference_phone_2']}}</u> 
+                                                <span>Years Acquainted: {{$employment_data[0]['reference_years_acquainted_2']}}</span> 
+                                            </p>
 
                                             <p>#3</p>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Name: {{$employment_data[0]['reference_name_3']}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Address: {{$employment_data[0]['reference_address_3']}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Phone: {{$employment_data[0]['reference_phone_3']}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Years Acquainted: {{$employment_data[0]['reference_years_acquainted_3']}} </label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <p>Name: <u>{{$employment_data[0]['reference_name_3']}}</u></p>
+
+                                            <p>Address: <u>{{$employment_data[0]['reference_address_3']}}</u> </p>
+
+                                            <p>Phone: <u>{{$employment_data[0]['reference_phone_3']}}</u> 
+                                                <span>Years Acquainted: <u>{{$employment_data[0]['reference_years_acquainted_3']}}</u></span> 
+                                            </p>
+
                                         <br>
                                             <h4 class="mb-sm-0 font-size-16">Any foreign language(s).</h4>
                                             <p>#1</p>
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Language: {{ucfirst($employment_data[0]['language_1'])}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Read and Write: {{ucfirst($employment_data[0]['read_write_1'])}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Read and Speak: {{ucfirst($employment_data[0]['read_speak_1'])}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Speak Only: {{ucfirst($employment_data[0]['speak_only_1'])}} </label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <p>Language: <u>{{ucfirst($employment_data[0]['language_1'])}}</u> </p>
+                                            <p>
+                                                <span>Read and Write: <u>{{ucfirst($employment_data[0]['read_write_1'])}}</u></span> 
+                                                <span style="margin-left: 50px;">Read and Speak: <u>{{ucfirst($employment_data[0]['read_speak_1'])}}</u> </span>
+                                                <span style="margin-left: 50px;">Speak Only: <u>{{ucfirst($employment_data[0]['speak_only_1'])}}</u></span>
+                                            </p>
                                             
                                             @if(!empty($employment_data[0]['language_2']))
                                             <p>#2</p>
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label">Language: {{ucfirst($employment_data[0]['language_2'])}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Read and Write: {{ucfirst($employment_data[0]['read_write_2'])}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Read and Speak: {{ucfirst($employment_data[0]['read_speak_2'])}} </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Speak Only: {{ucfirst($employment_data[0]['speak_only_2'])}} </label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <p>Language: <u>{{ucfirst($employment_data[0]['language_2'])}}</u> </p>
+                                            <p>Read and Write: {{ucfirst($employment_data[0]['read_write_2'])}} 
+                                                <span>Read and Speak: {{ucfirst($employment_data[0]['read_speak_2'])}}</span> 
+                                                <span>Speak Only: {{ucfirst($employment_data[0]['speak_only_2'])}}</span>
+                                            </p>
                                             @endif
 
-                                            <div class="mb-3">
-                                                <label for="formrow-firstname-input" class="form-label">In case of emergency notify: {{$employment_data[0]['emergency_address'] . ' ' . $employment_data[0]['emergency_city'] . ' ' . $employment_data[0]['emergency_state'] . ' ' . $employment_data[0]['emergency_zip']}}
-                                                </label>
-                                            </div>
+                                            <p>In case of emergency notify: {{$employment_data[0]['emergency_address'] . ' ' . $employment_data[0]['emergency_city'] . ' ' . $employment_data[0]['emergency_state'] . ' ' . $employment_data[0]['emergency_zip']}}</p>
 
                                             <div class="row">
                                                 <h5>INITIAL	Conditions of Employment - please read carefully</h5>
@@ -589,19 +317,10 @@
 
                                             <hr>
 
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-email-input" class="form-label"><strong>Signature of Applicant:
-                                                        </strong></label><br>
-                                                        <img width="250" class="img-fluid" src="{{asset('storage/signature/' . $employment_data[0]['signature'])}}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label for="formrow-password-input" class="form-label">Date: {{ \Carbon\Carbon::parse($employment_data[0]['date_signed'])->format('M d, Y')}}</label>
-                                                    </div>
-                                                </div>
+                                            <div>
+                                            <p>Signature of Applicant:</p>
+                                                <img width="250" class="img-fluid" src="{{asset('storage/signature/' . $employment_data[0]['signature'])}}">
+                                               <span style="margin-left: 100px;">Date: {{ \Carbon\Carbon::parse($employment_data[0]['date_signed'])->format('M d, Y')}}</span>
                                             </div>
 
                                             <hr>

@@ -35,7 +35,7 @@
                         <li><a href="{{ route('view-criminal-history-search', ['applicant_id' => $applicant_id, 'id' => \App\Services\FormService::isAnyFormFilled(['\App\Models\CriminalHistorySearch'], $applicant_id)]) }}" key="t-level-2-3">Criminal History Search Consent Form</a></li>
                         @endif 
                         @if(\App\Services\FormService::isAnyFormFilled(['\App\Models\DrugTestingPolicy'], $applicant_id)) 
-                        <li><a href="{{ route('view-drug-testing-policy', ['applicant_id' => $applicant_id, 'id' => \App\Services\FormService::isAnyFormFilled(['\App\Models\DrugTestingPolicy'], $applicant_id)]) }}" key="t-level-2-4">Drug Testing Policy</a></li>
+                        <li><a href="{{ route('get-drug-testing-policy', ['applicant_id' => $applicant_id, 'id' => \App\Services\FormService::isAnyFormFilled(['\App\Models\DrugTestingPolicy'], $applicant_id)]) }}" key="t-level-2-4">Drug Testing Policy</a></li>
                         @endif
                         @if(\App\Services\FormService::isAnyFormFilled(['\App\Models\DisclaimerWaiverLiability'], $applicant_id))
                         <li><a href="{{ route('view-disclaimer-waiver-liability', ['applicant_id' => $applicant_id, 'id' => \App\Services\FormService::isAnyFormFilled(['\App\Models\DisclaimerWaiverLiability'], $applicant_id)]) }}" key="t-level-2-5">Disclaimer and Waiver of Liability</a></li>
@@ -55,7 +55,7 @@
                         @if(\App\Services\FormService::isAnyFormFilled(['\App\Models\EmployeeOrientation'], $applicant_id))
                         <li><a href="{{ route('view-employee-orientation', ['applicant_id' => $applicant_id, 'id' => \App\Services\FormService::isAnyFormFilled(['\App\Models\EmployeeOrientation'], $applicant_id)]) }}" key="t-level-2-10">Employee Orientation</a></li>
                         @endif
-                        @if(\App\Services\FormService::isAnyFormFilled(['\App\Models\EmployeereferenceCheck'], $applicant_id))
+                        @if(\App\Services\FormService::isAnyFormFilled(['\App\Models\EmployeeReferenceCheck'], $applicant_id))
                         <li><a href="{{ route('view-employee-reference-check', ['applicant_id' => $applicant_id, 'id' => \App\Services\FormService::isAnyFormFilled(['\App\Models\EmployeereferenceCheck'], $applicant_id)]) }}" key="t-level-2-11">Employee Reference Check</a></li>
                         @endif
                         @if(\App\Services\FormService::isAnyFormFilled(['\App\Models\AttendanceTardiness'], $applicant_id))

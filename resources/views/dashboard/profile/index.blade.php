@@ -12,7 +12,14 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset('images/favicon.png')}}">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        @vite(['resources/css/bootstrap.min.css', 'resources/css/icons.min.css', 'resources/css/app.min.css', 'resources/libs/dropzone/min/dropzone.min.css'])
+            <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+
+<!-- Include Icons CSS -->
+<link rel="stylesheet" href="{{ asset('assets/css/icons.min.css') }}">
+
+<!-- Include App CSS -->
+<link rel="stylesheet" href="{{ asset('assets/css/app.min.css') }}">
 
     </head>
 
@@ -126,12 +133,23 @@
         <div class="rightbar-overlay"></div>
 
         <!-- JAVASCRIPT -->
-      @vite(['resources/libs/jquery/jquery.min.js', 
-      'resources/libs/bootstrap/js/bootstrap.bundle.min.js', 
-      'resources/libs/metismenu/metisMenu.min.js', 
-      'resources/libs/simplebar/simplebar.min.js', 
-      'resources/libs/node-waves/waves.min.js',  
-      'resources/js/app.js', 'resources/libs/dropzone/min/dropzone.min.js'])
+      <!-- Include jQuery -->
+    <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
+
+<!-- Include Bootstrap JS -->
+<script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<!-- Include MetisMenu JS -->
+<script src="{{ asset('assets/libs/metismenu/metisMenu.min.js') }}"></script>
+
+<!-- Include SimpleBar JS -->
+<script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
+
+<!-- Include Waves JS -->
+<script src="{{ asset('assets/libs/node-waves/waves.min.js') }}"></script>
+
+<!-- Include App JS -->
+<script src="{{ asset('assets/js/app.js') }}"></script>
 
     </body>
 </html> 

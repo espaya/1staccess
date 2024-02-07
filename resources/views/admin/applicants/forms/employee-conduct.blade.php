@@ -63,53 +63,49 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                        <p class="mb-sm-0 font-size-15">Name of Employee: <u>{{ ucfirst($profileData->full_name) }}</u></p><br>
-                                    <h4 class="mb-sm-0 font-size-18">Employee Notification of Policy: Employee Conduct</h4><br>
+                                        <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                            <strong>1st Access Home Care Incorporated</strong>
+                                        </p>
+                                        <p style="text-align: center; font-size: 11;">
+                                            6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                        </p>
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                            <strong>Employee Notification of Policy: Employee Conduct</strong>
+                                        </p>
 
-                                    <p>The Agency expects all employees to display high standards of conduct when representing the Agency in any manner or capacity. Non-compliance to expected standards will result in disciplinary actions, termination or reporting to the appropriate regulatory authorities.</p> <br>
+                                        <p class="mb-sm-0 font-size-15">Name of Employee: <u>{{ ucfirst($profileData->full_name) }}</u></p>
 
-                                        <h3 class="mb-sm-0 font-size-18">Unacceptable conduct shall include but is not limited to the following:</h3>
+                                    <p>The Agency expects all employees to display high standards of conduct when representing the Agency in any manner or capacity. Non-compliance to expected standards will result in disciplinary actions, termination or reporting to the appropriate regulatory authorities.</p>
+                                        <p><strong>Unacceptable conduct shall include but is not limited to the following:</strong></p>
                                         <ul>
                                             <li>Abuse, Neglect or Exploitation of clients.</li>
-
                                             <li>Acts of fraud, abuse, or illegal remuneration.</li>
-
                                             <li>Unsafe client care practices.</li>
-
                                             <li>Use of illegal drugs.</li>
-
                                             <li>Intoxication or use of intoxicants while conducting company business.</li>
-
                                             <li>Falsification of company records.</li>
-
                                             <li>Fighting or threatening behavior toward clients or other employees.</li>
-
                                             <li>Sleeping on the job.</li>
-
                                             <li>Acceptance of gifts or gratuities from clients.</li>
-
                                             <li>Reportable conduct by an employee.</li>
-
                                             <li>Insubordination.</li>
 
-                                        </ul> <br>
+                                        </ul>
 
-                                        <h5 class="nk-block-title">Method of monitoring employee behavior shall include:</h5>
-                                        <ul style="list-style: none;">
+                                        <p><strong>Method of monitoring employee behavior shall include:</strong></p>
+                                        <ul>
                                           <li>Quality Improvement Activity.</li>
-
                                           <li>Employee performance evaluations</li>
-
                                           <li>Clients complaints</li>
-
                                           <li>Supervisory visits</li>
-
                                           <li>Employee complaints</li>
                                         </ul> <br>
 
-                                        <h5 class="nk-block-title">Reports of unprofessional conduct will be investigated by the employee’s immediate Supervisor.</h5>
-                                        <p><strong><em>The Supervisor will document the complaint and the investigation and make recommendations for disciplinary actions. Disciplinary actions may include but are not limited to:</em></strong></p>
-                                        <ul style="list-style: none;">
+                                        <p><strong>Reports of unprofessional conduct will be investigated by the employee’s immediate Supervisor.</strong></p>
+                                        <p><strong><em>The Supervisor will document the complaint and the investigation and make recommendations for disciplinary actions. Disciplinary actions may include but are not limited to:
+                                        </em></strong></p>
+                                        <ul>
                                             <li>Verbal warning for minor incidents, stating the unacceptable conduct, expected behavior and expected time frames for change.</li>
 
                                             <li>Written warning for the second episode of a minor incident.</li>
@@ -117,23 +113,13 @@
                                             <li>Suspension, termination or reporting to regulatory authorities as severity of the behavior dictates.</li>
 
                                             <li>All employees will be informed of the policy related to employee conduct during the orientation period.</li>
-                                        </ul><br>
-                                        <p>___ I acknowledge that I have been oriented to agencies policy regarding employee conduct and agree to follow all guidelines, both written and verbal. I understand that, if the guidelines, policies and procedures are not followed, that I may be immediately terminated. I also had the opportunity to ask questions regarding this policy and I know where it’s located for future reference.</p>
+                                        </ul>
+                                        <p>I acknowledge that I have been oriented to agencies policy regarding employee conduct and agree to follow all guidelines, both written and verbal. I understand that, if the guidelines, policies and procedures are not followed, that I may be immediately terminated. I also had the opportunity to ask questions regarding this policy and I know where it’s located for future reference.</p>
 
+                                        <p>Employee Signature</p>
+                                        <img width="250"  src="{{asset('storage/signature/' . $employee_conduct_data[0]['signature'])}}">
                                             <div class="row d-flex align-items-center justify-content-center">
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Signature</label> <br>
-                                                        <img width="250"  src="{{asset('storage/signature/' . $employee_conduct_data[0]['signature'])}}">
-                                                    </div>
-                                                </div>
                                                 
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Date Signed</label>
-                                                        <p>{{ \Carbon\Carbon::parse($employee_conduct_data[0]['created_at'])->format('M d, Y')}}</p>
-                                                    </div>
-                                                </div>
                                             </div>
 
                                             @if(!empty($employee_conduct_data[0]['supervisor_signature']))

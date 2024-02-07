@@ -63,75 +63,64 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                    <strong>1st Access Home Care Incorporated</strong>
+                                    </p>
+                                    <p style="text-align: center; font-size: 11;">
+                                        6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                    </p>
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                        <strong>Criminal History Search Consent Form</strong>
+                                    </p>
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="mb-3">
                                             <p>Name: 
                                                 <span style="text-decoration: underline;">
                                                     @if(!empty($profileData)) {{$profileData->full_name}} @endif
                                                 </span>
-                                            </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                @if(!empty($criminalHistoryData[0]['created_at']))
-                                                <p>Date: {{ \Carbon\Carbon::parse($criminalHistoryData[0]['created_at'])->format('M d, Y')}}</p>
-                                                @else
-                                                <p>Date: <?php echo date('M d, Y'); ?></p>
+                                                <span style="margin-left: 200px;">Date: 
+                                                    @if(!empty($criminal_history_search_data[0]['created_at']))
+                                                    {{ \Carbon\Carbon::parse($criminal_history_search_data[0]['created_at'])->format('M d, Y')}}
                                                 @endif
+                                                </span>
+                                            </p>
+                                            <p>I, <span style="text-decoration: underline !important;">@if(!empty($profileData)) ({{ ucfirst($profileData->full_name) }}) @endif</span> have had no prior convictions of an offense described in the  <strong>Health and Safety Code</strong> which would bar or potentially bar employment as listed below:</p>
+                                            <ul>
+                                                <li><strong>CRIMINAL HOMICIDE</strong></li>
+                                                <li><strong>INDECENCY WITH A CHILD</strong></li>
+                                                <li><strong>SOLICITATION OF A CHILD</strong></li>
+                                                <li><strong>ARSON</strong></li>
+                                                <li><strong>AGGRAVATED ROBBERY</strong></li>
+                                                <li><strong>BURGLARY AND CRIMINAL TRESPASS</strong></li>
+                                                <li><strong>WEAPONS</strong></li>
+                                                <li><strong>PUBLIC LEWDNESS</strong></li>
+                                                <li><strong>PUBLIC INDECENCY</strong></li>
+                                                <li><strong>KIDNAPPING AND FALSE IMPRISONMENT</strong></li>
+                                                <li><strong>AGREEMENT TO ABDUCT FROM CUSTODY</strong></li>
+                                                <li><strong>SALE OR PURCHASE OF A CHILD</strong></li>
+                                                <li><strong>ROBBERY</strong></li>
+                                                <li><strong>ASSAULTIVE OFFENSES</strong></li>
+                                                <li><strong>THEFT</strong></li>
+                                                <li><strong>FRAUD</strong></li>
+                                                <li><strong>INDECENT EXPOSURE</strong></li>
+                                                <li><strong>A FELONY VIOLATION OF A STATUTE</strong></li>
+                                                <li><strong>INTENDED TO CONTROL THE POSSESSION OR DISTRIBUTION OF AN ILLEGAL SUBSTANCE</strong></li>
+                                            </ul>
+                                            <p><strong>
+                                            I UNDERSTAND THAT THE HOME HEALTH AGENCY IS REQUIRED TO CONDUCT A CRIMINAL HISTORY CHECK BEFORE OFFERING ME EMPLOYMENT. I, THE UNDERSIGNING, HEREBY AUTHORIZE THIS AGENCY TO CONDUCT AND VERIFY MY CRIMINAL HISTORY BY PERFORMING A CRIMINAL HISTORY CHECK.</strong>
+                                            </p>
+                                            <p>Signature of Emplooyee <br>
+                                                <img width="250"  src="{{asset('storage/signature/' . $criminal_history_search_data[0]['signature'])}}">
+                                            </p>
+                                        <p>Date Signed</p>
+                                        <p>{{ \Carbon\Carbon::parse($criminal_history_search_data[0]['created_at'])->format('M d, Y')}}</p>
+                                          
                                             </div>
                                         </div>
                                     </div>
-
-                                        <div>
-                                        <h4 class="mb-sm-0 font-size-18">Criminal History Search</h4><br>
-                                    </ul> 
-                                    <p>I, <span style="text-decoration: underline !important;">@if(!empty($profileData)) ({{ ucfirst($profileData->full_name) }}) @endif</span> have had no prior convictions of an offense described in the  <strong>Health and Safety Code</strong> which would bar or potentially bar employment as listed below:</p>
-                                    <ul>
-                                        <li>CRIMINAL HOMICIDE</li>
-                                        <li>INDECENCY WITH A CHILD</li>
-                                        <li>SOLICITATION OF A CHILD</li>
-                                        <li>ARSON</li>
-                                        <li>AGGRAVATED ROBBERY</li>
-                                        <li>BURGLARY AND CRIMINAL TRESPASS</li>
-                                        <li>WEAPONS</li>
-                                        <li>PUBLIC LEWDNESS</li>
-                                        <li>PUBLIC INDECENCY</li>
-                                        <li>KIDNAPPING AND FALSE IMPRISONMENT</li>
-                                        <li>AGREEMENT TO ABDUCT FROM CUSTODY</li>
-                                        <li>SALE OR PURCHASE OF A CHILD</li>
-                                        <li>ROBBERY</li>
-                                        <li>ASSAULTIVE OFFENSES</li>
-                                        <li>THEFT</li>
-                                        <li>FRAUD</li>
-                                        <li>INDECENT EXPOSURE</li>
-                                        <li>A FELONY VIOLATION OF A STATUTE</li>
-                                        <li>INTENDED TO CONTROL THE POSSESSION OR DISTRIBUTION OF AN ILLEGAL SUBSTANCE</li>
-                                    </ul>
-                                    <p>
-                                    I UNDERSTAND THAT THE HOME HEALTH AGENCY IS REQUIRED TO CONDUCT A CRIMINAL HISTORY CHECK BEFORE OFFERING ME EMPLOYMENT. I, THE UNDERSIGNING, HEREBY AUTHORIZE THIS AGENCY TO CONDUCT AND VERIFY MY CRIMINAL HISTORY BY PERFORMING A CRIMINAL HISTORY CHECK.
-                                    </p>
-                                        <br>
-                                        
-                                            <div class="row d-flex align-items-center justify-content-center">
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Signature</label> <br>
-                                                        <img width="250"  src="{{asset('storage/signature/' . $criminal_history_search_data[0]['signature'])}}">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Date Signed</label>
-                                                        <p>{{ \Carbon\Carbon::parse($criminal_history_search_data[0]['created_at'])->format('M d, Y')}}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
-                                        
                                     </div>
                                     <!-- end card body -->
                                 </div>

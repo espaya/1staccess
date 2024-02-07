@@ -65,40 +65,39 @@
                      <div class="col-xl-8">
                         <div class="card">
                            <div class="card-body">
-                              <h4 class="mb-sm-0 font-size-18">Employee Orientation</h4>
-                              <br>
+                           <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                            <strong>1st Access Home Care Incorporated</strong>
+                                        </p>
+                                        <p style="text-align: center; font-size: 11;">
+                                            6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                        </p>
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                            <strong>Employee Orientation</strong>
+                                        </p>
                               <div class="row g-4">
-                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                       <label for="inputEmail4" class="form-label">Employee Name: {{ucfirst($profileData->full_name)}} </label>
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                       <label for="inputPassword4" class="form-label">Position: {{ucfirst($employee_orientation_data[0]['position'])}} </label>
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                       <label for="inputPassword4" class="form-label">Date of Hire: {{\Carbon\Carbon::parse($employee_orientation_data[0]['date_of_hire'])->format('M d, Y')}}</label>
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                       <label for="inputPassword4" class="form-label">Date of Orientation: {{ \Carbon\Carbon::parse($employee_orientation_data[0]['dateOfOrientation'])->format('F d, Y')}}</label>
-                                    </div>
+                                 <div class="col-md-12">
+                                    <p>Employee Name: {{ucfirst($profileData->full_name)}} <span style="margin-left: 100px;">Position: {{ucfirst($employee_orientation_data[0]['position'])}}</span> </p>
+
+                                    <p>
+                                       Date of Hire: {{\Carbon\Carbon::parse($employee_orientation_data[0]['date_of_hire'])->format('M d, Y')}}
+                                       <span style="margin-left: 100px;">Date of Orientation: {{ \Carbon\Carbon::parse($employee_orientation_data[0]['dateOfOrientation'])->format('F d, Y')}}
+                                       </span>
+                                    </p>
+
+                                    <p><strong>GENERAL ORIENTATION WITH HUMAN RESOURCES</strong></p>
+                                    <ul style="list-style: none;">
+                                       <li>➢	HIPAA Privacy Regulations - Review agency’s HIPAA Policy</li>
+                                       <li>➢	Discuss policies and procedures in the agency’s Policies and Procedures Manual with focus on new and added updated policies and review policy and procedure examination.</li>
+                                       <li>➢	Review employee benefits as applicable to various employee statuses </li>
+                                       <li>➢	Review complaint and grievances procedures</li>
+                                       <li>➢	Review sexual harassment policy.</li>
+                                    </ul>
+                                    
                                  </div>
                               </div>
-                              <h5 class="nk-block-title">GENERAL ORIENTATION WITH HUMAN RESOURCES</h5>
-                              <ul style="list-style: none;">
-                                 <li>➢	HIPAA Privacy Regulations - Review agency’s HIPAA Policy</li>
-                                 <li>➢	Discuss policies and procedures in the agency’s Policies and Procedures Manual with focus on new and added updated policies and review policy and procedure examination.</li>
-                                 <li>➢	Review employee benefits as applicable to various employee statuses </li>
-                                 <li>➢	Review complaint and grievances procedures</li>
-                                 <li>➢	Review sexual harassment policy.</li>
-                              </ul>
-                              <br>
-                              <h5 class="nk-block-title">GENERAL ORIENTATION WITH MANAGEMENT:</h5>
+                              
+                              <p><strong>GENERAL ORIENTATION WITH MANAGEMENT:</strong></p>
                               <ul style="list-style: none;">
                                  <li>➢	Instructive memos from Supervisor to home care staff.</li>
                                  <li>➢	Sample Visit Notes</li>
@@ -107,34 +106,15 @@
                                  <li>➢	Skills Checklist</li>
                                  <li>➢	Detecting Patient Abuse: Child Abuse and Abuse of the Elderly</li>
                               </ul>
-                              <br>
-                              <br>
                               @if(!empty($employee_orientation_data[0]['applicant_id']))
-                              <div class="row d-flex align-items-center justify-content-center">
-                                 <div class="col-md-12">
-                                    <div class="mb-3">
-                                       <label class="form-label">Signature</label> <br>
-                                       <img width="250"  src="{{asset('storage/signature/' . $employee_orientation_data[0]['signature'])}}">
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6">
-                                    <div class="mb-3">
-                                       <label class="form-label">Date Signed</label>
-                                       <p>{{ \Carbon\Carbon::parse($employee_orientation_data[0]['created_at'])->format('F d, Y')}}</p>
-                                    </div>
-                                 </div>
-                              </div>
+                                 <p>Signature</p>
+                                 <img width="250"  src="{{asset('storage/signature/' . $employee_orientation_data[0]['signature'])}}">
+                                 <p>Date Signed</p>
+                                 <p>{{ \Carbon\Carbon::parse($employee_orientation_data[0]['created_at'])->format('F d, Y')}}</p>
                               @endif
-                              
                               @if(!empty($employee_orientation_data[0]['hr_signature']))
-                              <div class="row d-flex align-items-center justify-content-center">
-                                 <div class="col-md-12">
-                                    <div class="mb-3">
-                                       <label class="form-label">HR Supervisor Signature</label> <br>
-                                       <img width="250"  src="{{asset('storage/signature/' . $employee_orientation_data[0]['hr_signature'])}}">
-                                    </div>
-                                 </div>
-                              </div>
+                                 <p>HR Supervisor Signature</p>
+                                 <img width="250"  src="{{asset('storage/signature/' . $employee_orientation_data[0]['hr_signature'])}}">
                               @else
                               <form action="{{ route('submit-hr-supervisor-signature', ['applicant_id' => $applicant_id, 'id' => $id]) }}" method="post" enctype="multipart/form-data" onsubmit="submitHRForm();">
                                  @csrf

@@ -64,85 +64,45 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                    <h4 class="mb-sm-0 font-size-18">Sworn Disclosure Statement</h4><br>
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                            <strong>1st Access Home Care Incorporated</strong>
+                                        </p>
+                                        <p style="text-align: center; font-size: 11;">
+                                            6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                        </p>
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                            <strong>Sworn Disclosure Statement</strong>
+                                        </p><br>
 
                                     <div>
                                  <p>Section 32.1-162.9:1 of the Code of Virginia requires that a sworn disclosure statement or affirmation be completed for each prospective employee for a home care organization.
                                  Employment or volunteering is prohibited if a person has been convicted of any of the offenses specified on the reverse side or has been the subject of a founded complaint of child abuse or neglect.
                                  Convictions include adult convictions and juvenile convictions and adjudications of delinquency based on an offense that would have been at the time of conviction a felony, conviction if committed by an adult within or outside the commonwealth.
                                  Any person making a materially false statement regarding any such offense shall be guilty of a Class 1 misdemeanor. This statement must be provided to and maintained at the exempt facility for prospective employees and volunteers.
-                                 </p> <br>
+                                 </p>
+                                 <p>Name: {{ ucfirst($profileData->full_name) }} <span style="margin-left: 100px;"> Social Security #: {{ ucfirst($sworn_disclosure_statement_data[0]['SSN']) }}</span>
+                                 </p>
+                                 <p>
+                                    Mailing Address: {{ ucfirst($sworn_disclosure_statement_data[0]['mailing_address']) }}</p>
+
+                                    <p>Position Applied For: {{ ucfirst($sworn_disclosure_statement_data[0]['position']) }}</p>
+
+                                    <p>1.	Have you ever been convicted of or are you the subject of pending charges for any of the following offenses: murder; malicious wounding by mob; abduction; abduction for immoral purposes; assault and bodily wounding; robbery; carjacking; extortion by threat; any felony stalking violation; sexual assault; arson; burglary; any felony violation relating to possession or distribution of drugs; drive by shooting; use of a machine gun in a crime of violence; aggressive use of a machine gun; use of a sawed-off shotgun in a crime of violence; pandering; crimes against nature involving children; incest; taking indecent liberties with children; abuse and neglect of children, including failing to secure medical attention for an injured child; obscenity offenses; possession of child pornography; electronic facilitation of pornography; abuse and neglect of incapacitated adults; employing or permitting a minor to assist in an act constituting an obscenity or related offence; delivery of drugs to prisoners; escape from jail; felonies by prisoners; within the Commonwealth or any equivalent offense outside the Commonwealth?: {{ ucfirst($sworn_disclosure_statement_data[0]['convicted_outside_commonwealth']) }}</p>
+
+                                    @if($sworn_disclosure_statement_data[0]['convicted_outside_commonwealth'] == "Yes")   
+                                       <p>If Yes Specify Crimes: {{$sworn_disclosure_statement_data[0]['outside_commonwealth_specify']}}</p>   
+                                    @endif
+
+                                    <p>2.	Have you been convicted of or are you the subject of a pending charge for any other felony in the five(5) years prior to the date of employment or volunteering?: {{$sworn_disclosure_statement_data[0]['convicted_pending']}}</p>
+
+                                    @if($sworn_disclosure_statement_data[0]['convicted_pending'] === "Yes (Convicted)" || $sworn_disclosure_statement_data[0]['convicted_pending'] === "Yes (Pending)" )
+                                       <p>{{$sworn_disclosure_statement_data[0]['convicted_pending_specify']}}</p>
+                                    @endif
+
+                                    <p>3.	Have you ever been the subject of a founded complaint of child abuse or neglect within or outside the Commonwealth: {{$sworn_disclosure_statement_data[0]['child_abuse']}}</p>
                               </div>                            
-
                               <div class="row g-4">
-                                       <div class="col-md-6">
-                                          <div class="form-group">
-                                             <div class="form-control-wrap">
-                                                <p>
-                                             <span class="form-label">Name: </span>{{ ucfirst($profileData->full_name) }}</p>
-                                            </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-6">
-                                          <div class="form-group">
-                                             <div class="form-control-wrap">
-                                                <p>
-                                             <span class="form-label">Social Security #: </span>{{ ucfirst($sworn_disclosure_statement_data[0]['SSN']) }}</p>
-                                            </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-12">
-                                          <div class="form-group">
-                                             <div class="form-control-wrap">
-                                                <p>
-                                             <span class="form-label">Mailing Address: </span>{{ ucfirst($sworn_disclosure_statement_data[0]['mailing_address']) }}</p>
-                                            </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-12">
-                                          <div class="form-group">
-                                             <div class="form-control-wrap">
-                                                <p><span class="form-label">Position Applied For: </span>{{ ucfirst($sworn_disclosure_statement_data[0]['position']) }}</p>
-                                            </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-12">
-                                          <div class="form-group">
-                                             <div class="form-control-wrap">
-                                                <p>1.	Have you ever been convicted of or are you the subject of pending charges for any of the following offenses: murder; malicious wounding by mob; abduction; abduction for immoral purposes; assault and bodily wounding; robbery; carjacking; extortion by threat; any felony stalking violation; sexual assault; arson; burglary; any felony violation relating to possession or distribution of drugs; drive by shooting; use of a machine gun in a crime of violence; aggressive use of a machine gun; use of a sawed-off shotgun in a crime of violence; pandering; crimes against nature involving children; incest; taking indecent liberties with children; abuse and neglect of children, including failing to secure medical attention for an injured child; obscenity offenses; possession of child pornography; electronic facilitation of pornography; abuse and neglect of incapacitated adults; employing or permitting a minor to assist in an act constituting an obscenity or related offence; delivery of drugs to prisoners; escape from jail; felonies by prisoners; within the Commonwealth or any equivalent offense outside the Commonwealth?: {{ ucfirst($sworn_disclosure_statement_data[0]['convicted_outside_commonwealth']) }}</p>
-                                            </div>
-                                          </div>
-                                       </div>
-                                       @if($sworn_disclosure_statement_data[0]['convicted_outside_commonwealth'] == "Yes")
-                                       <div class="col-md-12">
-                                          <div class="form-group">
-                                             <div class="form-control-wrap">
-                                             <p><span class="form-label">If Yes Specify Crimes: </span>{{$sworn_disclosure_statement_data[0]['outside_commonwealth_specify']}}</p>
-                                            </div>
-                                          </div>
-                                       </div>
-                                       @endif
-                                       <div class="col-md-12">
-                                          <div class="form-group">
-                                          <label for="inputCity" class="form-label">2.	Have you been convicted of or are you the subject of a pending charge for any other felony in the five(5) years prior to the date of employment or volunteering?: {{$sworn_disclosure_statement_data[0]['convicted_pending']}}</label>
-                                          </div>
-                                       </div>
-
-                                       @if($sworn_disclosure_statement_data[0]['convicted_pending'] === "Yes (Convicted)" || $sworn_disclosure_statement_data[0]['convicted_pending'] === "Yes (Pending)" )
-                                       <div class="col-md-12" id="convicted_pending_specify" style="display:none">
-                                          <div class="form-group">
-                                             <label for="inputZip" class="form-label">If Yes, Specify Crime(s)</label>
-                                             <div class="form-control-wrap">
-                                             <p>{{$sworn_disclosure_statement_data[0]['convicted_pending_specify']}}</p>
-                                            </div>
-                                          </div>
-                                       </div>
-                                       @endif
-                                       <div class="col-md-12">
-                                          <div class="form-group">
-                                             <label for="inputState" class="form-label">3.	Have you ever been the subject of a founded complaint of child abuse or neglect within or outside the Commonwealth: {{$sworn_disclosure_statement_data[0]['child_abuse']}}</label>
-                                          </div>
-                                       </div>
                                        <div class="col-md-6">
                                        <div class="form-group">
                                              <label for="inputZip" class="form-label">Applicant Signature</label>

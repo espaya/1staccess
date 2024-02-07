@@ -61,9 +61,18 @@
                      <div class="col-xl-8">
                         <div class="card">
                            <div class="card-body">
+                              <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                              <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                 <strong>1st Access Home Care Incorporated</strong>
+                              </p>
+                              <p style="text-align: center; font-size: 11;">
+                                 6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                              </p>
+                              <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                 <strong>Disclaimer and Waiver of Liability</strong>
+                              </p>
                               <p>Name of Employee: <u>{{ ucfirst($profileData->full_name) }}</u></p>
-                              <h4 class="mb-sm-0 font-size-18">Disclaimer and Waiver of Liability</h4>
-                              <br>
+                              
                               <p>I acknowledge and will adhere to the rules and regulations as set forth by the Office of Licensure and Certification. I understand that the falsification of documents, particularly those pertaining to the submission of visit notes where in fact no visits was made, is considered to be fraud and is subject to filing of a criminal grievance, civil and/or criminal prosecution, and immediate termination. I therefore hold the home health care agency, its shareholders, directors and officers, harmless from any falsified documents.</p>
                               <p><strong>I have read and understand the above information. I understand that the falsification of documents, particularly those pertaining to the submission of visit notes where in fact no visits was made, is considered to be fraud and is subject to filing of a criminal grievance, civil and/or criminal prosecution, and immediate termination.</strong></p>
                               </ul> 
@@ -72,7 +81,7 @@
                               <div class="row d-flex align-items-center justify-content-center">
                                  <div class="col-md-12">
                                     <div class="mb-3">
-                                       <label class="form-label">Signature</label> <br>
+                                       <label class="form-label">Employee Signature</label> <br>
                                        <img width="250"  src="{{asset('storage/signature/' . $disclaimer_waiver_liability_data[0]['signature'])}}">
                                     </div>
                                  </div>
@@ -85,14 +94,8 @@
                               </div>
 
                                  @if(!empty($disclaimer_waiver_liability_data[0]['rep_signature']))
-                                 <div class="row d-flex align-items-center justify-content-center">
-                                    <div class="col-md-12">
-                                       <div class="mb-3">
-                                          <label class="form-label">Agency Representative Signature</label> <br>
-                                          <img width="250"  src="{{asset('storage/signature/' . $disclaimer_waiver_liability_data[0]['rep_signature'])}}">
-                                       </div>
-                                    </div>
-                                 </div>
+                                    <p class="form-label">Agency Representative Signature</p>
+                                    <img width="250"  src="{{asset('storage/signature/' . $disclaimer_waiver_liability_data[0]['rep_signature'])}}">
                                  @else 
                                     <!-- Agency Representative Signature -->
                                     <form action="{{ route('submit-disclaimer-waiver-liability', ['applicant_id' => $applicant_id, 'id' => $id]) }}" method="post" onsubmit="submitForm();" enctype="multipart/form-data">

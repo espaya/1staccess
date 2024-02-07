@@ -64,7 +64,16 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                    <h4 class="mb-sm-0 font-size-18">Following Infection Control Agreement</h4><br>
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                            <strong>1st Access Home Care Incorporated</strong>
+                                        </p>
+                                        <p style="text-align: center; font-size: 11;">
+                                            6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                        </p>
+                                        <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                            <strong>Following Infection Control Agreement</strong>
+                                        </p>
 
                                 <div class="row g-4">
                                  <p>1st Access Home Care wants to improve client outcomes by identifying and reducing the risk of infection in clients and Agency staff.</p>
@@ -72,6 +81,8 @@
                                  <p>The infection control program will include surveillance, identification, prevention, control and reporting. Targeted surveillance of infections will focus on specific client population or procedures.</p>
                                  <p>Infection Control Standards are established in compliance with the recommendations of the National Center for Disease Control. All staff are educated on these standards and they are practiced consistently. Any incidents of infection related to care and service are reported.</p>
                                  <p><em>I recognize and I am fully aware of the fact that any client may be contagious at any time and that this may not always be a known fact while care is being provided. I will follow all Infection Control and Universal Precautions Procedures of the Agency. I also state that currently I am in excellent health and have no impairments that may alter my job performance.</em></p>
+
+                                 
                               </div>
                               
                                     <div class="row g-4">

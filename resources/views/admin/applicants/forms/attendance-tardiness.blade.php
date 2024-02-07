@@ -50,21 +50,32 @@
                         <div class="card">
                            <div class="card-body">
                               <div>
-                                 <h4 class="mb-sm-0 font-size-18">Employee Notification of Policy: Employee Attendance, Tardiness, Absenteeism & Leave</h4><br>
-                                 <p>Name: <u> {{ucfirst($profileData->full_name)}} </u> </p>
-                                 <p>Hire Date: {{\Carbon\Carbon::parse($attendance_tardiness_data[0]['hire_date'])->format('M d, Y')}} </p>
-                                 <p>Title: {{ucfirst($attendance_tardiness_data[0]['position'])}} </p>
+                                 <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                       <strong>1st Access Home Care Incorporated</strong>
+                                    </p>
+                                    <p style="text-align: center; font-size: 11;">
+                                       6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                    </p>
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                       <strong>Employee Notification of Policy:<br> Employee Attendance, Tardiness, Absenteeism & Leave</strong>
+                                    </p>
+
+                                 <p>Name: <u> {{ucfirst($profileData->full_name)}} </u> <span style="margin-left: 100px;">Hire Date: {{\Carbon\Carbon::parse($attendance_tardiness_data[0]['hire_date'])->format('M d, Y')}} </span></p>
+                                 
+                                 <p>Title: {{ucfirst($attendance_tardiness_data[0]['position'])}} 
+                                    <span style="margin-left: 100px;">Department:</span> </p>
                                 
                                  <p>Exempt employees are owners, officers, management and supervisors. All full time employees are required to put in a full day's work and a full 40 hour work week. All employees regardless of classification, are required to arrive on time and appropriately complete their designated hours and tasks as assigned.</p>
-                                 <br>
-                                 <h5>ATTENDANCE:</h5>
+                                 
+                                 <p><strong>ATTENDANCE:</strong></p>
                                  <ul>
                                     <li>1.	The employee must notify the Supervisor in all events of tardiness. If the office is closed, call the answering service to have on-call Supervisor paged and relay information to him or her. Only 3 tardiness in a calendar month will be accepted unless very extenuating circumstances are present and approved by the Supervisor. More than 3 tardiness within a given month may result in counselling with Supervisor and every effort made to avoid further tardiness. A copy of counselling will be placed in the personnel file. Two consecutive months of written warnings for excessive tardiness may result in dismissal or termination</li>
                                     <li>2.	No show/no call situations are not tolerated and may result in termination.</li>
                                     <li>3.	Perfect attendance throughout the year may be rewarded at year - end at the discretion of supervisor and/or administrator.</li>
                                  </ul>
                                  <br>
-                                 <h5>ABSENTEEISM:</h5>
+                                 <p><strong>ABSENTEEISM:</strong></p>
                                  <ul>
                                     <li>1.	Employees are required to inform the Supervisor as soon as possible when absenteeism is known, to allow the Agency time to cover assignments. The employee is not excused from work until the Supervisor approves the absence or verified he/she is aware.</li>
                                     <li>2.	Illness and or injury that requires a physician’s treatment and that may take more than a day for recovery will need to be called in and discussed with the Supervisor. When the office is closed, request the answering service to contact the person on call with the information and give your phone number for follow-up.</li>
@@ -74,8 +85,8 @@
                                     <li>6.	<strong>No shows / no calls are not tolerated.</strong> The need to follow policy and procedure is a courtesy to other employees. Disciplinary action may be supervised in an effort to avoid any further complications.</li>
                                     <li>7.	Notice to your Supervisor in writing for consideration on a requested leave of absence must be submitted at least 14 days to leave, unless there is a cause of emergency or illness.</li>
                                  </ul>
-                                 <br>
-                                 <p>____ <strong>I</strong> acknowledge that I have been oriented to the Agency’s policy regarding <strong>ATTENDANCE</strong> and <strong>ABSENTEEISM,</strong> and I agree to follow all guidelines, both written and verbal. I understand that, if the guidelines, policies and procedures are not followed, that I may be immediately terminated. I also had the opportunity to ask questions regarding this policy and I know where it's located for future reference</p>
+                                 
+                                 <p><strong>I</strong> acknowledge that I have been oriented to the Agency’s policy regarding <strong>ATTENDANCE</strong> and <strong>ABSENTEEISM,</strong> and I agree to follow all guidelines, both written and verbal. I understand that, if the guidelines, policies and procedures are not followed, that I may be immediately terminated. I also had the opportunity to ask questions regarding this policy and I know where it's located for future reference</p>
                               </div>
                               @if(!empty($attendance_tardiness_data[0]['applicant_id']))
                               <div class="row d-flex align-items-center justify-content-center">
@@ -83,8 +94,7 @@
                                     <div class="mb-3">
                                        <label class="form-label">Signature</label> <br>
                                        <img width="250"  src="{{asset('storage/signature/' . $attendance_tardiness_data[0]['signature'])}}">
-                                    </div>
-                                 </div>
+                                    
                                  <div class="col-md-6">
                                     <div class="mb-3">
                                        <label class="form-label">Date Signed</label>
@@ -271,11 +281,22 @@
          }
       </style>
       <!-- JAVASCRIPT -->
-      @vite(['resources/libs/jquery/jquery.min.js', 
-      'resources/libs/bootstrap/js/bootstrap.bundle.min.js', 
-      'resources/libs/metismenu/metisMenu.min.js', 
-      'resources/libs/simplebar/simplebar.min.js', 
-      'resources/libs/node-waves/waves.min.js',  
-      'resources/js/app.js'])
+      <!-- Include jQuery -->
+    <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
+
+<!-- Include Bootstrap JS -->
+<script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<!-- Include MetisMenu JS -->
+<script src="{{ asset('assets/libs/metismenu/metisMenu.min.js') }}"></script>
+
+<!-- Include SimpleBar JS -->
+<script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
+
+<!-- Include Waves JS -->
+<script src="{{ asset('assets/libs/node-waves/waves.min.js') }}"></script>
+
+<!-- Include App JS -->
+<script src="{{ asset('assets/js/app.js') }}"></script>
    </body>
 </html>

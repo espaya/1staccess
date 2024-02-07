@@ -64,7 +64,17 @@
                             <div class="col-xl-8">
                                 <div class="card">
                                     <div class="card-body">
-                                    <h4 class="mb-sm-0 font-size-18">Drug Testing Policy</h4><br>
+                                    <img width="30%" src="{{ asset('images/1staccess.png') }}" style="margin-left:220px;">
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 14; text-align: center;">
+                                    <strong>1st Access Home Care Incorporated</strong>
+                                    </p>
+                                    <p style="text-align: center; font-size: 11;">
+                                        6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
+                                    </p>
+                                    <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                        <strong>Drug Testing Policy</strong>
+                                    </p>
+                                    
                                     <p>Agency employees may not possess, distribute or use alcoholic beverages or controlled substances. Including inhalants while on premises of property controlled by the Agency or while in the course of conducting company business or engaged in any company sponsored activity.</p>
 
                                         <P>Patients or visitors may not possess, distribute and/or use alcoholic beverages or controlled substances, while on the premises of property controlled by the Agency.</P>
@@ -73,25 +83,15 @@
 
                                         <P>Based on reasonable cause, the Agency may conduct searches or inspection of an employee’s personal belongings and may be asked to take a drug test. Refusal to consent may result in termination.</P>
 
-                                        <P><strong>*I HAVE READ AND UNDERSTAND THE ABOVE AND WILL COMPLY WITH THIS AGREEMENT</strong></P>    <br>
+                                        <P><strong>*I HAVE READ AND UNDERSTAND THE ABOVE AND WILL COMPLY WITH THIS AGREEMENT</strong></P>
 
                                         @if(!empty($drug_testing_policy_data[0]['applicant_id']))
-                                            <div class="row d-flex align-items-center justify-content-center">
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Signature</label> <br>
-                                                        <img width="250"  src="{{asset('storage/signature/' . $drug_testing_policy_data[0]['signature'])}}">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Date Signed</label>
-                                                        <p>{{ \Carbon\Carbon::parse($drug_testing_policy_data[0]['created_at'])->format('M d, Y')}}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </div>
+                                        <p>Employee Signature</p>
+                                        <img width="250"  src="{{asset('storage/signature/' . $drug_testing_policy_data[0]['signature'])}}">
+                                        <p>Date Signed</p>
+                                        <p>{{ \Carbon\Carbon::parse($drug_testing_policy_data[0]['created_at'])->format('M d, Y')}}</p>
                                         @endif
+                                        </div>
                                     </div>
                                     <!-- end card body -->
                                 </div>
