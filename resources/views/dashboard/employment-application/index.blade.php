@@ -335,209 +335,86 @@
                                           </tbody>
                                        </table>
 
-                                                                              
+                                       <br>
+
+                                       <p><strong>Reference</strong></p>
+
+
+                                       <table>
+                                          <thead>
+                                             <tr>
+                                                   <th>Name</th>
+                                                   <th>Address</th>
+                                                   <th>Phone</th>
+                                                   <th>Years Acquainted</th>
+                                                   
+                                             </tr>
+                                          </thead>
+                                          <tbody>
+                                             <tr>
+                                                   <td data-label="Column 1">{{$referenceData[0]['reference_name_1']}}</td>
+                                                   <td data-label="Column 2">{{$referenceData[0]['reference_address_1']}}</td>
+                                                   <td data-label="Column 3">{{$referenceData[0]['reference_phone_1']}}</td>
+                                                   <td data-label="Column 4">{{$referenceData[0]['reference_years_acquainted_1']}}</td>   
+                                             </tr>
+                                             <tr>
+                                                   <td data-label="Column 1">{{$referenceData[0]['reference_name_2']}}</td>
+                                                   <td data-label="Column 2">{{$referenceData[0]['reference_address_2']}}</td>
+                                                   <td data-label="Column 3">{{$referenceData[0]['reference_phone_2']}}</td>
+                                                   <td data-label="Column 4">{{$referenceData[0]['reference_years_acquainted_2']}}</td>
+                                             </tr>
+                                             <tr>
+                                                   <td data-label="Column 1">{{$referenceData[0]['reference_name_3']}}</td>
+                                                   <td data-label="Column 2">{{$referenceData[0]['reference_address_3']}}</td>
+                                                   <td data-label="Column 3">{{$referenceData[0]['reference_phone_3']}}</td>
+                                                   <td data-label="Column 4">{{$referenceData[0]['reference_years_acquainted_3']}}</td>  
+                                             </tr>
+                                          </tbody>
+                                       </table>
+
+                                       <br>
+
+                                       <p><strong>Language(s)</strong></p>
+
+
+                                       <table>
+                                          <thead>
+                                             <tr>
+                                                   <th>Language</th>
+                                                   <th>Read and Write</th>
+                                                   <th>Read and Speak</th>
+                                                   <th>Speak Only</th>
+                                             </tr>
+                                          </thead>
+                                          <tbody>
+                                             <tr>
+                                                   <td data-label="Column 1">{{$languageData[0]['language_1']}}</td>
+                                                   <td data-label="Column 2">{{$languageData[0]['read_write_1']}}</td>
+                                                   <td data-label="Column 3">{{$languageData[0]['read_speak_1']}}</td>
+                                                   <td data-label="Column 4">{{$languageData[0]['speak_only_1']}}</td>
+                                             </tr>
+                                             @if(!empty($languageData[0]['language_2']))
+                                             <tr>
+                                                   <td data-label="Column 1">{{$languageData[0]['language_2']}}</td>
+                                                   <td data-label="Column 2">{{$languageData[0]['read_write_2']}}</td>
+                                                   <td data-label="Column 3">{{$languageData[0]['read_speak_2']}}</td>
+                                                   <td data-label="Column 4">{{$languageData[0]['speak_only_2']}}</td>
+                                             </tr>
+                                             @endif
+                                          </tbody>
+                                       </table>
+
+                                       <br>
+
+                                       <p>Emergency Address: {{$emergencyData[0]['emergency_address']}}, {{$emergencyData[0]['emergency_city']}}, {{$emergencyData[0]['emergency_state']}}, {{$emergencyData[0]['emergency_zip']}}</p>
+
+                                       <div class="form-control-wrap">
+                                          <img width="250" class="img-fluid" src="{{ asset('storage/signature/' . $signatureData[0]['signature']) }}">
+                                          <span style="margin-left: 100px;">{{Carbon\Carbon::parse($signatureData[0]['date_signed'])->format('M d, Y')}}</span>
+                                       </div>
+                                       
                                     </div>
 
-                                       
-                                       
-                                      
-                                       <hr>
-                                       <p><strong>Reference</strong></p>
-                                       <p>#1</p>
-                                       <div class="col-md-3">
-                                          <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Name</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$referenceData[0]['reference_name_1']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-4">
-                                          <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Address</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$referenceData[0]['reference_address_1']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-2">
-                                          <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Phone</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$referenceData[0]['reference_phone_1']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-3">
-                                          <div class="form-group">
-                                             <label for="inputAddress2" class="form-label">Years Acquainted: {{$referenceData[0]['reference_years_acquainted_1']}}</label>
-                                             <div class="form-control-wrap">
-                                                <p></p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <p>#2</p>
-                                       <div class="col-md-3">
-                                          <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Name</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$referenceData[0]['reference_name_2']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-4">
-                                          <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Address</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$referenceData[0]['reference_address_2']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-2">
-                                          <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Phone</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$referenceData[0]['reference_phone_2']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-3">
-                                          <div class="form-group">
-                                             <label for="inputAddress2" class="form-label">Years Acquainted: {{$referenceData[0]['reference_years_acquainted_2']}}</label>
-                                             <div class="form-control-wrap">
-                                                <p></p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <p>#3</p>
-                                       <div class="col-md-3">
-                                          <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Name</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$referenceData[0]['reference_name_3']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-4">
-                                          <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Address</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$referenceData[0]['reference_address_3']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-2">
-                                          <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Phone</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$referenceData[0]['reference_phone_3']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-3">
-                                          <div class="form-group">
-                                             <label for="inputAddress2" class="form-label">Years Acquainted: {{$referenceData[0]['reference_years_acquainted_3']}}</label>
-                                             <div class="form-control-wrap">
-                                                <p></p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <hr>
-                                       <p><strong>Language(s)</strong></p>
-                                       <p>#1</p>
-                                       <div class="col-md-3">
-                                          <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Language</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$languageData[0]['language_1']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-3">
-                                          <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Read and Write</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$languageData[0]['read_write_1']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-3">
-                                          <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Read and Speak</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$languageData[0]['read_speak_1']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-3">
-                                          <div class="form-group">
-                                             <label for="inputAddress2" class="form-label">Speak Only</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$languageData[0]['speak_only_1']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       @if($languageData[0]['language_2'])
-                                       <p>#2</p>
-                                       <div class="col-md-3">
-                                          <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Language</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$languageData[0]['language_2']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-3">
-                                          <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Read and Write</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$languageData[0]['read_write_2']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-3">
-                                          <div class="form-group">
-                                             <label for="inputPassword4" class="form-label">Read and Speak</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$languageData[0]['read_speak_2']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-3">
-                                          <div class="form-group">
-                                             <label for="inputAddress2" class="form-label">Speak Only</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{$languageData[0]['speak_only_2']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       @endif
-                                       <hr>
-                                       <div class="col-md-12">
-                                          <div class="form-group">
-                                             <div class="form-control-wrap">
-                                                <p><strong>Emergency Address</strong></p>
-                                                <p>{{$emergencyData[0]['emergency_address']}}, {{$emergencyData[0]['emergency_city']}}, {{$emergencyData[0]['emergency_state']}}, {{$emergencyData[0]['emergency_zip']}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <hr>
-                                       <div class="col-md-8">
-                                          <div class="form-group">
-                                             <label for="inputEmail4" class="form-label">Signature</label>
-                                             <div class="form-control-wrap">
-                                                <img width="250" class="img-fluid" src="{{ asset('storage/signature/' . $signatureData[0]['signature']) }}">
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-md-4">
-                                          <div class="form-group">
-                                             <label for="inputEmail4" class="form-label">Date</label>
-                                             <div class="form-control-wrap">
-                                                <p>{{Carbon\Carbon::parse($signatureData[0]['date_signed'])->format('M d, Y')}}</p>
-                                             </div>
-                                          </div>
-                                       </div>
                                     </form>
                                         
                                     </div>
