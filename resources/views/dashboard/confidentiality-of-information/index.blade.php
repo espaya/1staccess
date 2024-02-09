@@ -97,34 +97,34 @@
                                     <p style="text-align: center; font-size: 11;">
                                         6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
                                     </p>
-                                    <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
+                                    <p style="font-size: 11; text-align: center;">
                                         <strong>Confidentiality of Information Agreement</strong>
                                     </p>
 
-                                            <p>Employee Name:<u> {{ ucfirst($profileData[0]['full_name']) }}</u> </p>
-                                        <br>
-                                        <ul>
-                                        <li>1. All information designated confidential that is obtained or generated as a result of any or all of the operations of the Agency will be dealt with in a confidential manner.</li>
-
-                                        <li>2. All information that is gathered, maintained or stored by the Agency becomes the Agency’s property and cannot be released without proper authorization from the administration.</li>
-
-                                        <li>3. Altering information is prohibited by the Agency and by law. Correction of any identified erroneous information must be done according to Agency policy</li>
-
-                                    </ul> <br>
-
-                                    <h5 class="nk-block-title">WhaT we can do to maintain the confidentiality of Information</h5>
+                                        <p>Employee Name:<u> {{ ucfirst($profileData[0]['full_name']) }}</u> </p>
+                                       <p><strong>Confidentiality of Information</strong></p> 
                                     <ul>
-                                        <li>1. In order to protect any individual from invasion of privacy and to protect the interest of the Agency, any information gathered for client care or operations will be gathered, maintained and stored in such a manner as to ensure confidentiality.</li>
+                                        <p>1. All information designated confidential that is obtained or generated as a result of any or all of the operations of the Agency will be dealt with in a confidential manner.</p>
 
-                                        <li>2. Access to information will be limited to a need to know basis to perform the scope of one’s duties and responsibilities.</li>
+                                        <p>2. All information that is gathered, maintained or stored by the Agency becomes the Agency’s property and cannot be released without proper authorization from the administration.</p>
 
-                                        <li>3. Dissemination of information will be handled according to Agency policy, and staff will be informed during orientation, will sign the confidentiality statement and it will be placed in the employee’s file</li>
+                                        <p>3. Altering information is prohibited by the Agency and by law. Correction of any identified erroneous information must be done according to Agency policy</p>
+
                                     </ul>
-                                    <br>
+
+                                    <p><strong>WhaT we can do to maintain the confidentiality of Information</strong></p>
+                                    <ul>
+                                        <p>1. In order to protect any individual from invasion of privacy and to protect the interest of the Agency, any information gathered for client care or operations will be gathered, maintained and stored in such a manner as to ensure confidentiality.</p>
+
+                                        <p>2. Access to information will be limited to a need to know basis to perform the scope of one’s duties and responsibilities.</p>
+
+                                        <p>3. Dissemination of information will be handled according to Agency policy, and staff will be informed during orientation, will sign the confidentiality statement and it will be placed in the employee’s file</p>
+                                    </ul>
+                                    
                                     <p><strong>I understand that I am responsible for following this Confidentiality Policy Agreement & The Guidelines, both written and verbal</strong></p>
-                                        <br>
+                                        
                                         @if(!empty($conf_infoData[0]['applicant_id']))
-                                            <div class="row d-flex align-items-center justify-content-center">
+                                           
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label class="form-label">Signature</label> <br>
@@ -139,8 +139,6 @@
                                                     </div>
                                                 </div>
                                                 
-                                            </div>
-                                            </div>
                                         @else
                                         <form action="{{route('confidentiality-of-information')}}" method="post" enctype="multipart/form-data" onsubmit="submitForm();">
                                         @csrf

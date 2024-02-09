@@ -97,31 +97,31 @@
                                     <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
                                         <strong>Employee Safety! Cellular Phone Use</strong>
                                     </p><br>
-                                        <br>
+                                        
                                         <div>
                                         <p>Employee Name: <u>{{ ucfirst($profileData[0]['full_name']) }}</u></p>
-                                        <br>
-                                        <p><strong class="text-black">1st Access Home Care Incorporated</strong> Does Not Permit employees whilst on company time to talk on cellular phones while on the job. This is very dangerous and should be avoided any time. It is mandatory that I must pull over and stop my vehicle each time I conduct Agency business per cellular phone.
+                                        
+                                        <p><strong>1st Access Home Care Incorporated</strong> Does Not Permit employees whilst on company time to talk on cellular phones while on the job. This is very dangerous and should be avoided any time. It is mandatory that I must pull over and stop my vehicle each time I conduct Agency business per cellular phone.
                                     </p>
                                     <p> The agency is not responsible for any moving violations, accidents or other incidents that may occur while I am using my cellular phone and driving.
                                     </p>
-                                    <p><strong class="text-black">I have read and understand the above information of the Agency regulation regarding cellular phone use and I will comply.</strong>
+                                    <p><strong>I have read and understand the above information of the Agency regulation regarding cellular phone use and I will comply.</strong>
 
                                     </ul> 
-                                        <br>
+                                        
                                         @if(!empty($empSafetyData[0]['applicant_id']))
-                                            <div class="row d-flex align-items-center justify-content-center">
+                                           
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
-                                                        <label class="form-label">Signature</label> <br>
+                                                        <p>Signature</p> <br>
                                                         <img width="250" class="img-fluid" src="{{asset('storage/signature/' . $empSafetyData[0]['signature'])}}">
-                                             </div>
                                                     </div>
                                                 </div>
+                                               
                                                 
                                                 <div class="col-md-6">
                                                     <div class="mb-3">
-                                                        <label class="form-label">Date Signed</label>
+                                                        <p>Date Signed</p>
                                                         <p>{{ \Carbon\Carbon::parse($empSafetyData[0]['created_at'])->format('M d, Y')}}</p>
                                                     </div>
                                                 </div>

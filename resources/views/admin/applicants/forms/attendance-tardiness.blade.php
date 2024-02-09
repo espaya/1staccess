@@ -87,29 +87,26 @@
                                  </ul>
                                  
                                  <p><strong>I</strong> acknowledge that I have been oriented to the Agency’s policy regarding <strong>ATTENDANCE</strong> and <strong>ABSENTEEISM,</strong> and I agree to follow all guidelines, both written and verbal. I understand that, if the guidelines, policies and procedures are not followed, that I may be immediately terminated. I also had the opportunity to ask questions regarding this policy and I know where it's located for future reference</p>
-                              </div>
-                              @if(!empty($attendance_tardiness_data[0]['applicant_id']))
-                              <div class="row d-flex align-items-center justify-content-center">
-                                 <div class="col-md-6">
-                                    <div class="mb-3">
-                                       <label class="form-label">Signature</label> <br>
-                                       <img width="250"  src="{{asset('storage/signature/' . $attendance_tardiness_data[0]['signature'])}}">
-                                    
-                                 <div class="col-md-6">
-                                    <div class="mb-3">
-                                       <label class="form-label">Date Signed</label>
-                                       <p>{{ \Carbon\Carbon::parse($attendance_tardiness_data[0]['created_at'])->format('M d, Y')}}</p>
-                                    </div>
-                                 </div>
-                              </div>
-                              @endif
 
+                                 @if(!empty($attendance_tardiness_data[0]['applicant_id']))
+                                 <p>Employee Signature</p>
+                                 <img width="250"  src="{{asset('storage/signature/' . $attendance_tardiness_data[0]['signature'])}}">
+                                 @endif
+
+                                 <p >Date Signed</p>
+                                 <p>{{ \Carbon\Carbon::parse($attendance_tardiness_data[0]['created_at'])->format('M d, Y')}}</p>
+
+
+                              </div>
+                             
+                              <div class="row d-flex ">
+                                 <div class="col-md-12">
                               <!-- Supervisor Signature -->
                               @if(!empty($attendance_tardiness_data[0]['supervisor_signature']))
-                              <div class="row d-flex align-items-center justify-content-center">
+                              <div class="row d-flex ">
                                  <div class="col-md-6">
                                     <div class="mb-3">
-                                       <label class="form-label">Signature</label> <br>
+                                       <label class="form-label">Supervisor Signature</label> <br>
                                        <img width="250"  src="{{asset('storage/signature/' . $attendance_tardiness_data[0]['supervisor_signature'])}}">
                                     </div>
                                  </div>
@@ -144,7 +141,7 @@
                               <br><br>
                               <!-- HR Signature -->
                               @if(!empty($attendance_tardiness_data[0]['hr_signature']))
-                              <div class="row d-flex align-items-center justify-content-center">
+                              <div class="row d-flex ">
                                  <div class="col-md-6">
                                     <div class="mb-3">
                                        <label class="form-label">HR Signature</label> <br>

@@ -96,73 +96,52 @@
                                         6600 Fieldtan Trail, Moseley, VA, 23120<br>Agency Phone: 804.818.3216
                                     </p>
                                     <p class="mb-sm-0 font-size-18" style="font-size: 11; text-align: center;">
-                                        <strong>Criminal History Search</strong>
-                                    </p><br>
-                                        <br>
-
+                                        <strong>Criminal History Search Consent Form</strong>
+                                    </p>
                                     <div class="row">
-                                                
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                    <p>Name: <span style="text-decoration: underline;">{{$nameQueryData[0]['full_name']}}</span></p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                    @if(!empty($criminalHistoryData[0]['created_at']))
-                                                   <p>Date: {{ \Carbon\Carbon::parse($criminalHistoryData[0]['created_at'])->format('M d, Y')}}</p>
-                                                @else
-                                                   <p>Date: <?php echo date('M d, Y'); ?></p>
-                                                @endif
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="col-md-12">
+                                            
+                                            <p>Name: <span style="text-decoration: underline;">{{$nameQueryData[0]['full_name']}}</span>
+                                                <span style="margin-left: 100px;">Date: {{ \Carbon\Carbon::parse($criminalHistoryData[0]['created_at'])->format('M d, Y')}}</span>
+                                            </p>
 
-                                        <div>
-                                        <br>
-                                    </ul> 
-                                    <p>I, <span style="text-decoration: underline !important;">({{$nameQueryData[0]['full_name']}})</span> have had no prior convictions of an offense described in the  <strong>Health and Safety Code</strong> which would bar or potentially bar employment as listed below:</p>
-                                    <ul>
-                                        <li>CRIMINAL HOMICIDE</li>
-                                        <li>INDECENCY WITH A CHILD</li>
-                                        <li>SOLICITATION OF A CHILD</li>
-                                        <li>ARSON</li>
-                                        <li>AGGRAVATED ROBBERY</li>
-                                        <li>BURGLARY AND CRIMINAL TRESPASS</li>
-                                        <li>WEAPONS</li>
-                                        <li>PUBLIC LEWDNESS</li>
-                                        <li>PUBLIC INDECENCY</li>
-                                        <li>KIDNAPPING AND FALSE IMPRISONMENT</li>
-                                        <li>AGREEMENT TO ABDUCT FROM CUSTODY</li>
-                                        <li>SALE OR PURCHASE OF A CHILD</li>
-                                        <li>ROBBERY</li>
-                                        <li>ASSAULTIVE OFFENSES</li>
-                                        <li>THEFT</li>
-                                        <li>FRAUD</li>
-                                        <li>INDECENT EXPOSURE</li>
-                                        <li>A FELONY VIOLATION OF A STATUTE</li>
-                                        <li>INTENDED TO CONTROL THE POSSESSION OR DISTRIBUTION OF AN ILLEGAL SUBSTANCE</li>
-                                    </ul>
-                                        <br>
-                                        @if(!empty($criminalHistoryData[0]['applicant_id']))
-                                            <div class="row d-flex align-items-center justify-content-center">
-                                                <div class="col-md-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Signature</label> <br>
-                                                        <img width="250"  src="{{asset('storage/signature/' . $criminalHistoryData[0]['signature'])}}">
-                                                    </div>
+                                            <p>I, <span style="text-decoration: underline !important;">({{$nameQueryData[0]['full_name']}})</span> have had no prior convictions of an offense described in the  <strong>Health and Safety Code</strong> which would bar or potentially bar employment as listed below:</p>
+                                            <ul>
+                                                <li>CRIMINAL HOMICIDE</li>
+                                                <li>INDECENCY WITH A CHILD</li>
+                                                <li>SOLICITATION OF A CHILD</li>
+                                                <li>ARSON</li>
+                                                <li>AGGRAVATED ROBBERY</li>
+                                                <li>BURGLARY AND CRIMINAL TRESPASS</li>
+                                                <li>WEAPONS</li>
+                                                <li>PUBLIC LEWDNESS</li>
+                                                <li>PUBLIC INDECENCY</li>
+                                                <li>KIDNAPPING AND FALSE IMPRISONMENT</li>
+                                                <li>AGREEMENT TO ABDUCT FROM CUSTODY</li>
+                                                <li>SALE OR PURCHASE OF A CHILD</li>
+                                                <li>ROBBERY</li>
+                                                <li>ASSAULTIVE OFFENSES</li>
+                                                <li>THEFT</li>
+                                                <li>FRAUD</li>
+                                                <li>INDECENT EXPOSURE</li>
+                                                <li>A FELONY VIOLATION OF A STATUTE</li>
+                                                <li>INTENDED TO CONTROL THE POSSESSION OR DISTRIBUTION OF AN ILLEGAL SUBSTANCE</li>
+                                            </ul>
+                                            <p><strong>I UNDERSTAND THAT THE HOME HEALTH AGENCY IS REQUIRED TO CONDUCT A CRIMINAL HISTORY CHECK BEFORE OFFERING ME EMPLOYMENT. I, THE UNDERSIGNING, HEREBY AUTHORIZE THIS AGENCY TO CONDUCT AND VERIFY MY CRIMINAL HISTORY BY PERFORMING A CRIMINAL HISTORY CHECK.</strong></p>
+                                        </div>    
+                                    </div>
+
+                                    @if(!empty($criminalHistoryData[0]['applicant_id']))
+                                     <div>
+                                        <div class="col-md-12">
+                                            <p>Signature</p>
+                                                <img width="250"  src="{{asset('storage/signature/' . $criminalHistoryData[0]['signature'])}}">
+
+                                                <p>{{ \Carbon\Carbon::parse($criminalHistoryData[0]['created_at'])->format('M d, Y')}}</p>
                                                 </div>
                                                 
-                                                <div class="col-md-6">
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Date Signed</label>
-                                                        <p>{{ \Carbon\Carbon::parse($criminalHistoryData[0]['created_at'])->format('M d, Y')}}</p>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                            </div>
-                                        @else
+                                        </div>
+                                    @else
                                         <form  onsubmit="submitForm();" action="{{route('criminal-history-search')}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                             <div class="row">
